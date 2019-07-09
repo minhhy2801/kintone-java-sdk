@@ -1071,15 +1071,15 @@ Auth kintoneAuth = new Auth();
 kintoneAuth.setPasswordAuth(username, password);
 
 String myDomainName = "sample.cybozu.com";
-Connection connection = new Connection(myDomainName, kintoneAuth);
+Connection kintoneConnection = new Connection(myDomainName, kintoneAuth);
 
 // Set proxy without proxyUsername & proxyPassword
-connection.setProxy(proxyHost, proxyPort);
+kintoneConnection.setProxy(proxyHost, proxyPort);
 
 // Set proxy with proxyUsername & proxyPassword
 String proxyUsername = "xxxx";
 String proxyPassword = "xxxx";
-connection.setProxy(proxyHost, proxyPort, proxyUsername, proxyPassword);
+kintoneConnection.setProxy(proxyHost, proxyPort, proxyUsername, proxyPassword);
 </pre>
 
 </details>
