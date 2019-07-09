@@ -13,7 +13,7 @@
         <meta name="description" content="The SDK of kintone REST API client on Java">
       
       
-        <link rel="canonical" href="https://kintone.github.io/kintone-java-sdk/reference/file/">
+        <link rel="canonical" href="https://kintone.github.io/kintone-java-sdk/reference/record-cursor/">
       
       
       
@@ -40,7 +40,7 @@
     
     
       
-        <title>File - kintone Java SDK</title>
+        <title>RecordCursor - kintone Java SDK</title>
       
     
     
@@ -91,7 +91,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#file" tabindex="1" class="md-skip">
+      <a href="#recordcursor" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -360,11 +360,117 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../record-cursor/" title="RecordCursor" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        RecordCursor
+      </label>
+    
+    <a href="./" title="RecordCursor" class="md-nav__link md-nav__link--active">
       RecordCursor
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#constructor" title="Constructor" class="md-nav__link">
+    Constructor
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameter" title="Parameter" class="md-nav__link">
+    Parameter
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sample-code" title="Sample code" class="md-nav__link">
+    Sample code
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#methods" title="Methods" class="md-nav__link">
+    Methods
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#createcursorinteger-app-arraystring62-fields-string-query-integer-size" title="createCursor(Integer app, Array&lt;String> fields, String query, Integer size)" class="md-nav__link">
+    createCursor(Integer app, Array&lt;String> fields, String query, Integer size)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getrecordsstring-cursorid" title="getRecords(String cursorID)" class="md-nav__link">
+    getRecords(String cursorID)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getallrecordsstring-cursorid" title="getAllRecords(String cursorID)" class="md-nav__link">
+    getAllRecords(String cursorID)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deletecursorstring-cursorid" title="deleteCursor(String cursorID)" class="md-nav__link">
+    deleteCursor(String cursorID)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reference" title="Reference" class="md-nav__link">
+    Reference
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -408,76 +514,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        File
-      </label>
-    
-    <a href="./" title="File" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../file/" title="File" class="md-nav__link">
       File
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#constructor" title="Constructor" class="md-nav__link">
-    Constructor
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#methods" title="Methods" class="md-nav__link">
-    Methods
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#uploadfilepath" title="upload(filePath)" class="md-nav__link">
-    upload(filePath)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#downloadfilekey-outputfilepath" title="download(fileKey, outPutFilePath)" class="md-nav__link">
-    download(fileKey, outPutFilePath)
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -847,6 +888,26 @@
     Constructor
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameter" title="Parameter" class="md-nav__link">
+    Parameter
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sample-code" title="Sample code" class="md-nav__link">
+    Sample code
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -858,21 +919,42 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#uploadfilepath" title="upload(filePath)" class="md-nav__link">
-    upload(filePath)
+  <a href="#createcursorinteger-app-arraystring62-fields-string-query-integer-size" title="createCursor(Integer app, Array&lt;String> fields, String query, Integer size)" class="md-nav__link">
+    createCursor(Integer app, Array&lt;String> fields, String query, Integer size)
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#downloadfilekey-outputfilepath" title="download(fileKey, outPutFilePath)" class="md-nav__link">
-    download(fileKey, outPutFilePath)
+  <a href="#getrecordsstring-cursorid" title="getRecords(String cursorID)" class="md-nav__link">
+    getRecords(String cursorID)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getallrecordsstring-cursorid" title="getAllRecords(String cursorID)" class="md-nav__link">
+    getAllRecords(String cursorID)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deletecursorstring-cursorid" title="deleteCursor(String cursorID)" class="md-nav__link">
+    deleteCursor(String cursorID)
   </a>
   
 </li>
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reference" title="Reference" class="md-nav__link">
+    Reference
+  </a>
   
 </li>
       
@@ -892,13 +974,16 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/kintone/kintone-java-sdk/edit/master/docs/reference/file.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/kintone/kintone-java-sdk/edit/master/docs/reference/record-cursor.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="file">File</h1>
-<p>Provide manipulate functions on file: file download &amp; file upload in the kintone app.</p>
+                <h1 id="recordcursor">RecordCursor</h1>
+<p>This module provide functions to work with Record Cursor.</p>
+<blockquote>
+<p>The user or API Token must have permission to view the records.</p>
+</blockquote>
 <h2 id="constructor">Constructor</h2>
-<p><strong>Parameter</strong></p>
+<h3 id="parameter"><strong>Parameter</strong></h3>
 <table>
 <thead>
 <tr>
@@ -917,23 +1002,32 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Sample code</strong></p>
+<h3 id="sample-code"><strong>Sample code</strong></h3>
 <details class="tab-container" open>
-<Summary>Initial file class</Summary>
+<Summary>Init app module</Summary>
 
 <strong class="tab-name">Source code</strong>
 
 <pre class="inline-code">
 
-File fileManagement = new File(connection);
+    // Init authentication
+    Auth kintoneAuth = new Auth()
+
+    // Password Authentication
+    String username = "your_username"
+    String password = "your_password"
+    kintoneAuth = kintoneAuth.setPasswordAuth(username, password)
+    Connection connection = Connection( "your_domain", kintoneAuth )
+    RecordCursor recordCursor = new RecordCursor(connection);
+
 </pre>
 
 </details>
 
 <h2 id="methods">Methods</h2>
-<h3 id="uploadfilepath">upload(filePath)</h3>
+<h3 id="createcursorinteger-app-arraystring62-fields-string-query-integer-size">createCursor(Integer app, Array&lt;String> fields, String query, Integer size)</h3>
 <blockquote>
-<p>Upload file kintone via Rest API</p>
+<p>Get single app</p>
 </blockquote>
 <p><strong>Parameter</strong></p>
 <table>
@@ -947,48 +1041,67 @@ File fileManagement = new File(connection);
 </thead>
 <tbody>
 <tr>
-<td>filePath</td>
-<td>String</td>
+<td>appId</td>
+<td>Integer</td>
 <td>yes</td>
-<td>The full path of file on your environment</td>
+<td>The kintone app ID</td>
+</tr>
+<tr>
+<td>fields</td>
+<td>Array&lt;String></td>
+<td>(optional)</td>
+<td>Fields of record to return</td>
+</tr>
+<tr>
+<td>query</td>
+<td>String</td>
+<td>(optional)</td>
+<td>Query condition</td>
+</tr>
+<tr>
+<td>size</td>
+<td>Integer</td>
+<td>(optional)</td>
+<td>Number of records to retrieve per request. <br> Default: 100. <br>Maximum: 500.</td>
 </tr>
 </tbody>
 </table>
 <p><strong>Return</strong></p>
-<p><a href="../file-model">FileModel</a></p>
+<p><a href="../model/cursor/record-cursor#CreateRecordCursorResponse">CreateRecordCursorResponse</a></p>
 <p><strong>Sample code</strong></p>
 <details class="tab-container" open>
-<Summary>Get app sample</Summary>
+<Summary>create Cursor</Summary>
 
 <strong class="tab-name">Source code</strong>
-
 <pre class="inline-code">
-String username = "cybozu";
-String password = "cybozu";
 
-// Init authenticationAuth
-Auth kintoneAuth = new Auth();
-kintoneAuth.setPasswordAuth(username, password);
+    RecordCursor recordCursor = new RecordCursor(connection);
 
-// Init Connection
-String myDomainName = "sample.cybozu.com";
-Connection kintoneOnDemoDomain = new Connection(myDomainName, kintoneAuth);
+    int appID = 110;
+    int size = 500;
+    String query = "order by 数値 desc";
+    ArrayList<String> fields = new ArrayList<String>();
+    fields.add("数値");
 
-// Init File Module
-File kintoneFileManager = new File(kintoneOnDemoDomain);
+    CreateRecordCursorResponse cursor = recordCursor.createCursor(appID, fields, query, size);
+    System.out.println("cursorID: " + cursor.getId());
+    System.out.println("totalRecord: " + cursor.getTotalCount());
 
-// execute upload file API
-String uploadPath = "C:/Users/Administrator/Desktop/upload";
-FileModel fileModel = kintoneFileManager .upload(uploadPath + "test.txt");
+    /*
+    output:
+    cursorID: "your_cursor_id"
+    totalRecord: 50
+    */
+
 </pre>
 
 </details>
 
-<h3 id="downloadfilekey-outputfilepath">download(fileKey, outPutFilePath)</h3>
+<h3 id="getrecordsstring-cursorid">getRecords(String cursorID)</h3>
 <blockquote>
-<p>Download file kintone via Rest API</p>
+<p>Get multiple apps</p>
 </blockquote>
-<p><strong>Parameter</strong></p>
+<p><strong>Parameter </strong></p>
 <table>
 <thead>
 <tr>
@@ -1000,60 +1113,173 @@ FileModel fileModel = kintoneFileManager .upload(uploadPath + "test.txt");
 </thead>
 <tbody>
 <tr>
-<td>fileKey</td>
+<td>cursorID</td>
 <td>String</td>
-<td>yes</td>
-<td>The file key of the uploaded file on kintone</td>
-</tr>
-<tr>
-<td>outPutFilePath</td>
-<td>String</td>
-<td>yes</td>
-<td>The full path of output file on your environment</td>
+<td>(optional)</td>
+<td>The cursor ID.</td>
 </tr>
 </tbody>
 </table>
 <p><strong>Return</strong></p>
-<p>(none)</p>
+<p><a href="../model/cursor/record-cursor#GetRecordCursorResponse">GetRecordCursorResponse</a></p>
 <p><strong>Sample code</strong></p>
 <details class="tab-container" open>
-<Summary>Get apps sample</Summary>
+<Summary>Get Records</Summary>
 
 <strong class="tab-name">Source code</strong>
 
 <pre class="inline-code">
-String username = "cybozu";
-String password = "cybozu";
+    RecordCursor recordCursor = new RecordCursor(connection);
 
-// Init authenticationAuth
-Auth kintoneAuth = new Auth();
-kintoneAuth.setPasswordAuth(username, password);
+    String cursorId = "dc24fc1f-4195-41b3-a55d-7e4547d45de1";
+    GetRecordCursorResponse response = recordCursor.getRecords(cursorId);
 
-String myDomainName = "sample.cybozu.com";
-Connection kintoneOnDemoDomain = new Connection(myDomainName, kintoneAuth);
-
-// Init File Module
-File kintoneFileManager = new File(kintoneOnDemoDomain);
-// Init Record Module
-Record kintonRecordManager = new Record(kintoneOnDemoDomain);
-
-// get filekey
-Integer appID = 1;
-Integer recordID =1;
-GetRecordResponse recordJson = kintonRecordManager.getRecord(appID, recordID);
-HashMap<String, FieldValue> recordVal = recordJson.getRecord();
-FieldValue fileVal = recordVal.get("TempFile");
-ArrayList<FileModel> fileList = (ArrayList<FileModel>) fileVal.getValue();
-
-// execute download file API
-String downloadPath = "C:/Users/Administrator/Desktop/";
-for (int i = 0; i < fileList.size(); i++) {
-    FileModel fdata = fileList.get(i);
-    kintoneFileManager.download(fdata.getFileKey(), downloadPath + fdata.getName());
-}
+    ArrayList<HashMap<String, FieldValue>> resultRecords = response.getRecords();
+    for (HashMap<String, FieldValue> record : resultRecords) {
+        for (Entry<String, FieldValue> entry : record.entrySet()) {
+            System.out.println(entry.getKey() + " " + entry.getValue().getValue());
+        }
+    }
+    /*
+    output:
+    数値 7669
+    数値 7668
+    数値 7667
+    数値 7666
+    数値 7665
+    */
 </pre>
 
 </details>
+
+<h3 id="getallrecordsstring-cursorid">getAllRecords(String cursorID)</h3>
+<blockquote>
+<p>Get multiple apps by list of ids</p>
+</blockquote>
+<p><strong>Parameter </strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>cursorID</td>
+<td>String</td>
+<td>yes</td>
+<td>The cursor ID.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Return</strong></p>
+<p><a href="../model/record/record-model#GetRecordsResponse">GetRecordsResponse</a></p>
+<p><strong>Sample code</strong></p>
+<details class="tab-container" open>
+<Summary>get Apps By IDs</Summary>
+
+<strong class="tab-name">Source code</strong>
+
+<pre class="inline-code">
+    RecordCursor recordCursor = new RecordCursor(connection);
+
+    String cursorId = "dc24fc1f-4195-41b3-a55d-7e4547d45de1";
+    GetRecordsResponse response = recordCursor.getAllRecords(cursorId);
+
+    ArrayList<HashMap<String, FieldValue>> resultRecords = response.getRecords();
+    for (HashMap<String, FieldValue> record : resultRecords) {
+        for (Entry<String, FieldValue> entry : record.entrySet()) {
+            System.out.println(entry.getKey() + " " + entry.getValue().getValue());
+        }
+    }
+
+    /*
+    output:
+    数値 7669
+    数値 7668
+    数値 7667
+    数値 7666
+    数値 7665
+    */
+</pre>
+
+</details>
+
+<h3 id="deletecursorstring-cursorid">deleteCursor(String cursorID)</h3>
+<blockquote>
+<p>Get multiple apps by a list of codes</p>
+</blockquote>
+<p><strong>Parameter </strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>cursorID</td>
+<td>String</td>
+<td>yes</td>
+<td>The cursor ID.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Return</strong></p>
+<p>none</p>
+<p><strong>Sample code</strong></p>
+<details class="tab-container" open>
+<Summary>Delete Cursor</Summary>
+
+<strong class="tab-name">Source code</strong>
+
+<pre class="inline-code">
+    RecordCursor recordCursor = new RecordCursor(connection);
+
+    String cursorId = "dc24fc1f-4195-41b3-a55d-7e4547d45de1";
+    recordCursor.deleteCursor(cursorId);
+</pre>
+
+</details>
+
+<h2 id="reference">Reference</h2>
+<ul>
+<li><a href="https://developer.kintone.io/hc/en-us/articles/212494888">Get App</a></li>
+<li><a href="https://developer.kintone.io/hc/en-us/articles/115005336727">Get Apps</a></li>
+<li><a href="https://developer.kintone.io/hc/en-us/articles/115005509288">Get Form fields</a></li>
+<li><a href="https://developer.kintone.io/hc/en-us/articles/115005506868">Add Form fields</a></li>
+<li><a href="https://developer.kintone.io/hc/en-us/articles/115005507788">Update Form fields</a></li>
+<li>
+<p><a href="https://developer.kintone.io/hc/en-us/articles/115005341187">Delete Form fields</a></p>
+</li>
+<li>
+<p><a href="https://developer.kintone.io/hc/en-us/articles/115005509068">Get Form Layout</a></p>
+</li>
+<li>
+<p><a href="https://developer.kintone.io/hc/en-us/articles/115005341427">Update Form Layout</a></p>
+</li>
+<li>
+<p><a href="https://developer.kintone.io/hc/en-us/articles/115004712547">Add Preview App</a></p>
+</li>
+<li><a href="https://developer.kintone.io/hc/en-us/articles/115004881348">Deploy App Settings</a></li>
+<li><a href="https://developer.kintone.io/hc/en-us/articles/115004890947">Get App Deploy Status</a></li>
+<li>
+<p><a href="https://developer.kintone.io/hc/en-us/articles/115004401787">Get Views</a></p>
+</li>
+<li>
+<p><a href="https://developer.kintone.io/hc/en-us/articles/115004880588">Update Views</a></p>
+</li>
+<li>
+<p><a href="https://developer.kintone.io/hc/en-us/articles/115004811668">Get General Settings</a></p>
+</li>
+<li><a href="https://developer.kintone.io/hc/en-us/articles/115004868628">Update General Settings</a></li>
+</ul>
                 
                   
                 
@@ -1074,7 +1300,7 @@ for (int i = 0; i < fileList.size(); i++) {
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../kintone-api-exception/" title="Kintone APIException" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../record/" title="Record" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -1083,19 +1309,19 @@ for (int i = 0; i < fileList.size(); i++) {
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Kintone APIException
+                Record
               </span>
             </div>
           </a>
         
         
-          <a href="../model/app/app/app-model/" title="App" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../bulk-request/" title="Bulk Request" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                App
+                Bulk Request
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
