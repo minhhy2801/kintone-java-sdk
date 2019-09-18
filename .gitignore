@@ -1,29 +1,12 @@
-# Compiled class file
-*.class
+.DS_Store
 
-# Log file
-*.log
+node_modules
 
-# BlueJ files
-*.ctxt
+lib/core/metadata.js
+lib/core/MetadataBlog.js
 
-# Mobile Tools for Java (J2ME)
-.mtj.tmp/
-
-# Package Files #
-*.jar
-*.war
-*.ear
-*.zip
-*.tar.gz
-*.rar
-
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
-hs_err_pid*
-
-.settings
-target/
-.classpath
-.project
-/bin/
-site
+website/translated_docs
+website/build/
+website/yarn.lock
+website/node_modules
+website/i18n/*
