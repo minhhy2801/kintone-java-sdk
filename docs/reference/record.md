@@ -19,8 +19,8 @@ Provide manipulate functions on records: get, update, delete, update the record 
 
 <pre class="inline-code">
 
-String USERNAME = "cybozu";
-String PASSWORD = "cybozu";
+String USERNAME = "YOUR_USERNAME";
+String PASSWORD = "YOUR_PASSWORD";
 
 // Init authenticationAuth
 Auth kintoneAuthWithPassword = new Auth();
@@ -62,8 +62,8 @@ Record kintoneRecordManager = new Record(kintoneOnDemoDomain);
 
 <pre class="inline-code">
 
-String USERNAME = "cybozu";
-String PASSWORD = "cybozu";
+String USERNAME = "YOUR_USERNAME";
+String PASSWORD = "YOUR_PASSWORD";
 
 // Init authenticationAuth
 Auth kintoneAuthWithPassword = new Auth();
@@ -108,8 +108,8 @@ GetRecordResponse response = kintoneRecordManager.getRecord(appID, recordID);
 <strong class="tab-name">Source code</strong>
 
 <pre class="inline-code">
-String USERNAME = "cybozu";
-String PASSWORD = "cybozu";
+String USERNAME = "YOUR_USERNAME";
+String PASSWORD = "YOUR_PASSWORD";
 
 // Init authenticationAuth
 Auth kintoneAuthWithPassword = new Auth();
@@ -129,6 +129,51 @@ GetRecordsResponse response = kintoneRecordManager.getRecords(appID, query, null
 
 </details>
 
+### getAllRecordsByCursor(Integer app, String query, Array<String\> fields)
+
+> Retrieves details of all records from an app using a query string.
+
+**Parameter**
+
+| Name| Type| Required| Description |
+| --- | --- | --- | --- |
+| app | Integer | yes | The kintone app ID
+| query | String | (optional) | [The query string](https://developer.kintone.io/hc/en-us/articles/213149287#getrecords) that will specify what records will be responded.
+| fields | ArrayList<String\>| (optional) | List of field codes you want in the response.
+
+**Return**
+
+[GetRecordsResponse](../record-model/#getrecordsresponse)
+
+**Sample code**
+
+<details class="tab-container" open>
+<Summary>Get all records by cursor</Summary>
+
+<strong class="tab-name">Source code</strong>
+
+<pre class="inline-code">
+    String USERNAME = "YOUR_USERNAME";
+    String PASSWORD = "YOUR_PASSWORD";
+
+    // Init authenticationAuth
+    Auth kintoneAuthWithPassword = new Auth();
+    kintoneAuthWithPassword.setPasswordAuth(USERNAME, PASSWORD);
+
+    // Init Connection without "guest space ID"
+    Connection kintoneOnDemoDomain = new Connection("sample.domain.dot", kintoneAuthWithPassword);
+
+    // Init Record Module
+    Record kintoneRecordManager = new Record(kintoneOnDemoDomain);
+
+    // execute GET RECORDS API
+    Integer appID = 1;
+    String query = "$id >=" +  1 + "and $id <=" + 10 + "order by $id asc";
+    GetRecordsResponse response = kintoneRecordManager.getAllRecordsByCursor(appID, query, null);
+</pre>
+
+</details>
+
 ### addRecord(app, record)
 
 >Add one record to an app.
@@ -138,7 +183,7 @@ GetRecordsResponse response = kintoneRecordManager.getRecords(appID, query, null
 | Name| Type| Required| Description |
 | --- | --- | --- | --- |
 | app | Integer | yes | The kintone app ID
-| record | HashMap<String, [FieldValue](../record-field-model#fieldvalue)\> | (optional) | The record data to be add to kintone app. About the format, please look the sample below or [reference](#reference) at the end of this page
+| record | HashMap&lt;String, [FieldValue](../record-field-model#fieldvalue)\> | (optional) | The record data to be add to kintone app. About the format, please look the sample below or [reference](#reference) at the end of this page
 
 **Return**
 
@@ -152,8 +197,8 @@ GetRecordsResponse response = kintoneRecordManager.getRecords(appID, query, null
 <strong class="tab-name">Source code</strong>
 
 <pre class="inline-code">
-String USERNAME = "cybozu";
-String PASSWORD = "cybozu";
+String USERNAME = "YOUR_USERNAME";
+String PASSWORD = "YOUR_PASSWORD";
 
 // Init authenticationAuth
 Auth kintoneAuthWithPassword = new Auth();
@@ -167,7 +212,7 @@ Record kintoneRecordManager = new Record(kintoneOnDemoDomain);
 
 // execute ADD RECORD API
 Integer appID = 1;
-HashMap<String, FieldValue> record = new HashMap<String, FieldValue>();
+HashMap&lt;String, FieldValue&gt; record = new HashMap&lt;String, FieldValue&gt;();
 
 FieldValue fv = new FieldValue();
 fv.setType(FieldType.SINGLE_LINE_TEXT);
@@ -188,7 +233,7 @@ AddRecordResponse response = kintoneRecordManager.addRecord(appID, record);
 | Name| Type| Required| Description |
 | --- | --- | --- | --- |
 | app | Integer | yes | The kintone app ID
-| records | ArrayList<HashMap<String, [FieldValue](../record-field-model#fieldvalue)\>\> | yes | List of records data to be add to kintone app. About the format, please look the sample below or [reference](#reference) at the end of this page.
+| records | ArrayList<HashMap&lt;String, [FieldValue](../record-field-model#fieldvalue)\>\> | yes | List of records data to be add to kintone app. About the format, please look the sample below or [reference](#reference) at the end of this page.
 
 **Return**
 
@@ -202,8 +247,8 @@ AddRecordResponse response = kintoneRecordManager.addRecord(appID, record);
 <strong class="tab-name">Source code</strong>
 
 <pre class="inline-code">
-String USERNAME = "cybozu";
-String PASSWORD = "cybozu";
+String USERNAME = "YOUR_USERNAME";
+String PASSWORD = "YOUR_PASSWORD";
 
 // Init authenticationAuth
 Auth kintoneAuthWithPassword = new Auth();
@@ -217,9 +262,9 @@ Record kintoneRecordManager = new Record(kintoneOnDemoDomain);
 
 // execute ADD RECORDS API
 Integer appID = 1;
-ArrayList<HashMap<String, FieldValue>> records = new ArrayList<HashMap<String, FieldValue>>();
-HashMap<String, FieldValue> record1 = new HashMap<String, FieldValue>();
-HashMap<String, FieldValue> record2 = new HashMap<String, FieldValue>();
+ArrayList&lt;HashMap&lt;String, FieldValue&gt;> records = new ArrayList&lt;HashMap&lt;String, FieldValue&gt;>();
+HashMap&lt;String, FieldValue&gt; record1 = new HashMap&lt;String, FieldValue&gt;();
+HashMap&lt;String, FieldValue&gt; record2 = new HashMap&lt;String, FieldValue&gt;();
 
 FieldValue fv = new FieldValue();
 fv.setType(FieldType.SINGLE_LINE_TEXT);
@@ -250,7 +295,7 @@ AddRecordsResponse response = kintoneRecordManager.addRecords(appID, records);
 | --- | --- | --- | --- |
 | app | Integer | yes | The kintone app ID
 | id | Integer | yes | The record ID on kintone app
-| record | HashMap<String, [FieldValue](../record-field-model#fieldvalue)\> | yes | The record data to be update in  kintone app. About the format, please look the sample below or [reference](#reference) at the end of this page.
+| record | HashMap&lt;String, [FieldValue](../record-field-model#fieldvalue)\> | yes | The record data to be update in  kintone app. About the format, please look the sample below or [reference](#reference) at the end of this page.
 | revision | Integer | (optional) | The revision number of record
 
 **Return**
@@ -265,8 +310,8 @@ AddRecordsResponse response = kintoneRecordManager.addRecords(appID, records);
 <strong class="tab-name">Source code</strong>
 
 <pre class="inline-code">
-String USERNAME = "cybozu";
-String PASSWORD = "cybozu";
+String USERNAME = "YOUR_USERNAME";
+String PASSWORD = "YOUR_PASSWORD";
 
 // Init authenticationAuth
 Auth kintoneAuthWithPassword = new Auth();
@@ -283,7 +328,7 @@ Integer appID = 1;
 Integer recordID = 1;
 Integer revision = 1;
 
-HashMap<String, FieldValue> record = new HashMap<String, FieldValue>();
+HashMap&lt;String, FieldValue&gt; record = new HashMap&lt;String, FieldValue&gt;();
 
 FieldValue fv = new FieldValue();
 fv.setType(FieldType.SINGLE_LINE_TEXT);
@@ -306,7 +351,7 @@ Updates details of 1 record in an app by unique key.
 | --- | --- | --- | --- |
 | app | Integer | yes | The kintone app ID
 | updateKey | [RecordUpdateKey](../record-model/#recordupdatekey) | yes | The unique key of the record to be updated. About the format, please look the sample below or [reference](#reference) at the end of this page.
-| record | HashMap<String, [FieldValue](../record-field-model#fieldvalue)\>  | yes | The record data will be added to kintone app. About the format, please look the sample below or [reference](#reference) at the end of this page.
+| record | HashMap&lt;String, [FieldValue](../record-field-model#fieldvalue)\>  | yes | The record data will be added to kintone app. About the format, please look the sample below or [reference](#reference) at the end of this page.
 | revision | Integer | (optional) | The revision number of record
 
 **Return**
@@ -321,8 +366,8 @@ Updates details of 1 record in an app by unique key.
 <strong class="tab-name">Source code</strong>
 
 <pre class="inline-code">
-String USERNAME = "cybozu";
-String PASSWORD = "cybozu";
+String USERNAME = "YOUR_USERNAME";
+String PASSWORD = "YOUR_PASSWORD";
 
 // Init authenticationAuth
 Auth kintoneAuthWithPassword = new Auth();
@@ -336,7 +381,7 @@ Record kintoneRecordManager = new Record(kintoneOnDemoDomain);
 
 // execute UPDATE RECORD API
 Integer appID = 1;
-HashMap<String, FieldValue> record = new HashMap<String, FieldValue>();
+HashMap&lt;String, FieldValue&gt; record = new HashMap&lt;String, FieldValue&gt;();
 RecordUpdateKey uKey = new RecordUpdateKey("文字列__1行__0", "unique_value1");
 Integer revision = 1;
 
@@ -374,8 +419,8 @@ UpdateRecordResponse response = kintoneRecordManager.updateRecordByUpdateKey(app
 <strong class="tab-name">Source code</strong>
 
 <pre class="inline-code">
-String USERNAME = "cybozu";
-String PASSWORD = "cybozu";
+String USERNAME = "YOUR_USERNAME";
+String PASSWORD = "YOUR_PASSWORD";
 
 // Init authenticationAuth
 Auth kintoneAuthWithPassword = new Auth();
@@ -389,8 +434,8 @@ Record kintoneRecordManager = new Record(kintoneOnDemoDomain);
 
 // execute UPDATE RECORDS API
 Integer appID = 1;
-HashMap<String, FieldValue> record1 = new HashMap<String, FieldValue>();
-HashMap<String, FieldValue> record2 = new HashMap<String, FieldValue>();
+HashMap&lt;String, FieldValue&gt; record1 = new HashMap&lt;String, FieldValue&gt;();
+HashMap&lt;String, FieldValue&gt; record2 = new HashMap&lt;String, FieldValue&gt;();
 
 FieldValue fv1 = new FieldValue();
 fv1.setType(FieldType.SINGLE_LINE_TEXT);
@@ -403,7 +448,7 @@ fv2.setValue("test_updateRecords2");
 record1.put("FieldCode1", fv1);
 record2.put("FieldCode1", fv2);
 
-ArrayList<RecordUpdateItem> records = new ArrayList<RecordUpdateItem>();
+ArrayList&lt;RecordUpdateItem&gt; records = new ArrayList&lt;RecordUpdateItem&gt;();
 records.add(new RecordUpdateItem(1, null, null, record1));
 records.add(new RecordUpdateItem(2, null, null, record2));
 
@@ -435,8 +480,8 @@ UpdateRecordsResponse response = kintoneRecordManager.updateRecords(appID, recor
 <strong class="tab-name">Source code</strong>
 
 <pre class="inline-code">
-String USERNAME = "cybozu";
-String PASSWORD = "cybozu";
+String USERNAME = "YOUR_USERNAME";
+String PASSWORD = "YOUR_PASSWORD";
 
 // Init authenticationAuth
 Auth kintoneAuthWithPassword = new Auth();
@@ -450,7 +495,7 @@ Record kintoneRecordManager = new Record(kintoneOnDemoDomain);
 
 // execute DELETE RECORDS API
 Integer appID = 1;
-ArrayList<Integer> ids = new ArrayList<Integer>();
+ArrayList&lt;Integer&gt; ids = new ArrayList&lt;Integer&gt;();
 ids.add(1);
 ids.add(2);
 
@@ -482,8 +527,8 @@ kintoneRecordManager.deleteRecords(appID, ids);
 <strong class="tab-name">Source code</strong>
 
 <pre class="inline-code">
-String USERNAME = "cybozu";
-String PASSWORD = "cybozu";
+String USERNAME = "YOUR_USERNAME";
+String PASSWORD = "YOUR_PASSWORD";
 
 // Init authenticationAuth
 Auth kintoneAuthWithPassword = new Auth();
@@ -497,7 +542,7 @@ Record kintoneRecordManager = new Record(kintoneOnDemoDomain);
 
 // execute DELETE RECORDS API
 Integer appID = 1;
-HashMap<Integer, Integer> idsWithRevision = new HashMap<Integer, Integer>();
+HashMap&lt;Integer, Integer&gt; idsWithRevision = new HashMap&lt;Integer, Integer&gt;();
 
 idsWithRevision.put(1, 1);
 idsWithRevision.put(2, null);
@@ -530,11 +575,11 @@ kintoneRecordManager.deleteRecordsWithRevision(appID, idsWithRevision);
 <details class="tab-container" open>
 <Summary>update record Assignees</Summary>
 
-<pre class="inline-code">
+<strong class="tab-name">Source code</strong>
 
 <pre class="inline-code">
-String USERNAME = "cybozu";
-String PASSWORD = "cybozu";
+String USERNAME = "YOUR_USERNAME";
+String PASSWORD = "YOUR_PASSWORD";
 
 // Init authenticationAuth
 Auth kintoneAuthWithPassword = new Auth();
@@ -549,7 +594,7 @@ Record kintoneRecordManager = new Record(kintoneOnDemoDomain);
 // execute UPDATE RECORD API
 Integer appID = 1;
 Integer recordID =1;
-ArrayList<String> assignees = new ArrayList<String>();
+ArrayList&lt;String&gt; assignees = new ArrayList&lt;String&gt;();
 assignees.add("sample_user");
 Integer revision = 1;
 
@@ -569,7 +614,7 @@ UpdateRecordResponse response = kintoneRecordManager.updateRecordAssignees(appID
 | app | Integer | yes | The kintone app ID.
 | id | Integer | yes | The record ID on kintone app.
 | action | String | yes | The Action name will be run.
-| assignee | String | (Conditionally required) | The next Assignee. Specify the Assignee's log in name.</br>Required, if the "Assignee List" of the current status is set to "User chooses one assignee from the list to take action", and a selectable assignee exists.
+| assignee | String | (Conditionally required) | The next Assignee. Specify the Assignee's log in name.<br>Required, if the "Assignee List" of the current status is set to "User chooses one assignee from the list to take action", and a selectable assignee exists.
 | revision | Integer | (optional) | The revision of record
 
 **Return**
@@ -581,11 +626,11 @@ UpdateRecordResponse response = kintoneRecordManager.updateRecordAssignees(appID
 <details class="tab-container" open>
 <Summary>Update record status</Summary>
 
-<pre class="inline-code">
+<strong class="tab-name">Source code</strong>
 
 <pre class="inline-code">
-String USERNAME = "cybozu";
-String PASSWORD = "cybozu";
+String USERNAME = "YOUR_USERNAME";
+String PASSWORD = "YOUR_PASSWORD";
 
 // Init authenticationAuth
 Auth kintoneAuthWithPassword = new Auth();
@@ -629,11 +674,11 @@ UpdateRecordResponse response = kintoneRecordManager.updateRecordStatus(appID, r
 <details class="tab-container" open>
 <Summary>Update multi record status</Summary>
 
-<pre class="inline-code">
+<strong class="tab-name">Source code</strong>
 
 <pre class="inline-code">
-String USERNAME = "cybozu";
-String PASSWORD = "cybozu";
+String USERNAME = "YOUR_USERNAME";
+String PASSWORD = "YOUR_PASSWORD";
 
 // Init authenticationAuth
 Auth kintoneAuthWithPassword = new Auth();
@@ -647,7 +692,7 @@ Record kintoneRecordManager = new Record(kintoneOnDemoDomain);
 
 // execute UPDATE RECORDS API
 Integer appID = 1;
-ArrayList<RecordUpdateStatusItem> rusi = new ArrayList<RecordUpdateStatusItem>();
+ArrayList&lt;RecordUpdateStatusItem&gt; rusi = new ArrayList&lt;RecordUpdateStatusItem&gt;();
 
 String action = "処理開始";
 String assignee = "sample_user1";
@@ -687,11 +732,11 @@ UpdateRecordsResponse response = kintoneRecordManager.updateRecordsStatus(appID,
 <details class="tab-container" open>
 <Summary>Get comments</Summary>
 
-<pre class="inline-code">
+<strong class="tab-name">Source code</strong>
 
 <pre class="inline-code">
-String USERNAME = "cybozu";
-String PASSWORD = "cybozu";
+String USERNAME = "YOUR_USERNAME";
+String PASSWORD = "YOUR_PASSWORD";
 
 // Init authenticationAuth
 Auth kintoneAuthWithPassword = new Auth();
@@ -734,11 +779,11 @@ GetCommentsResponse response = kintoneRecordManager.getComments(appID, recordID,
 <details class="tab-container" open>
 <Summary>Add comment</Summary>
 
-<pre class="inline-code">
+<strong class="tab-name">Source code</strong>
 
 <pre class="inline-code">
-String USERNAME = "cybozu";
-String PASSWORD = "cybozu";
+String USERNAME = "YOUR_USERNAME";
+String PASSWORD = "YOUR_PASSWORD";
 
 // Init authenticationAuth
 Auth kintoneAuthWithPassword = new Auth();
@@ -754,7 +799,7 @@ Record kintoneRecordManager = new Record(kintoneOnDemoDomain);
 Integer app = 1;
 Integer record = 1;
 CommentContent comment = new CommentContent();
-ArrayList<CommentMention> mentionList = new ArrayList<CommentMention>();
+ArrayList&lt;CommentMention&gt; mentionList = new ArrayList&lt;CommentMention&gt;();
 CommentMention mention = new CommentMention();
 mention.setCode("sample_user");
 mention.setType("USER");
@@ -786,11 +831,11 @@ AddCommentResponse response = kintoneRecordManager.addComment(app, record, comme
 <details class="tab-container" open>
 <Summary>Delete comment</Summary>
 
-<pre class="inline-code">
+<strong class="tab-name">Source code</strong>
 
 <pre class="inline-code">
-String USERNAME = "cybozu";
-String PASSWORD = "cybozu";
+String USERNAME = "YOUR_USERNAME";
+String PASSWORD = "YOUR_PASSWORD";
 
 // Init authenticationAuth
 Auth kintoneAuthWithPassword = new Auth();
@@ -810,6 +855,338 @@ Integer comment = 1;
 kintoneRecordManager.deleteComment(app, record, comment);
 </pre>
 
+</details>
+
+### getAllRecordsByQuery(app, query, fields, totalCount)
+
+**Parameter**
+
+| Name| Type| Required| Description |
+| --- | --- | --- | --- |
+| app | Integer | yes | The kintone app ID
+| query | String | (optional) | The query string that will specify what records will be responded.
+| fields | ArrayList&lt;String&gt; | (optional) | List of field codes you want in the response.
+| totalCount | Boolean | (optional) | If "true", the request will retrieve total count of records match with query conditions.
+
+**Return**
+
+[GetRecordsResponse](../model/record/record-model/#getrecordsresponse)
+
+**Sample code**
+
+<details class="tab-container" open>
+<Summary>Get all records by query</Summary>
+
+<strong class="tab-name">Source code</strong>
+
+<pre class="inline-code">
+    Integer appID = {YOUR_APP_ID};
+    String query = {YOUR_QUERY};
+    ArrayList&lt;String&gt; fields = new ArrayList&lt;String&gt;();
+    GetRecordsResponse getAllRecords = kintoneRecordManager.getAllRecordsByQuery(appID, query, fields);
+</pre>
+</details>
+
+### deleteAllRecordsByQuery(Integer app, String query)
+
+> Delete all records by indicating query. Can delete over 2000 records, but can't do rollback.
+
+**Parameter**
+
+| Name| Type| Required| Description |
+| --- | --- | --- | --- |
+| app | Integer | yes | The kintone app ID
+| query | String | (optional) | The query string that will specify what records will be responded. If nothing is specified, fields will be returned from all accessible records. The query detail can't indicate **limit** and **offset**.
+
+**Return**
+
+(none)
+
+**Sample code**
+
+<details class="tab-container" open>
+<Summary>Delete all records by query</Summary>
+
+<strong class="tab-name">Source code</strong>
+
+<pre class="inline-code">
+Integer appID = 114;
+String query = "$id >=" +  1 + "and $id <=" + 10 + "order by $id asc";
+try {
+    // Init Record Module
+    Record kintoneRecord = new Record(kintoneConnection);
+    BulkRequestResponse bulkRequestResponse = kintoneRecord.deleteAllRecordsByQuery(appID, query);
+} catch (BulksException e) {
+    System.out.println(e.getResults());
+    // Ex: If User delete 6000 records:
+    // Case 1: If there error occur in record 0
+    // Err response:
+    // [KintoneAPIException]
+    // Case 2: the error occur in record 4000
+    // err response
+    // [
+    //    BulkRequestResponse,
+    //    BulkRequestResponse,
+    //    BulkRequestResponse,
+    //    BulkRequestResponse,
+    //    BulkRequestResponse,
+    //    BulkRequestResponse,
+    //    BulkRequestResponse,
+    //    BulkRequestResponse,
+    //    BulkRequestResponse,
+    //    BulkRequestResponse,
+    //    BulkRequestResponse,
+    //    BulkRequestResponse,
+    //    BulkRequestResponse,
+    //    BulkRequestResponse,
+    //    BulkRequestResponse,
+    //    BulkRequestResponse,
+    //    KintoneAPIException
+    //  ]
+}
+</pre>
+</details>
+
+### updateAllRecords(Integer app, ArrayList<RecordUpdateItem\> records)
+> Update all records to the kintone app
+
+**Parameter**
+
+| Name| Type| Required| Description |
+| --- | --- | --- | --- |
+| app | Integer | yes | The kintone app ID
+| records | Array<[RecordUpdateItem](../model/record/record-model/#recordupdateitem)> | yes | The records data which will update to kintone app
+
+**Return**
+
+(none)
+
+**Sample code**
+
+<details class="tab-container" open>
+<Summary>update all records</Summary>
+
+<strong class="tab-name">Source code</strong>
+
+<pre class="inline-code">
+Integer appID = 114;
+HashMap &lt;String, FieldValue&gt; record = new HashMap();
+ 
+FieldValue fv = new FieldValue();
+fv.setType(FieldType.SINGLE_LINE_TEXT);
+fv.setValue("test_updateRecords3x");
+ 
+record.put("文字列__1行", fv);
+ 
+ArrayList&lt;RecordUpdateItem&gt; records = new ArrayList&lt;RecordUpdateItem&gt;();
+records.add(new RecordUpdateItem(58178, null, null, record));
+try {
+    BulkRequestResponse bulkRequestResponse = this.passwordAuthRecordManagerment.updateAllRecords(appID, records);
+    UpdateRecordsResponse updateRecordsResponse =  (UpdateRecordsResponse) bulkRequestResponse.getResults().get(0);
+    System.out.println("record ID: " + updateRecordsResponse.getRecords().get(0).getID());
+    System.out.println("revision: " + updateRecordsResponse.getRecords().get(0).getRevision());
+    /*
+    output:
+        record ID: 58178   // record ID
+        revision: 5  // revision
+    */
+} catch (BulksException e) {
+    System.out.println(e.getResults());
+ 
+    // Ex: If User update 6000 records:
+    // Case 1: If there error occur in record 0
+    // Err response:
+    // [KintoneAPIException]
+    // Case 2: the error occur in record 4000
+    // err response
+    // [
+    //    UpdateRecordsResponse,
+    //    UpdateRecordsResponse,
+    //    UpdateRecordsResponse,
+    //    UpdateRecordsResponse,
+    //    UpdateRecordsResponse,
+    //    UpdateRecordsResponse,
+    //    UpdateRecordsResponse,
+    //    UpdateRecordsResponse,
+    //    UpdateRecordsResponse,
+    //    UpdateRecordsResponse,
+    //    UpdateRecordsResponse,
+    //    UpdateRecordsResponse,
+    //    UpdateRecordsResponse,
+    //    UpdateRecordsResponse,
+    //    UpdateRecordsResponse,
+    //    UpdateRecordsResponse,
+    //    UpdateRecordsResponse,
+    //    UpdateRecordsResponse,
+    //    UpdateRecordsResponse,
+    //    UpdateRecordsResponse,
+    //    KintoneAPIException
+    //  ]
+}
+</pre>
+
+</details>
+
+### addAllRecords(Integer app, ArrayList<HashMap&lt;String, [FieldValue](../model/record/record-field-model#fieldvalue)\>\> records)
+> Add all records to the kintone app
+
+**Parameter**
+
+| Name| Type| Required| Description |
+| --- | --- | --- | --- |
+| app | Integer | yes | The kintone app ID
+| records | Array&lt;HashTable&lt;String, [FieldValue](../model/record/record-field-model#fieldvalue)&gt;&gt; | yes | The records data which will add to kintone app
+
+**Return**
+
+(none)
+
+**Sample code**
+
+<details class="tab-container" open>
+<Summary>update all records</Summary>
+
+<strong class="tab-name">Source code</strong>
+
+<pre class="inline-code">
+Integer appID = 114;
+ArrayList&lt;HashMap&lt;String, FieldValue&gt;&gt; records = new ArrayList&lt;HashMap&lt;String, FieldValue&gt;&gt;();
+ 
+HashMap&lt;String, FieldValue&gt; record = new HashMap&lt;String, FieldValue&gt;();
+ 
+FieldValue fv = new FieldValue();
+fv.setType(FieldType.SINGLE_LINE_TEXT);
+fv.setValue("test_updateRecords3x");
+ 
+record.put("文字列__1行", fv);
+records.add(record);
+try {
+    BulkRequestResponse bulkRequestResponse = this.passwordAuthRecordManagerment.addAllRecords(appID, records);
+    AddRecordsResponse addRecordsResponse =  (AddRecordsResponse) bulkRequestResponse.getResults().get(0);
+    System.out.println("record ID: " + addRecordsResponse.getIDs().get(0));
+    System.out.println("revision: " + addRecordsResponse.getRevisions().get(0));
+    /*
+    output:
+        record ID: 58179   // record ID
+        revision: 1  // revision
+    */
+} catch (BulksException e) {
+    System.out.println(e.getResults());
+ 
+    // Ex: User update 6000 records:
+    // Case 1: If there error occur in record 0
+    // err response:[KintoneAPIException]
+    
+    // Case 2: the error occur in record 4000
+    // err response:
+    //  [
+    //    AddRecordsResponse,
+    //    AddRecordsResponse,
+    //    AddRecordsResponse,
+    //    AddRecordsResponse,
+    //    AddRecordsResponse,
+    //    AddRecordsResponse,
+    //    AddRecordsResponse,
+    //    AddRecordsResponse,
+    //    AddRecordsResponse,
+    //    AddRecordsResponse,
+    //    AddRecordsResponse,
+    //    AddRecordsResponse,
+    //    AddRecordsResponse,
+    //    AddRecordsResponse,
+    //    AddRecordsResponse,
+    //    AddRecordsResponse,
+    //    AddRecordsResponse,
+    //    AddRecordsResponse,
+    //    AddRecordsResponse,
+    //    AddRecordsResponse,
+    //    KintoneAPIException
+    //  ]
+}
+</pre>
+
+</details>
+
+### upsertRecord(app, updateKey, record, revision)
+
+**Parameter**
+
+| Name| Type| Required| Description |
+| --- | --- | --- | --- |
+| app | Integer | yes | The kintone app ID
+| updateKey | [RecordUpdateKey](../model/record/record-model/#recordupdatekey) | yes | The unique key of the record to be updated. About the format, please look the sample below or [reference](#reference) at the end of this page.
+| record | HashMap<String, [FieldValue](../model/record/record-field-model#fieldvalue)\>  | yes | The record data will be added to kintone app. About the format, please look the sample below or [reference](#reference) at the end of this page.
+| revision | Integer | (optional) | The revision number of record
+
+**Return**
+
+[AddRecordResponse](../model/record/record-model/#addrecordresponse) or [UpdateRecordResponse](../model/record/record-model/#updaterecordresponse)
+
+**Sample code**
+
+<details class="tab-container" open>
+<Summary>Upsert record</Summary>
+
+<strong class="tab-name">Source code</strong>
+
+<pre class="inline-code">
+
+    Integer appID = {YOUR_APP_ID};
+    FieldValue fv = new FieldValue();
+    fv.setType(FieldType.SINGLE_LINE_TEXT);
+    fv.setValue( {YOUR_FIELD_VALUE} );
+    
+    HashMap&lt;String, FieldValue&gt; record = new HashMap&lt;String, FieldValue&gt;();
+    record.put("title", fv);
+    
+    RecordUpdateKey updateKey = new RecordUpdateKey("detail", "update 123");
+    
+    kintoneRecordManager.upsertRecord(appID, updateKey, record, 1);
+
+</pre>
+
+</details>
+
+### upsertRecords(app, updateKey, records, revision)
+
+**Parameter**
+
+| Name| Type| Required| Description |
+| --- | --- | --- | --- |
+| app | Integer | yes | The kintone app ID
+| records | ArrayList<[RecordUpdateItem](../model/record/record-model/#recordupdateitem)\> | yes | The record data will be added to kintone app. About the format, please look the sample below or [reference](#reference) at the end of this page.
+
+**Return**
+
+[BulkRequestResponse](../model/bulk-request/bulk-request-response)
+
+**Sample code**
+
+<details class="tab-container" open>
+<Summary>Upsert records</Summary>
+
+<strong class="tab-name">Source code</strong>
+
+<pre class="inline-code">
+
+    Integer appID = {YOUR_APP_ID};
+    ArrayList&lt;RecordsUpsertItem&gt; upsertRecords = new ArrayList&lt;RecordsUpsertItem&gt;();
+    
+    ArrayList&lt;HashMap&lt;String, FieldValue&gt; &gt; records = new ArrayList&lt;HashMap&lt;String, FieldValue&gt; &gt;();
+    
+    FieldValue fv = new FieldValue();
+    fv.setType(FieldType.SINGLE_LINE_TEXT);
+    fv.setValue("Title 123");
+    
+    HashMap&lt;String, FieldValue&gt; record = new HashMap&lt;String, FieldValue&gt;();
+    record.put("title", fv);
+    
+    RecordUpdateKey updateKey = new RecordUpdateKey("title", "update 123");
+    
+    upsertRecords.add(new RecordsUpsertItem(updateKey, record));
+    kintoneRecordManager.upsertRecords(appID, upsertRecords);
+
+</pre>
 </details>
 
 ## Reference
