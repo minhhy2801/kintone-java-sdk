@@ -1,6 +1,6 @@
 /**
  * MIT License
- *
+ * <p>
  * Copyright (c) 2018 Cybozu
  * https://github.com/kintone/kintone-java-sdk/blob/master/LICENSE
  */
@@ -14,15 +14,10 @@ import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.io.OutputStreamWriter;
 import java.lang.reflect.Type;
-import java.net.HttpURLConnection;
-import java.net.InetSocketAddress;
-import java.net.MalformedURLException;
-import java.net.Proxy;
-import java.net.URL;
+import java.net.*;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Properties;
-
 import javax.net.ssl.HttpsURLConnection;
 import javax.net.ssl.SSLContext;
 
@@ -62,7 +57,7 @@ public class Connection {
     /*
      * User agent http header.
      */
-    private String userAgent = ConnectionConstants.USER_AGENT_VALUE;
+    public static String userAgent = ConnectionConstants.USER_AGENT_VALUE;
 
     /*
      * Object contains user's credential.
@@ -90,26 +85,30 @@ public class Connection {
      */
     private String proxyHost = null;
     private Integer proxyPort = null;
+    private Boolean isHttpsProxy = false;
+    private String proxyUser = null;
+    private String proxyPass = null;
+    private Authenticator proxyAuthenticator = null;
 
     /**
      * Constructor for init a connection object to connect to guest space.
      *
-     * @param domain Kintone domain url
-     * @param auth Credential information
+     * @param domain       Kintone domain url
+     * @param auth         Credential information
      * @param guestSpaceId Guest space number in kintone domain.
      */
     public Connection(String domain, Auth auth, int guestSpaceId) {
         this.domain = domain;
         this.auth = auth;
         this.guestSpaceId = guestSpaceId;
-        this.userAgent += "/" + getProperties().getProperty("version");
+        userAgent += "/" + getProperties().getProperty("version");
     }
 
     /**
      * Constructor for init a connection object to connect to normal space.
      *
      * @param domain Kintone domain url
-     * @param auth Credential information
+     * @param auth   Credential information
      */
     public Connection(String domain, Auth auth) {
         this(domain, auth, -1);
@@ -119,87 +118,59 @@ public class Connection {
      * Rest http request.
      * This method is low level api, use the correspondence methods in module package instead.
      *
-     * @param method rest http method. Only accept "GET", "POST", "PUT", "DELETE" value.
+     * @param method  rest http method. Only accept "GET", "POST", "PUT", "DELETE" value.
      * @param apiName api name
-     * @param body body of http request. In case "GET" method, the parameters.
+     * @param body    body of http request. In case "GET" method, the parameters.
      * @return json object
-     * @throws KintoneAPIException
-     *           the KintoneAPIException to throw
+     * @throws KintoneAPIException the KintoneAPIException to throw
      */
     public JsonElement request(String method, String apiName, String body) throws KintoneAPIException {
         HttpsURLConnection connection = null;
         String response = null;
 
-        boolean isGet = false;
-        if (ConnectionConstants.GET_REQUEST.equals(method)) {
-            isGet = true;
-        }
-
-        URL url = null;
         try {
+            boolean isGet = false;
+
+            if (ConnectionConstants.GET_REQUEST.equals(method)) {
+                isGet = true;
+            }
+
+            URL url = null;
             url = this.getURL(apiName, null);
-        } catch (MalformedURLException e) {
-            throw new KintoneAPIException("Invalid URL");
-        }
 
-        try {
-            if (this.proxyHost == null && this.proxyPort == null) {
-                connection = (HttpsURLConnection) url.openConnection();
-            } else {
-                Proxy proxy = new Proxy(Proxy.Type.HTTP, new InetSocketAddress(this.proxyHost, this.proxyPort));
-                connection = (HttpsURLConnection) url.openConnection(proxy);
-            }
-
-            if (this.auth.getClientCert() != null) {
-                SSLContext sslcontext = this.auth.getClientCert();
-                connection.setSSLSocketFactory(sslcontext.getSocketFactory());
-            }
-
+            connection = openApiConnection(url);
             this.setHTTPHeaders(connection);
             connection.setRequestMethod(method);
-        } catch (IOException e) {
-            throw new KintoneAPIException("can not open connection");
-        }
 
-        connection.setDoOutput(true);
-        connection.setRequestProperty(ConnectionConstants.CONTENT_TYPE_HEADER, JSON_CONTENT);
-        if (isGet) {
-            connection.setRequestProperty(ConnectionConstants.METHOD_OVERRIDE_HEADER, ConnectionConstants.GET_REQUEST);
-        }
-
-        try {
+            connection.setDoOutput(true);
+            connection.setRequestProperty(ConnectionConstants.CONTENT_TYPE_HEADER, JSON_CONTENT);
+            if (isGet) {
+                connection.setRequestProperty(ConnectionConstants.METHOD_OVERRIDE_HEADER, ConnectionConstants.GET_REQUEST);
+            }
             connection.connect();
-        } catch (IOException e) {
-            throw new KintoneAPIException(" cannot connect to host");
+        } catch(KintoneAPIException kintoneError) {
+            throw kintoneError;
+        } catch (Exception e) {
+            throw new KintoneAPIException(e.getMessage(), e);
         }
-
-        // send request
-        OutputStream os;
-        try {
-            os = connection.getOutputStream();
-        } catch (IOException e) {
-            throw new KintoneAPIException("an error occurred while sending data");
-        }
-        try {
-            OutputStreamWriter writer = new OutputStreamWriter(os, StandardCharsets.UTF_8);
+        
+        try(
+            OutputStream outputStream = connection.getOutputStream();
+            OutputStreamWriter writer = new OutputStreamWriter(outputStream, StandardCharsets.UTF_8);
+        ) {
             writer.write(body);
             writer.close();
-        } catch (IOException e) {
-            throw new KintoneAPIException("socket error");
-        }
-
-        try {
             checkStatus(connection, body);
-            InputStream is = connection.getInputStream();
-            try {
-                response = readStream(is);
-            } finally {
-                is.close();
+            try(
+                InputStream inputStream = connection.getInputStream();
+            ) {
+                response = this.readStream(inputStream);
             }
-        } catch (IOException e) {
-            throw new KintoneAPIException("an error occurred while receiving data");
+        }  catch(KintoneAPIException kintoneError) {
+            throw kintoneError;
+        } catch (Exception e) {
+            throw new KintoneAPIException(e.getMessage(), e);
         }
-
         return jsonParser.parse(response);
     }
 
@@ -209,8 +180,7 @@ public class Connection {
      *
      * @param body the body of the downloadfile
      * @return inputstream
-     * @throws KintoneAPIException
-     *           the KintoneAPIException to throw
+     * @throws KintoneAPIException the KintoneAPIException to throw
      */
     public InputStream downloadFile(String body) throws KintoneAPIException {
         HttpsURLConnection connection = null;
@@ -218,60 +188,34 @@ public class Connection {
 
         try {
             url = this.getURL(ConnectionConstants.FILE, null);
-        } catch (MalformedURLException e1) {
-            throw new KintoneAPIException("invalid url");
-        }
 
-        try {
-            if (this.proxyHost == null && this.proxyPort == null) {
-                connection = (HttpsURLConnection) url.openConnection();
-            } else {
-                Proxy proxy = new Proxy(Proxy.Type.HTTP, new InetSocketAddress(this.proxyHost, this.proxyPort));
-                connection = (HttpsURLConnection) url.openConnection(proxy);
-            }
-
-            if (this.auth.getClientCert() != null) {
-                SSLContext sslcontext = this.auth.getClientCert();
-                connection.setSSLSocketFactory(sslcontext.getSocketFactory());
-            }
-
+            connection = openApiConnection(url);
             this.setHTTPHeaders(connection);
             connection.setRequestMethod(ConnectionConstants.GET_REQUEST);
-        } catch (IOException e) {
-            throw new KintoneAPIException("can not open connection");
-        }
-        connection.setDoOutput(true);
-        connection.setRequestProperty(ConnectionConstants.CONTENT_TYPE_HEADER, JSON_CONTENT);
-        connection.setRequestProperty(ConnectionConstants.METHOD_OVERRIDE_HEADER, ConnectionConstants.GET_REQUEST);
 
-        try {
+            connection.setDoOutput(true);
+            connection.setRequestProperty(ConnectionConstants.CONTENT_TYPE_HEADER, JSON_CONTENT);
+            connection.setRequestProperty(ConnectionConstants.METHOD_OVERRIDE_HEADER, ConnectionConstants.GET_REQUEST);
+
             connection.connect();
-        } catch (IOException e) {
-            throw new KintoneAPIException("cannot connect to host");
+        } catch(KintoneAPIException kintoneError) {
+            throw kintoneError;
+        } catch (Exception e) {
+            throw new KintoneAPIException(e.getMessage(), e);
         }
 
-        // send request
-        OutputStream os;
-        try {
-            os = connection.getOutputStream();
-        } catch (IOException e) {
-            throw new KintoneAPIException("an error occurred while sending data");
-        }
-        try {
-            OutputStreamWriter writer = new OutputStreamWriter(os, StandardCharsets.UTF_8);
+        try (
+            OutputStream outputStream = connection.getOutputStream();
+            OutputStreamWriter writer = new OutputStreamWriter(outputStream, StandardCharsets.UTF_8);
+        ) {
             writer.write(body);
             writer.close();
-        } catch(IOException e) {
-            throw new KintoneAPIException("socket error");
-        }
-
-        // receive response
-        try {
             checkStatus(connection, body);
-            InputStream is = connection.getInputStream();
-            return is;
-        } catch (IOException e) {
-            throw new KintoneAPIException("an error occurred while receiving data");
+            return connection.getInputStream();
+        } catch(KintoneAPIException kintoneError) {
+            throw kintoneError;
+        } catch (Exception e) {
+            throw new KintoneAPIException(e.getMessage(), e);
         }
     }
 
@@ -280,56 +224,34 @@ public class Connection {
      * This method is execute file upload.
      *
      * @param fileName upload file name
-     * @param fis file inputstream
+     * @param fis      file inputstream
      * @return json object
-     * @throws KintoneAPIException
-     *           the KintoneAPIException to throw
+     * @throws KintoneAPIException the KintoneAPIException to throw
      */
     public JsonElement uploadFile(String fileName, InputStream fis) throws KintoneAPIException {
-
         HttpsURLConnection connection;
         String response = null;
-
         URL url = null;
         try {
             url = this.getURL(ConnectionConstants.FILE, null);
-        } catch (MalformedURLException e) {
-            throw new KintoneAPIException("Invalid URL");
-        }
 
-        try {
-            if (this.proxyHost == null && this.proxyPort == null) {
-                connection = (HttpsURLConnection) url.openConnection();
-            } else {
-                Proxy proxy = new Proxy(Proxy.Type.HTTP, new InetSocketAddress(this.proxyHost, this.proxyPort));
-                connection = (HttpsURLConnection) url.openConnection(proxy);
-            }
-
-            if (this.auth.getClientCert() != null) {
-                SSLContext sslcontext = this.auth.getClientCert();
-                connection.setSSLSocketFactory(sslcontext.getSocketFactory());
-            }
-
+            connection = openApiConnection(url);
             this.setHTTPHeaders(connection);
             connection.setRequestMethod(ConnectionConstants.POST_REQUEST);
-        } catch (IOException e) {
-            throw new KintoneAPIException("can not open connection");
-        }
-
-        connection.setDoOutput(true);
-        connection.setRequestProperty(ConnectionConstants.CONTENT_TYPE_HEADER,
-                "multipart/form-data; boundary=" + ConnectionConstants.BOUNDARY);
-
-        try {
+            connection.setDoOutput(true);
+            connection.setRequestProperty(ConnectionConstants.CONTENT_TYPE_HEADER,
+                    "multipart/form-data; boundary=" + ConnectionConstants.BOUNDARY);
             connection.connect();
-        } catch (IOException e) {
-            throw new KintoneAPIException("cannot connect to host");
+        } catch(KintoneAPIException kintoneError) {
+            throw kintoneError;
+        } catch (Exception e) {
+            throw new KintoneAPIException(e.getMessage(), e);
         }
 
-        OutputStream os;
-        try {
-            os = connection.getOutputStream();
-            OutputStreamWriter writer = new OutputStreamWriter(os, "UTF-8");
+        try (
+            OutputStream outputStream = connection.getOutputStream();
+            OutputStreamWriter writer = new OutputStreamWriter(outputStream, "UTF-8");
+        ) {
             writer.write("--" + ConnectionConstants.BOUNDARY + "\r\n");
             writer.write("Content-Disposition: form-data; name=\"file\"; filename=\""
                     + fileName + "\"\r\n");
@@ -339,31 +261,26 @@ public class Connection {
             byte[] buffer = new byte[8192];
             int n = 0;
             while (-1 != (n = fis.read(buffer))) {
-                os.write(buffer, 0, n);
+                outputStream.write(buffer, 0, n);
             }
-            os.flush();
+            outputStream.flush();
             writer.write("\r\n--" + ConnectionConstants.BOUNDARY + "--\r\n");
-            os.flush();
+            outputStream.flush();
+
             writer.close();
             fis.close();
-        } catch (IOException e) {
-            throw new KintoneAPIException("an error occurred while sending data");
-        }
-
-        // receive response
-        try {
+            
             checkStatus(connection, null);
-            InputStream is = connection.getInputStream();
-            try {
-                response = readStream(is);
-            } finally {
-                is.close();
-            }
-        } catch (IOException e) {
-            throw new KintoneAPIException("an error occurred while receiving data");
-        }
 
-        return jsonParser.parse(response);
+            try (InputStream inputStream = connection.getInputStream();) {
+                response = readStream(inputStream);
+                return jsonParser.parse(response);
+            }
+        } catch(KintoneAPIException kintoneError) {
+            throw kintoneError;
+        } catch (Exception e) {
+            throw new KintoneAPIException(e.getMessage(), e);
+        }
     }
 
 
@@ -389,7 +306,7 @@ public class Connection {
         if (!this.domain.contains(ConnectionConstants.HTTPS_PREFIX)) {
             sb.append(ConnectionConstants.HTTPS_PREFIX);
         }
-        if(this.domain.contains(ConnectionConstants.SECURE_ACCESS_SYMBOL) && this.auth.getClientCert() == null) {
+        if (this.domain.contains(ConnectionConstants.SECURE_ACCESS_SYMBOL) && this.auth.getClientCert() == null) {
             throw new KintoneAPIException("client-cert is not set");
         }
         sb.append(this.domain);
@@ -418,7 +335,7 @@ public class Connection {
             connection.setRequestProperty(header.getKey(), header.getValue());
         }
 
-        connection.setRequestProperty(ConnectionConstants.USER_AGENT_KEY, this.userAgent);
+        connection.setRequestProperty(ConnectionConstants.USER_AGENT_KEY, userAgent);
         for (HTTPHeader header : this.headers) {
             connection.setRequestProperty(header.getKey(), header.getValue());
         }
@@ -427,10 +344,10 @@ public class Connection {
     /**
      * Set addition header when connect.
      *
-     * @param key the key to set
+     * @param key   the key to set
      * @param value the value to set
      * @return connection
-     *            Connection object.
+     * Connection object.
      */
     public Connection setHeader(String key, String value) {
         this.headers.add(new HTTPHeader(key, value));
@@ -442,7 +359,7 @@ public class Connection {
      *
      * @param auth the auth to set
      * @return connection
-     *            Connection object.
+     * Connection object.
      */
     public Connection setAuth(Auth auth) {
         this.auth = auth;
@@ -452,10 +369,9 @@ public class Connection {
     /**
      * Parse input stream to string.
      *
-     * @param is
-     *          InputStream
+     * @param is InputStream
      * @return result
-     *          String data
+     * String data
      */
     private String readStream(InputStream is) {
         StringBuilder sb = new StringBuilder();
@@ -528,8 +444,7 @@ public class Connection {
     /**
      * Checks the status code of the response.
      *
-     * @param conn
-     *             a connection object
+     * @param conn a connection object
      * @param body
      */
     private void checkStatus(HttpURLConnection conn, String body) throws IOException, KintoneAPIException {
@@ -655,16 +570,67 @@ public class Connection {
     }
 
     /**
-     * Sets the proxy host.
+     * Sets the proxy.
      *
-     * @param host
-     *            proxy host
-     * @param port
-     *            proxy port
+     * @param host proxy host
+     * @param port proxy port
      */
     public void setProxy(String host, Integer port) {
         this.proxyHost = host;
         this.proxyPort = port;
+        this.isHttpsProxy = false;
+    }
+
+    /**
+     * Sets the proxy with authentication.
+     *
+     * @param host proxy host
+     * @param port proxy port
+     * @param username proxy user
+     * @param password proxy password
+     */
+    public void setProxy(String host, Integer port, String username, String password) {
+        this.proxyHost = host;
+        this.proxyPort = port;
+        this.proxyUser = username;
+        this.proxyPass = password;
+        this.isHttpsProxy = false;
+
+        //allowAuthenticationForHttps. This is required only for jdk > 8u11
+        System.setProperty("jdk.http.auth.tunneling.disabledSchemes", "");
+        this.proxyAuthenticator = new Authenticator() {
+            public PasswordAuthentication getPasswordAuthentication() {
+                return new PasswordAuthentication(proxyUser, proxyPass.toCharArray());
+            }
+        };
+    }
+
+    /**
+     * Sets the SSL-secured proxy.
+     *
+     * @param host proxy host
+     * @param port proxy port
+     */
+    public void setHttpsProxy(String host, Integer port) {
+        this.proxyHost = host;
+        this.proxyPort = port;
+        this.isHttpsProxy = true;
+    }
+
+    /**
+     * Sets the SSL-secured proxy with authentication.
+     *
+     * @param host proxy host
+     * @param port proxy port
+     * @param username proxy user
+     * @param password proxy password
+     */
+    public void setHttpsProxy(String host, Integer port, String username, String password) {
+        this.proxyHost = host;
+        this.proxyPort = port;
+        this.proxyUser = username;
+        this.proxyPass = password;
+        this.isHttpsProxy = true;
     }
 
     /**
@@ -684,5 +650,62 @@ public class Connection {
         pathURI = pathURI.replaceAll("\\{API_NAME\\}", apiName);
 
         return pathURI;
+    }
+
+    private HttpsURLConnection openApiConnection(URL apiEndpoint) throws Exception {
+        HttpsURLConnection connection = null;
+        SSLContext sslcontext = null;
+        SSLSocketFactoryForHttpsProxy sslSocketFactory = null;
+        Proxy proxy = null;
+        try {
+            // if there is client certificate get the ssl context
+            if (this.auth.getClientCert() != null) {
+                sslcontext = this.auth.getClientCert();
+            }
+
+            // set proxy if any is present
+            if(proxyHost != null && proxyPort != null) {
+                if(this.isHttpsProxy && sslcontext != null) {
+                    // forward factory from ssl context with client certificate
+                    sslSocketFactory = new SSLSocketFactoryForHttpsProxy(sslcontext.getSocketFactory());
+                } else if( this.isHttpsProxy && sslcontext == null) {
+                    sslSocketFactory = new SSLSocketFactoryForHttpsProxy();
+                } else {
+                    // normal http proxy 
+                    proxy = new Proxy(Proxy.Type.HTTP, new InetSocketAddress(proxyHost, proxyPort));
+                }
+
+                // if sslSocketFactory exists it means proxy is https and needs to set proxy info
+                if(sslSocketFactory != null) {
+                    sslSocketFactory.setProxyHost(proxyHost);
+                    sslSocketFactory.setProxyPort(proxyPort);
+                    if(proxyUser != null && proxyPass != null) {
+                        sslSocketFactory.setProxyUserName(proxyUser);
+                        sslSocketFactory.setProxyPassword(proxyPass);
+                    }
+                }
+            } else if(sslcontext != null) {
+                // no ssl proxy, but there is client certificate so set factory to factory of ssl context
+
+            }
+        } catch (Exception err) {
+            throw err;
+        }
+
+        // set http proxy for connection
+        if(proxy != null) {
+            connection = (HttpsURLConnection) apiEndpoint.openConnection(proxy);
+            if(this.proxyAuthenticator != null) {
+                connection.setAuthenticator(this.proxyAuthenticator);
+            }
+        } else {
+            connection = (HttpsURLConnection) apiEndpoint.openConnection();
+        }
+
+        // set ssl socket factory for connection to connect to ssl secured proxy
+        if(sslSocketFactory != null) {
+            connection.setSSLSocketFactory(sslSocketFactory);
+        }
+        return connection;
     }
 }
