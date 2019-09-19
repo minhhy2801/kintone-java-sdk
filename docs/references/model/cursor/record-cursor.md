@@ -1,7 +1,7 @@
 ---
 id: record-cursor
 title: RecordCursor Model
-sidebar_label: RecordCursor Model
+sidebar_label: RecordCursor
 ---
 
 General record cursor response, using for data response from the kintone app

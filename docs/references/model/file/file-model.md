@@ -1,7 +1,7 @@
 ---
 id: file-model
 title: File Model
-sidebar_label: File Model
+sidebar_label: File
 ---
 
 Holds file information obtained from kintone.

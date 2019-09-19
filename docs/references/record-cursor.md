@@ -90,7 +90,7 @@ totalRecord: 50
 
 > Get one block of records.
 
-**Parameter **
+**Parameter**
 
 | Name| Type| Required| Description |
 | --- | --- | --- | --- |
@@ -135,7 +135,7 @@ output:
 
 > Get all records
 
-**Parameter **
+**Parameter**
 
 | Name| Type| Required| Description |
 | --- | --- | --- | --- |
@@ -181,7 +181,7 @@ output:
 
 > Delete a cursor
 
-**Parameter **
+**Parameter**
 
 | Name| Type| Required| Description |
 | --- | --- | --- | --- |

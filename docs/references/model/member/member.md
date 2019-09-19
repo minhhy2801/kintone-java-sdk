@@ -1,7 +1,7 @@
 ---
 id: member-model
 title: Member Model
-sidebar_label: Member Model
+sidebar_label: Member
 ---
 
 General information of the member(user/group/organization) on the kintone application
