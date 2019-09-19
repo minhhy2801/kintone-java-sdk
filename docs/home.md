@@ -4,37 +4,51 @@ title: Home
 sidebar_label: Home
 ---
 
-## Getting Started
-* [Quick start](getting-started/quickstart)
+# Home
 
-## References
-* [Authentication](references/authentication)
-* [Connection](references/connection)
-* [Record](references/record)
-* [RecordCursor](references/record-cursor)
-* [BulkRequest](references/bulk-request)
-* [App](references/app)
-* [KintoneAPIException](references/kintone-api-exception)
-* [BulksException](references/bulks-exception)
-* [File](references/file)
-* Model
-    * App
-        * App
-            * [App](references/model/app/app/app-model)
-            * [AppDeployStatus](references/model/app/app/app-deploy-status)
-        * Form
-            * Field
-                * Input
-                    * [Lookup](references/model/app/form/field/input/form-fields-input-lookup)
-                    * [Input](references/model/app/form/field/input/form-fields-input)
-                    * [Member](references/model/member/member-model)
-                    * [Selection](references/model/app/form/field/input/form-fields-input-selection)
-                    * [Time](references/model/app/form/field/input/form-fields-input-time)
-            * [Layout](references/model/app/form/field/layout/form-layout)
-        * [General](references/model/app/general/general-settings)
-        * [View](references/model/app/view/view-model)
-    * [Record](references/model/record/record-model)
-    * Cursor
-        * [RecordCursor](reference/model/cursor/record-cursor)
-    * [File](reference/model/file/file-model)
-    * [Bulk Request](references/model/bulk-request/bulk-request-model)
+> kintone-java-sdk is the SDK of kintone REST API client on Java
+
+## Getting Started
+
+- [Quickstart](getting-started/quickstart)
+
+## Reference
+
+- [Authentication](reference/authentication)
+- [Connection](reference/connection)
+- [Record](reference/record)
+- [RecordCursor](reference/record-cursor)
+- [BulkRequest](reference/bulk-request)
+- [App](reference/app)
+- [KintoneAPIException](reference/kintone-api-exception)
+- [BulksException](reference/bulks-exception)
+- [File](reference/file)
+- Model
+    - App
+        - App
+            - [App](reference/model/app/app/app-model)
+            - [AppDeployStatus](reference/model/app/app/app-deploy-status)
+        - Form
+            - Field
+                - Input
+                    - [Lookup](reference/model/app/form/field/input/form-fields-input-lookup)
+                    - [Input](reference/model/app/form/field/input/form-fields-input)
+                    - [Member](reference/model/app/form/field/input/form-fields-input-member)
+                    - [Selection](reference/model/app/form/field/input/form-fields-input-selection)
+                    - [Time](reference/model/app/form/field/input/form-fields-input-time)
+            - [Layout](reference/model/app/form/layout/form-layout)
+        - [General](reference/model/app/general/general-settings)
+        - [View](reference/model/app/view/view-model)
+    - [Record](reference/model/record/record-model)
+    - Cursor
+        - [RecordCursor](reference/model/cursor/record-cursor)
+    - [File](reference/model/file/file-model)
+    - [Bulk Request](reference/model/bulk-request/bulk-request-model)
+
+## License
+
+MIT
+
+## Copyright
+
+Copyright(c) Cybozu, Inc.

@@ -5,16 +5,19 @@ sidebar_label: Quickstart
 ---
 
 ## Requirement
+
 * [Java SE](https://adoptopenjdk.net/) (Version 9 or later)
 * [maven](https://maven.apache.org/download.cgi) (Version 3.5.4 or later)
 * [kintone-java-sdk](https://github.com/kintone/kintone-java-sdk)
 
 ## Code example
+
 <details class="tab-container" open>
 <Summary>Get record sample</Summary>
 
 **Source code**
-```java  
+
+```java
 import com.cybozu.kintone.client.authentication.*;
 import com.cybozu.kintone.client.connection.*;
 import com.cybozu.kintone.client.model.record.*;
@@ -41,10 +44,11 @@ try {
   GetRecordResponse response = kintoneRecordManager.getRecord(appID, recordID);
 } catch (Exception e) {
   System.out.println(e.getMessage());
-}  
+}
 ```
 
 **Response success**
+
 ```java
 {
     "record":{
@@ -52,7 +56,9 @@ try {
     }
 }
 ```
+
 **Response error**
+
 ```java
 {
     id: '{ID}',
@@ -60,13 +66,15 @@ try {
     message: '{Message string}',
 }
 ```
+
 </details>
-       
+
 <details class="tab-container" open>
 <Summary>Bulk request sample</Summary>
 
 **Source code**
-```java  
+
+```java
 import java.util.*;
 import com.cybozu.kintone.client.authentication.*;
 import com.cybozu.kintone.client.connection.*;
@@ -91,8 +99,8 @@ Connection kintoneOnDemoDomain = new Connection("sample.domain.dot", kintoneAuth
 BulkRequest bulkRequestManager = new BulkRequest(kintoneOnDemoDomain);
 
 // update record & delete records with bulk request
-HashMap<String, FieldValue> record1 = new HashMap<String, FieldValue>();
-ArrayList<RecordUpdateItem> dataUpdate = new ArrayList<RecordUpdateItem>();
+HashMap&lt;String, FieldValue&gt; record1 = new HashMap&lt;String, FieldValue&gt;();
+ArrayList&lt;RecordUpdateItem&gt; dataUpdate = new ArrayList&lt;RecordUpdateItem&gt;();
 
 Integer recordID = 1;
 Integer revision = 1;
@@ -103,7 +111,7 @@ fv1.setValue("2222");
 record1.put("FieldCode1", fv1);
 dataUpdate.add(new RecordUpdateItem(recordID, revision, null, record1));
 
-ArrayList<Integer> recordIDsDelete = new ArrayList<Integer>();
+ArrayList&lt;Integer&gt; recordIDsDelete = new ArrayList&lt;Integer&gt;();
 recordIDsDelete.add(1);
 recordIDsDelete.add(2);
 recordIDsDelete.add(3);
@@ -118,7 +126,7 @@ try {
   BulkRequestResponse responses = bulkRequestManager.execute();
 
   // get results
-  ArrayList<Object> results = responses.getResults();
+  ArrayList&lt;Object&gt; results = responses.getResults();
   HashMap result1 = (HashMap)results.get(0);
   UpdateRecordsResponse result2 = (UpdateRecordsResponse)results.get(1);
 
@@ -126,7 +134,7 @@ try {
   System.out.println("delete request: " + result1.toString());
 
   // data Response of the update request
-  ArrayList<RecordUpdateResponseItem> result21 = result2.getRecords();
+  ArrayList&lt;RecordUpdateResponseItem&gt; result21 = result2.getRecords();
   System.out.println("update request ID: " + result21.get(0).getID());
   System.out.println("update request Revison: " + result21.get(0).getRevision());
 } catch (Exception e) {
@@ -135,6 +143,7 @@ try {
 ```
 
 **Response success**
+
 ```java
 {
     "record":{
@@ -142,7 +151,9 @@ try {
     }
 }
 ```
+
 **Response error**
+
 ```java
 {
     id: '{ID}',
@@ -150,5 +161,5 @@ try {
     message: '{Message string}',
 }
 ```
-</details>
 
+</details>
