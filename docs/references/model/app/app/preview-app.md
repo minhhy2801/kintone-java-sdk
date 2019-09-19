@@ -13,8 +13,8 @@ The preview app.
 
 | Name| Type| Description |
 | --- | --- | --- |
-| app | Integer | The appId
-| revision | The revision of the preview app
+| app | Integer | The appId|
+| revision | The revision of the preview app|
 
 ## Methods
 

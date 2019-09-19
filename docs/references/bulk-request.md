@@ -21,7 +21,7 @@ The Bulk Request API allows multiple API requests to run on multiple kintone app
 
 | Name| Type| Required| Description |
 | --- | --- | --- | --- |
-| connection | [Connection](../connection) | yes | The connection module of this SDK.
+| connection | [Connection](./connection)  | yes | The connection module of this SDK.
 
 **Sample code**
 
@@ -44,7 +44,7 @@ BulkRequest bulkRequestManager = new BulkRequest(connection);
 
 **Parameter**
 
-See at [Record - addRecord](../record#addrecordappid-recorddata)
+See at [Record - addRecord](./record#addrecordapp-record)
 
 **Return**
 
@@ -79,7 +79,7 @@ bulkRequestManager.addRecord(appID, record);
 
 **Parameter**
 
-See at [Record - addRecords](../record#addrecordsappid-recordsdata)
+See at [Record - addRecords](./record#addrecordsapp-records)
 
 **Return**
 
@@ -123,7 +123,7 @@ bulkRequestManager.addRecords(appID, records);
 
 **Parameter**
 
-See at [Record - updateRecordByID](../record#updaterecordbyidappid-recordid-recorddata-revision)
+See at [Record - updateRecordByID](./record#updaterecordbyidapp-id-record-revision)
 
 **Return**
 
@@ -159,7 +159,7 @@ bulkRequestManager.updateRecordByID(appID, recordID, record, revision);
 
 **Parameter**
 
-See at [Record - updateRecordByUpdateKey](../record#updaterecordbyupdatekeyappid-updatekey-recorddata-revision)
+See at [Record - updateRecordByUpdateKey](./record#updaterecordbyupdatekeyapp-updatekey-record-revision)
 
 **Return**
 
@@ -195,7 +195,7 @@ bulkRequestManager.updateRecordByUpdateKey(appID, uKey, record, revision);
 
 **Parameter**
 
-See at [Record - updateRecords](../record#updaterecordsappid-recordsdata)
+See at [Record - updateRecords](./record#updaterecordsapp-records)
 
 **Return**
 
@@ -242,7 +242,7 @@ bulkRequestManager.updateRecords(appID, records);
 
 **Parameter**
 
-See at [Record - deleteRecords](../record#deleterecordsappid-recordids)
+See at [Record - deleteRecords](./record#deleterecordsapp-ids)
 
 **Return**
 
@@ -274,7 +274,7 @@ bulkRequestManager.deleteRecords(appID, ids);
 
 **Parameter**
 
-See at [Record - deleteRecordsWithRevision](../record#deleterecordswithrevisionappid-idswithrevision)
+See at [Record - deleteRecordsWithRevision](./record#deleterecordswithrevisionapp-idswithrevision)
 
 **Return**
 
@@ -306,7 +306,7 @@ bulkRequestManager.deleteRecordsWithRevision(appID, idsWithRevision);
 
 **Parameter**
 
-See at [Record - updateRecordAssignees](../record#updaterecordassigneesappid-recordid-assignees-revision)
+See at [Record - updateRecordAssignees](./record#updaterecordassigneesapp-id-assignees-revision)
 
 **Return**
 
@@ -338,7 +338,7 @@ bulkRequestManager.updateRecordAssignees(appID, recordID, assignees, revision);
 
 **Parameter**
 
-See at [Record - updateRecordStatus](../record#updaterecordstatusappid-recordid-actionname-assignee-revision)
+See at [Record - updateRecordStatus](./record#updaterecordstatusapp-id-action-assignee-revision)
 
 **Return**
 
@@ -369,7 +369,7 @@ bulkRequestManager.updateRecordStatus(appID, recordID, action, assignee, revisio
 
 **Parameter**
 
-See at [Record - updateRecordsStatus](../record#updaterecordsstatusappid-recordsstatusupdate)
+See at [Record - updateRecordsStatus](./record#updaterecordstatusapp-id-action-assignee-revision)
 
 **Return**
 
@@ -415,7 +415,7 @@ bulkRequestManager.updateRecordsStatus(appID, rusi);
 
 **Return**
 
-[BulkRequestResponse](../bulk-request-model#bulkrequestresponse)
+[BulkRequestResponse](./model/bulk-request/bulk-request-response)
 
 **Sample code**
 

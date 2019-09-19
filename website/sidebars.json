@@ -16,25 +16,23 @@
       "references/file",
       {
         "type": "subcategory",
-        "label": "Record Model",
+        "label": "Model",
         "ids": [
-          "references/model/record/record-model",
-          "references/model/record/record-comment-model",
-          "references/model/record/record-field-model"
+          "references/model/app/app/app-model",
+          "references/model/app/app/app-deploy-status",
+          "references/model/app/form/field/input/form-fields-input-lookup",
+          "references/model/app/form/field/input/form-fields-input",
+          "references/model/app/form/field/input/form-fields-input-member",
+          "references/model/app/form/field/input/form-fields-input-selection",
+          "references/model/app/form/field/input/form-fields-input-time",
+          "references/model/app/form/field/layout/form-layout",
+          "references/model/app/general/general-settings",
+          "references/model/app/view/view-model",
+          "references/model/cursor/record-cursor",
+          "references/model/file/file-model",
+          "references/model/bulk-request/bulk-request-model"
         ]
-      },
-      {
-        "type": "subcategory",
-        "label": "BulkRequest Model",
-        "ids": [
-          "references/model/bulk-request/bulk-request-item",
-          "references/model/bulk-request/bulk-request-model",
-          "references/model/bulk-request/bulk-request-response"
-        ]
-      },
-      "references/model/member/member-model",
-      "references/model/cursor/record-cursor",
-      "references/model/file/file-model"
+      }
     ]
   }
 }

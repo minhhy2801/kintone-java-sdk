@@ -26,12 +26,12 @@ sidebar_label: Home
             * Field
                 * Input
                     * [Lookup](references/model/app/form/field/input/form-fields-input-lookup)
-                    * [Input](references/model/app/form/field/input/input-form-fields)
+                    * [Input](references/model/app/form/field/input/form-fields-input)
                     * [Member](references/model/member/member-model)
                     * [Selection](references/model/app/form/field/input/form-fields-input-selection)
                     * [Time](references/model/app/form/field/input/form-fields-input-time)
-            * [Layout](references/model/app/form/layout/layout-form)
-        * [General](references/model/app/general/general-setting)
+            * [Layout](references/model/app/form/field/layout/form-layout)
+        * [General](references/model/app/general/general-settings)
         * [View](references/model/app/view/view-model)
     * [Record](references/model/record/record-model)
     * Cursor
