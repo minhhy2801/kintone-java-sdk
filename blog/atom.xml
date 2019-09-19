@@ -6,8 +6,8 @@
     <generator>Feed for Node.js</generator>
     <link rel="alternate" href="https://minhhy2801.github.io/kintone-java-sdk/blog"/>
     <subtitle>The best place to stay up-to-date with the latest kintone-java-sdk news and events.</subtitle>
-    <logo>https://minhhy2801.github.io/kintone-java-sdk/img/favicon.ico</logo>
-    <rights>Copyright © 2019 Your Name or Your Company Name</rights>
+    <logo>https://minhhy2801.github.io/kintone-java-sdk/img/header.png</logo>
+    <rights>Copyright © 2019 Cybozu</rights>
     <entry>
         <title type="html"><![CDATA[New Version 1.0.0]]></title>
         <id>https://minhhy2801.github.io/kintone-java-sdk/blog/2017/10/24/new-version-1.0.0.html</id>

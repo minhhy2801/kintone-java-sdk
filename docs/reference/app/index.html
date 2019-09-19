@@ -1,0 +1,783 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>App · kintone-java-sdk</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="Gets general information of an App, including the name, description, related Space, creator and updater information."/><meta name="docsearch:language" content="en"/><meta property="og:title" content="App · kintone-java-sdk"/><meta property="og:type" content="website"/><meta property="og:url" content="https://minhhy2801.github.io/kintone-java-sdk/"/><meta property="og:description" content="Gets general information of an App, including the name, description, related Space, creator and updater information."/><meta property="og:image" content="https://minhhy2801.github.io/kintone-java-sdk/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://minhhy2801.github.io/kintone-java-sdk/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="/kintone-java-sdk/img/favicon.ico"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><link rel="stylesheet" href="/kintone-java-sdk/css/custom.css"/><script type="text/javascript" src="/kintone-java-sdk/js/extra.js"></script><script src="/kintone-java-sdk/js/scrollSpy.js"></script><link rel="stylesheet" href="/kintone-java-sdk/css/main.css"/><script src="/kintone-java-sdk/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/kintone-java-sdk/"><img class="logo" src="/kintone-java-sdk/img/header.png" alt="kintone-java-sdk"/><h2 class="headerTitleWithLogo">kintone-java-sdk</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a target="_self"></a></li></ul></nav></div></header></div></div><div class="navPusher singleRowMobileNav"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>API Reference</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">kintone java SDK</h3><ul class=""><li class="navListItem"><a class="navItem" href="/kintone-java-sdk/docs/home">Home</a></li><li class="navListItem"><a class="navItem" href="/kintone-java-sdk/docs/getting-started/quickstart">Quickstart</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">API Reference</h3><ul class=""><li class="navListItem"><a class="navItem" href="/kintone-java-sdk/docs/reference/authentication">Authentication</a></li><li class="navListItem"><a class="navItem" href="/kintone-java-sdk/docs/reference/connection">Connection</a></li><li class="navListItem"><a class="navItem" href="/kintone-java-sdk/docs/reference/record">Record</a></li><li class="navListItem"><a class="navItem" href="/kintone-java-sdk/docs/reference/record-cursor">RecordCursor</a></li><li class="navListItem"><a class="navItem" href="/kintone-java-sdk/docs/reference/bulk-request">BulkRequest</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/kintone-java-sdk/docs/reference/app">App</a></li><li class="navListItem"><a class="navItem" href="/kintone-java-sdk/docs/reference/kintone-api-exception">kintoneAPIException</a></li><li class="navListItem"><a class="navItem" href="/kintone-java-sdk/docs/reference/bulks-exception">BulksException</a></li><li class="navListItem"><a class="navItem" href="/kintone-java-sdk/docs/reference/file">File</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Model</h4><ul><li class="navListItem"><a class="navItem" href="/kintone-java-sdk/docs/reference/model/app/app/app-model">AppModel</a></li><li class="navListItem"><a class="navItem" href="/kintone-java-sdk/docs/reference/model/app/app/app-deploy-status">AppDeployStatus</a></li><li class="navListItem"><a class="navItem" href="/kintone-java-sdk/docs/reference/model/app/form/field/input/form-fields-input-lookup">Lookup</a></li><li class="navListItem"><a class="navItem" href="/kintone-java-sdk/docs/reference/model/app/form/field/input/form-fields-input">Input</a></li><li class="navListItem"><a class="navItem" href="/kintone-java-sdk/docs/reference/model/app/form/field/input/form-fields-input-member">Member</a></li><li class="navListItem"><a class="navItem" href="/kintone-java-sdk/docs/reference/model/app/form/field/input/form-fields-input-selection">Selection</a></li><li class="navListItem"><a class="navItem" href="/kintone-java-sdk/docs/reference/model/app/form/field/input/form-fields-input-time">Time</a></li><li class="navListItem"><a class="navItem" href="/kintone-java-sdk/docs/reference/model/app/general/general-settings">GeneralSettings</a></li><li class="navListItem"><a class="navItem" href="/kintone-java-sdk/docs/reference/model/app/view/view-model">ViewModel</a></li><li class="navListItem"><a class="navItem" href="/kintone-java-sdk/docs/reference/model/cursor/record-cursor">RecordCursor Model</a></li><li class="navListItem"><a class="navItem" href="/kintone-java-sdk/docs/reference/model/file/file-model">File Model</a></li><li class="navListItem"><a class="navItem" href="/kintone-java-sdk/docs/reference/model/bulk-request/bulk-request-model">BulkRequestModel</a></li></ul></div></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">App</h1></header><article><div><span><p>Gets general information of an App, including the name, description, related Space, creator and updater information.</p>
+<blockquote>
+<ul>
+<li>Permissions to view the App is needed.</li>
+<li>API Tokens cannot be used with this API.</li>
+</ul>
+</blockquote>
+<h2><a class="anchor" aria-hidden="true" id="constructor"></a><a href="#constructor" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Constructor</h2>
+<h3><a class="anchor" aria-hidden="true" id="parameter"></a><a href="#parameter" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><strong>Parameter</strong></h3>
+<table>
+<thead>
+<tr><th>Name</th><th>Type</th><th>Required</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td>connection</td><td><a href="../connection">Connection</a></td><td>yes</td><td>The connection module of this SDK.</td></tr>
+</tbody>
+</table>
+<h3><a class="anchor" aria-hidden="true" id="sample-code"></a><a href="#sample-code" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><strong>Sample code</strong></h3>
+<p><details class="tab-container" open>
+<Summary>Init app module</Summary></p>
+<p><strong>Source code</strong></p>
+<pre><code class="hljs css language-java">
+    <span class="hljs-comment">// Init authentication</span>
+    Auth kintoneAuth = <span class="hljs-keyword">new</span> Auth()
+    
+    <span class="hljs-comment">// Password Authentication</span>
+    String username = <span class="hljs-string">"your_usernamr"</span>
+    String password = <span class="hljs-string">"your_password"</span>
+    kintoneAuth = kintoneAuth.setPasswordAuth(username, password)
+    Connection connection = Connection( <span class="hljs-string">"your_domain"</span>, kintoneAuth )
+    App app = <span class="hljs-keyword">new</span> App(connection)
+
+</code></pre>
+<p></details></p>
+<h2><a class="anchor" aria-hidden="true" id="methods"></a><a href="#methods" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Methods</h2>
+<h3><a class="anchor" aria-hidden="true" id="getappinteger-appid"></a><a href="#getappinteger-appid" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>getApp(Integer appId)</h3>
+<blockquote>
+<p>Get single app</p>
+</blockquote>
+<h4><a class="anchor" aria-hidden="true" id="parameter-1"></a><a href="#parameter-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><strong>Parameter</strong></h4>
+<table>
+<thead>
+<tr><th>Name</th><th>Type</th><th>Required</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td>appId</td><td>Integer</td><td>yes</td><td>The kintone app ID</td></tr>
+</tbody>
+</table>
+<p><strong>Return</strong></p>
+<p><a href="../model/app/app/app-model">AppModel</a></p>
+<p><strong>Sample code</strong></p>
+<p><details class="tab-container" open>
+<Summary>get App</Summary></p>
+<p><strong>Source code</strong></p>
+<pre><code class="hljs css language-java">
+    Integer appId = {your_app_id};
+    App appManagerment = <span class="hljs-keyword">new</span> App(connection);
+    AppModel app = appManagerment.getApp(appId);
+
+</code></pre>
+<p></details></p>
+<h3><a class="anchor" aria-hidden="true" id="getappsinteger-offset-integer-limit"></a><a href="#getappsinteger-offset-integer-limit" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>getApps(Integer offset, Integer limit)</h3>
+<blockquote>
+<p>Get multiple apps</p>
+</blockquote>
+<p>**Parameter **</p>
+<table>
+<thead>
+<tr><th>Name</th><th>Type</th><th>Required</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td>offset</td><td>Integer</td><td>(optional)</td><td>The offset off data result</td></tr>
+<tr><td>limit</td><td>Integer</td><td>(optional)</td><td>The limit number of result</td></tr>
+</tbody>
+</table>
+<p><strong>Return</strong></p>
+<p>List&lt;<a href="../model/app/app/app-model">AppModel</a>&gt;</p>
+<p><strong>Sample code</strong></p>
+<p><details class="tab-container" open>
+<Summary>Get Apps</Summary></p>
+<p><strong>Source code</strong></p>
+<pre><code class="hljs css language-java">Integer offset = <span class="hljs-number">10</span>;
+Integer limit = <span class="hljs-number">50</span>;
+
+App appManagerment = <span class="hljs-keyword">new</span> App(connection);
+List&lt;AppModel&gt; appList = appManagerment.getApps(offset, limit);
+</code></pre>
+<p></details></p>
+<h3><a class="anchor" aria-hidden="true" id="getappsbyidslist-integer-ids-integer-offset-integer-limit"></a><a href="#getappsbyidslist-integer-ids-integer-offset-integer-limit" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>getAppsByIDs(List<Integer> ids, Integer offset, Integer limit)</h3>
+<blockquote>
+<p>Get multiple apps by list of ids</p>
+</blockquote>
+<p>**Parameter **</p>
+<table>
+<thead>
+<tr><th>Name</th><th>Type</th><th>Required</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td>ids</td><td>List&lt;Integer&gt;</td><td>yes</td><td>The array of app ids</td></tr>
+<tr><td>offset</td><td>Integer</td><td>(optional)</td><td>The offset off data result</td></tr>
+<tr><td>limit</td><td>Integer</td><td>(optional)</td><td>The limit number of result</td></tr>
+</tbody>
+</table>
+<p><strong>Return</strong></p>
+<p>List&lt;<a href="../model/app/app/app-model">AppModel</a>&gt;</p>
+<p><strong>Sample code</strong></p>
+<p><details class="tab-container" open>
+<Summary>get Apps By IDs</Summary></p>
+<p><strong>Source code</strong></p>
+<pre><code class="hljs css language-java">List&lt;Integer&gt; appIds = <span class="hljs-keyword">new</span> List&lt;Integer&gt;();
+appIds.add({your_app_id});
+appIds.add({your_app_id});
+Integer offset = {your_limit};
+Integer limit = {your_offset};
+
+App appManagerment = <span class="hljs-keyword">new</span> App(connection);
+List&lt;AppModel&gt; appList = appManagerment.getAppsByIDs(appIds, offset, limit);
+</code></pre>
+<p></details></p>
+<h3><a class="anchor" aria-hidden="true" id="getappsbycodeslist-string-codes-integer-offset-integer-limit"></a><a href="#getappsbycodeslist-string-codes-integer-offset-integer-limit" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>getAppsByCodes(List<String> codes, Integer offset, Integer limit)</h3>
+<blockquote>
+<p>Get multiple apps by a list of codes</p>
+</blockquote>
+<p>**Parameter **</p>
+<table>
+<thead>
+<tr><th>Name</th><th>Type</th><th>Required</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td>codes</td><td>List&lt;String&gt;</td><td>yes</td><td>The array of app codes</td></tr>
+<tr><td>offset</td><td>Integer</td><td>(optional)</td><td>The offset off data result</td></tr>
+<tr><td>limit</td><td>Integer</td><td>(optional)</td><td>The limit number of result</td></tr>
+</tbody>
+</table>
+<p><strong>Return</strong></p>
+<p>List&lt;<a href="../model/app/app/app-model">AppModel</a>&gt;</p>
+<p><strong>Sample code</strong></p>
+<p><details class="tab-container" open>
+<Summary>get Apps By Codes</Summary></p>
+<p><strong>Source code</strong></p>
+<pre><code class="hljs css language-java">List&lt;String&gt; appCode = <span class="hljs-keyword">new</span> List&lt;String&gt;();
+appCode.add({your_app_code});
+appCode.add({your_app_code});
+Integer limit = {your_limit};
+Integer offset = {your_offset};
+
+App appManagerment = <span class="hljs-keyword">new</span> App(connection);
+List&lt;AppModel&gt; appList = appManagerment.getAppsByCodes(appCode, offset, limit);
+</code></pre>
+<p></details></p>
+<h3><a class="anchor" aria-hidden="true" id="getappsbynamestring-name-integer-offset-integer-limit"></a><a href="#getappsbynamestring-name-integer-offset-integer-limit" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>getAppsByName(String name, Integer offset, Integer limit)</h3>
+<blockquote>
+<p>Get multiple apps by name</p>
+</blockquote>
+<p>**Parameter **</p>
+<table>
+<thead>
+<tr><th>Name</th><th>Type</th><th>Required</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td>name</td><td>String</td><td>yes</td><td>The app name</td></tr>
+<tr><td>offset</td><td>Integer</td><td>(optional)</td><td>The offset off data result</td></tr>
+<tr><td>limit</td><td>Integer</td><td>(optional)</td><td>The limit number of result</td></tr>
+</tbody>
+</table>
+<p><strong>Return</strong></p>
+<p>List&lt;<a href="../model/app/app/app-model">AppModel</a>&gt;</p>
+<p><strong>Sample code</strong></p>
+<p><details class="tab-container" open>
+<Summary>get Apps By Name</Summary></p>
+<p><strong>Source code</strong></p>
+<pre><code class="hljs css language-java">String appName = {your_app_name};
+Integer offset = {your_offset};
+Integer limit = {your_limit};
+
+App appManagerment = <span class="hljs-keyword">new</span> App(connection);
+List&lt;AppModel&gt; appLlist = appManagerment.getAppsByName(name, offset, limit);
+</code></pre>
+<p></details></p>
+<h3><a class="anchor" aria-hidden="true" id="getappsbyspaceidslist-integer-spaceids-integer-offset-integer-limit"></a><a href="#getappsbyspaceidslist-integer-spaceids-integer-offset-integer-limit" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>getAppsBySpaceIDs(List<Integer> spaceIds, Integer offset, Integer limit)</h3>
+<blockquote>
+<p>Get multiple apps by list of space's ids</p>
+</blockquote>
+<p>**Parameter **</p>
+<table>
+<thead>
+<tr><th>Name</th><th>Type</th><th>Required</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td>spaceIds</td><td>List&lt;Integer&gt;</td><td>yes</td><td>The array of space ids</td></tr>
+<tr><td>offset</td><td>Integer</td><td>(optional)</td><td>The offset off data result</td></tr>
+<tr><td>limit</td><td>Integer</td><td>(optional)</td><td>The limit number of result</td></tr>
+</tbody>
+</table>
+<p><strong>Return</strong></p>
+<p>List&lt;<a href="../model/app/app/app-model">AppModel</a>&gt;</p>
+<p><strong>Sample code</strong></p>
+<p><details class="tab-container" open>
+<Summary>get Apps By Space IDs</Summary></p>
+<p><strong>Source code</strong></p>
+<pre><code class="hljs css language-java">List&lt;Integer&gt; spaceIds = <span class="hljs-keyword">new</span> List&lt;Integer&gt;();
+spaseIds.add({your_space_id});
+spaseIds.add({your_space_id});
+Integer offset = {your_offset};
+Integer limit = {your_litmit};
+
+App appManagerment = <span class="hljs-keyword">new</span> App(connection);
+List&lt;AppModel&gt; appList = appManagerment.getAppsBySpaceIDs(spaceIds, offset, limit);
+</code></pre>
+<p></details></p>
+<h3><a class="anchor" aria-hidden="true" id="addpreviewappstring-name-integer-space-integer-thread"></a><a href="#addpreviewappstring-name-integer-space-integer-thread" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>addPreviewApp(String name, Integer space, Integer thread)</h3>
+<p>Creates a preview App.</p>
+<p>**Parameter **</p>
+<table>
+<thead>
+<tr><th>Name</th><th>Type</th><th>Required</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td>name</td><td>String</td><td>yes</td><td>The App name.<br>The maximum length is 64 characters.</td></tr>
+<tr><td>space</td><td>Integer</td><td>(optional)</td><td>The Space ID of where the App will be created.</td></tr>
+<tr><td>thread</td><td>Integer</td><td>(optional)</td><td>The Thread ID of the thread in the Space where the App will be created.<br>It is recommended to ignore this parameter so that Apps are created in the default thread. <br>There is currently no helpful reason to create Apps in threads other than the default thread, as there are no visual representations in kintone of Apps being related to threads.<br> There are only visual representations of Apps being related to Spaces.</td></tr>
+</tbody>
+</table>
+<p><strong>Return</strong></p>
+<p><a href="../model/app/app/preview-app">PreviewApp</a></p>
+<p><strong>Sample code</strong></p>
+<p><details class="tab-container" open>
+<Summary>add PreviewApp</Summary></p>
+<p><strong>Source code</strong></p>
+<pre><code class="hljs css language-java">
+    Integer spaceId = {your_space_id} <span class="hljs-comment">// Space will add this app</span>
+    Integer threadId = {your_thread_id} <span class="hljs-comment">// Thread will add this app</span>
+
+    App appManagerment = <span class="hljs-keyword">new</span> App(connection);
+    appManagerment.addPreviewApp(appName, spaceId, threadId);
+
+</code></pre>
+<p></details></p>
+<h3><a class="anchor" aria-hidden="true" id="deployappsettingsarray-previewapp-apps-boolean-revert"></a><a href="#deployappsettingsarray-previewapp-apps-boolean-revert" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>deployAppSettings(Array<PreviewApp> apps, Boolean revert)</h3>
+<p>Updates the settings of a pre-live App to the live App.</p>
+<p>**Parameter **</p>
+<table>
+<thead>
+<tr><th>Name</th><th>Type</th><th>Required</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td>apps</td><td>Array<PreviewApp></td><td>yes</td><td>The list of Apps to deploy the pre-live settings to the live Apps. The Maximum limit is 300.<br>If Apps are being deployed to Guest Spaces, Apps can only be deployed to the same Guest Space..</td></tr>
+<tr><td>revert</td><td>Boolean</td><td>(optional)</td><td>Specify <b>&quot;true&quot;</b> to cancel all changes made to the pre-live settings. The pre-live settings will be reverted back to the current settings of the live app.</td></tr>
+</tbody>
+</table>
+<p><strong>Return</strong></p>
+<p>None</p>
+<p><strong>Sample code</strong></p>
+<p><details class="tab-container" open>
+<Summary>deploy AppSettings</Summary></p>
+<p><strong>Source code</strong></p>
+<pre><code class="hljs css language-java">
+    Integer appId = {your_app_id}
+    Integer revision = {your_revision} <span class="hljs-comment">// Revision of application to deploy</span>
+    ArrayList&lt;appPreview&gt; appPreviewList = <span class="hljs-keyword">new</span> ArrayList&lt;appPreview&gt;();
+    PreviewApp appPreview = <span class="hljs-keyword">new</span> PreviewApp(appId, revision)
+    
+    App appManagerment = <span class="hljs-keyword">new</span> App(connection);
+    appManagerment.deployAppSettings(appPreviewList, <span class="hljs-keyword">false</span>)
+
+</code></pre>
+<p></details></p>
+<h3><a class="anchor" aria-hidden="true" id="getappdeploystatuslist-integer-apps"></a><a href="#getappdeploystatuslist-integer-apps" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>getAppDeployStatus(List<Integer> apps)</h3>
+<p>Updates the settings of a pre-live App to the live App.</p>
+<p>**Parameter **</p>
+<table>
+<thead>
+<tr><th>Name</th><th>Type</th><th>Required</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td>apps</td><td>List<Integer></td><td>yes</td><td>The list of Apps to check the deploy statuses of. The Maximum limit is 300.<br>If Apps in Guest Spaces are specified, all Apps specified in the request must belong to that Guest Space.</td></tr>
+</tbody>
+</table>
+<p><strong>Return</strong></p>
+<p><a href="../model/app/app/get-app-deploy-status-response">GetAppDeployStatusResponse</a></p>
+<p><strong>Sample code</strong></p>
+<p><details class="tab-container" open>
+<Summary>get App DeployStatus</Summary></p>
+<p><strong>Source code</strong></p>
+<pre><code class="hljs css language-java">
+    List&lt;Integer&gt; appIds = <span class="hljs-keyword">new</span> List&lt;Integer&gt;();
+    appIds.add({your_app_id});
+    appIds.add({your_app_id});
+    
+    App appManagerment = <span class="hljs-keyword">new</span> App(connection);
+    GetAppDeployStatusResponse res = appManagerment.getAppDeployStatus(appIds);
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; res.getApp.length; i++) {
+        print(res.getApp.get(i));
+    }
+
+</code></pre>
+<p></details></p>
+<h3><a class="anchor" aria-hidden="true" id="getformfieldsinteger-app-languagesetting-lang-boolean-ispreview"></a><a href="#getformfieldsinteger-app-languagesetting-lang-boolean-ispreview" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>getFormFields(Integer app, LanguageSetting lang, Boolean isPreview)</h3>
+<p>Get field of the form in the kintone app</p>
+<p>**Parameter **</p>
+<table>
+<thead>
+<tr><th>Name</th><th>Type</th><th>Required</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td>appId</td><td>Integer</td><td>yes</td><td>The app ID</td></tr>
+<tr><td>lang</td><td>LanguageSetting</td><td>(optional)</td><td>The language code. Support: <ul><li>DEFAULT: Default language setting of system </li><li>JA: Japanese language setting</li><li>ZH: Chinese language setting</li><li>EN: English language setting</li></td></tr>
+<tr><td>isPreview</td><td>Boolean</td><td>(optional)</td><td>Get the app form fields with a <a href="https://developer.kintone.io/hc/en-us/articles/115005509288">pre-live settings</a>.</td></tr>
+</tbody>
+</table>
+<p><strong>Return</strong></p>
+<p><a href="../model/app/form/field/form-fields">FormFields</a></p>
+<p><strong>Sample code</strong></p>
+<p><details class="tab-container" open>
+<Summary>get FormFields</Summary></p>
+<p><strong>Source code</strong></p>
+<pre><code class="hljs css language-java">
+    Integer appId = {your_app_id} <span class="hljs-comment">// Integer</span>
+    LanguageSetting lang = {language_code} <span class="hljs-comment">// LanguageSetting .Ex: LanguageSetting.JA</span>
+    Boolean isPreview = <span class="hljs-keyword">true</span>;
+
+    App appManagerment = <span class="hljs-keyword">new</span> App(connection);
+    FormFields fields appManagerment.getFormFields(appId, lang, isPreview)
+
+</code></pre>
+<p></details></p>
+<h3><a class="anchor" aria-hidden="true" id="addformfieldsinteger-app-hashmap-string-field-fields-integer-revision"></a><a href="#addformfieldsinteger-app-hashmap-string-field-fields-integer-revision" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>addFormFields(Integer app, HashMap&lt;String, Field&gt; fields, Integer revision)</h3>
+<p>Adds fields to a form of an App.</p>
+<p>**Parameter **</p>
+<table>
+<thead>
+<tr><th>Name</th><th>Type</th><th>Required</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td>appId</td><td>Integer</td><td>yes</td><td>The app ID</td></tr>
+<tr><td>fields</td><td>Map</td><td>(optional)</td><td>The formFields which will add to form of kintone app <br> <em>Note:</em> <br> [String: Field]: <ul><li>Key: The field code of field on kintone app</li><li> Value:  The field settings of form field on kintone app </li> </ul></td></tr>
+<tr><td>revision</td><td>Boolean</td><td>(optional)</td><td>Specify the revision number of the settings that will be deployed.<br>The request will fail if the revision number is not the latest revision.<br>The revision will not be checked if this parameter is ignored, or -1 is specified.</td></tr>
+</tbody>
+</table>
+<p><strong>Return</strong></p>
+<p><a href="../model/app/basic-response">BasicResponse</a></p>
+<p><strong>Sample code</strong></p>
+<p><details class="tab-container" open>
+<Summary>add FormFields</Summary></p>
+<p><strong>Source code</strong></p>
+<pre><code class="hljs css language-java">
+    Integer appId = {your_app_id} <span class="hljs-comment">// App Id</span>
+    String fieldCode = {field_code_string} <span class="hljs-comment">// Field code of new Field. It must be not as same as any fields in Pre-Live App Setttings</span>
+    Integer revision = {latest_revision_of_the_settings} <span class="hljs-comment">// Integer</span>
+    
+    <span class="hljs-comment">// Create Radio field instance and set properties</span>
+    RadioButtonField addNewField = <span class="hljs-keyword">new</span> RadioButtonField(fieldCode)
+    HashMap&lt;String, OptionData&gt; optionArray = <span class="hljs-keyword">new</span> HashMap&lt;String, OptionData&gt;()
+    optionArray[<span class="hljs-string">"1"</span>] = OptionData(<span class="hljs-string">"1"</span>,<span class="hljs-string">"1"</span>)
+    optionArray[<span class="hljs-string">"2"</span>] = OptionData(<span class="hljs-string">"2"</span>,<span class="hljs-string">"2"</span>)
+    optionArray[<span class="hljs-string">"3"</span>] = OptionData(<span class="hljs-string">"3"</span>,<span class="hljs-string">"3"</span>)
+    addNewField.setOptions(optionArray)
+    addNewField.setNoLabel(<span class="hljs-keyword">false</span>)
+    addNewField.setRequired(<span class="hljs-keyword">true</span>)
+    addNewField.setLabel(<span class="hljs-string">"Label Radio"</span>)
+    addNewField.setAlign(AlignLayout.VERTICAL)
+    
+    <span class="hljs-comment">// Add Field object into dictionary with key is Field Code</span>
+    HashMap&lt;String, Field&gt; properties = <span class="hljs-keyword">new</span> HashMap&lt;String, Field&gt;()
+    properties.put(fieldCode, addNewField);
+    <span class="hljs-comment">// Another add field here</span>
+
+    App appManagerment = <span class="hljs-keyword">new</span> App(connection);
+    BasicResponse res = appManagerment.addFormFields(appId, properties, revision);
+
+</code></pre>
+<p></details></p>
+<h3><a class="anchor" aria-hidden="true" id="updateformfieldsinteger-app-hashmap-string-field-fields-integer-revision"></a><a href="#updateformfieldsinteger-app-hashmap-string-field-fields-integer-revision" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>updateFormFields(Integer app, HashMap&lt;String, Field&gt; fields, Integer revision)</h3>
+<p>Updates the field settings of fields in a form of an App.</p>
+<p>**Parameter **</p>
+<table>
+<thead>
+<tr><th>Name</th><th>Type</th><th>Required</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td>app</td><td>Integer</td><td>yes</td><td>The app ID</td></tr>
+<tr><td>fields</td><td>Map</td><td>(optional)</td><td>The formFields which will add to form of kintone app <br> <em>Note:</em> <br> [String: Field]: <ul><li>Key: The field code of field on kintone app</li><li> Value:  The field settings of form field on kintone app </li> </ul></td></tr>
+<tr><td>revision</td><td>Boolean</td><td>(optional)</td><td>Specify the revision number of the settings that will be deployed.<br>The request will fail if the revision number is not the latest revision.<br>The revision will not be checked if this parameter is ignored, or -1 is specified.</td></tr>
+</tbody>
+</table>
+<p><strong>Return</strong></p>
+<p><a href="../model/app/basic-response">BasicResponse</a></p>
+<p><strong>Sample code</strong></p>
+<p><details class="tab-container" open>
+<Summary>update FormFields</Summary></p>
+<p><strong>Source code</strong></p>
+<pre><code class="hljs css language-java">
+    Integer appId = {your_app_id} <span class="hljs-comment">// Integer</span>
+    String fieldCode = {field_code_string} <span class="hljs-comment">// String | fieldCode of exist fields in Pre-Live App Setttings</span>
+    Integer revision = {latest_revision_of_the_settings} <span class="hljs-comment">// Integer</span>
+    
+    <span class="hljs-comment">// Create Field Object to Update</span>
+    SingleLineTextField updateField = <span class="hljs-keyword">new</span> SingleLineTextField(fieldCode)
+    updateField.setDefaultValue(<span class="hljs-string">"Hello Kintone"</span>)
+    updateField.setRequired(<span class="hljs-keyword">true</span>)
+    
+    <span class="hljs-comment">// Add Update Field object into dictionary with key is Field Code</span>
+    HashMap&lt;String, Field&gt; properties = <span class="hljs-keyword">new</span> HashMap&lt;String, Field&gt;()
+    properties.put(fieldCode, updateField);
+    
+    App appManagerment = <span class="hljs-keyword">new</span> App(connection);
+    BasicResponse res = appManagerment.updateFormFields(appId, properties, revision);
+
+</code></pre>
+<p></details></p>
+<h3><a class="anchor" aria-hidden="true" id="deleteformfieldsinteger-app-arraylist-string-fields-integer-revision"></a><a href="#deleteformfieldsinteger-app-arraylist-string-fields-integer-revision" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>deleteFormFields(Integer app, ArrayList<String> fields, Integer revision)</h3>
+<blockquote>
+<p>Deletes fields from a form of an App.</p>
+</blockquote>
+<p>**Parameter **</p>
+<table>
+<thead>
+<tr><th>Name</th><th>Type</th><th>Required</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td>app</td><td>Integer</td><td>yes</td><td>The app ID</td></tr>
+<tr><td>fields</td><td>Array&lt;String&gt;</td><td>yes</td><td>The list of field codes of the fields to delete.<br>Up to 100 field codes can be specified.</td></tr>
+<tr><td>revision</td><td>Integer</td><td>(optional)</td><td>Specify the revision number of the settings that will be deployed.<br>The request will fail if the revision number is not the latest revision.<br>The revision will not be checked if this parameter is ignored, or -1 is specified.</td></tr>
+</tbody>
+</table>
+<p><strong>Return</strong></p>
+<p><a href="../model/app/basic-response">BasicResponse</a></p>
+<p><strong>Sample code</strong></p>
+<p><details class="tab-container" open>
+<Summary>delete FormFields</Summary></p>
+<p><strong>Source code</strong></p>
+<pre><code class="hljs css language-java">
+    <span class="hljs-keyword">int</span> appId = {your_app_id} <span class="hljs-comment">// Integer</span>
+    ArrayList&lt;String&gt; fieldCodeArray = [{field_code_string}] <span class="hljs-comment">// Array&lt;String&gt; | Array of fieldCodes of exist fields in Pre-Live App Setttings</span>
+    <span class="hljs-keyword">int</span> revision = {latest_revision_of_the_settings} <span class="hljs-comment">// Integer</span>
+
+    App appManagerment = <span class="hljs-keyword">new</span> App(connection);
+    BasicResponse res = appManagerment.deleteFormFields(appId, fieldCodeArray, revision);
+
+</code></pre>
+<p></details></p>
+<h3><a class="anchor" aria-hidden="true" id="getformlayoutinteger-appid-boolean-ispreview"></a><a href="#getformlayoutinteger-appid-boolean-ispreview" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>getFormLayout(Integer appId, Boolean isPreview)</h3>
+<p>Get the layout of form in kintone app</p>
+<p>**Parameter **</p>
+<table>
+<thead>
+<tr><th>Name</th><th>Type</th><th>Required</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td>app</td><td>Integer</td><td>yes</td><td>The kintone app id</td></tr>
+<tr><td>isPreview</td><td>Boolean</td><td>(optional)</td><td>Get the app form layout with a <a href="https://developer.kintone.io/hc/en-us/articles/115005509288">pre-live settings</a>.</td></tr>
+</tbody>
+</table>
+<p><strong>Return</strong></p>
+<p><a href="../model/app/form/layout/form-layout">FormLayout</a></p>
+<p><strong>Sample code</strong></p>
+<p><details class="tab-container" open>
+<Summary>get FormLayout</Summary></p>
+<p><strong>Source code</strong></p>
+<pre><code class="hljs css language-java">
+    <span class="hljs-keyword">int</span> appId = {your_app_id} <span class="hljs-comment">// Integer</span>
+    <span class="hljs-keyword">boolean</span> isPreview = <span class="hljs-keyword">true</span>
+
+    <span class="hljs-comment">// Get a pre-live (preview) form fields</span>
+    App appManagerment = <span class="hljs-keyword">new</span> App(connection);
+    FormLayout res = appManagerment.getFormLayout(appId, isPreview)
+
+</code></pre>
+<p></details></p>
+<h3><a class="anchor" aria-hidden="true" id="updateformlayoutinteger-app-arraylist-itemlayout-layout-integer-revision"></a><a href="#updateformlayoutinteger-app-arraylist-itemlayout-layout-integer-revision" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>updateFormLayout(Integer app, ArrayList<ItemLayout> layout, Integer revision)</h3>
+<p>Updates the field layout info of a form in an App.</p>
+<p>**Parameter **</p>
+<table>
+<thead>
+<tr><th>Name</th><th>Type</th><th>Required</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td>app</td><td>Integer</td><td></td><td>The kintone app id</td></tr>
+<tr><td>layout</td><td>Array&lt;ItemLayout&gt;</td><td>yes</td><td>A list of field layouts for each row.</td></tr>
+<tr><td>revision</td><td>Integer</td><td>(optional)</td><td>Specify the revision number of the settings that will be deployed.<br>The request will fail if the revision number is not the latest revision.<br>The revision will not be checked if this parameter is ignored, or -1 is specified.</td></tr>
+</tbody>
+</table>
+<p><strong>Return</strong></p>
+<p><a href="../model/app/basic-response">BasicResponse</a></p>
+<p><strong>Sample code</strong></p>
+<p><details class="tab-container" open>
+<Summary>update FormLayout</Summary></p>
+<p><strong>Source code</strong></p>
+<pre><code class="hljs css language-java">
+    <span class="hljs-keyword">int</span> appId = {your_app_id} <span class="hljs-comment">// Integer</span>
+    ArrayList&lt;ItemLayout&gt; itemLayoutRequest = <span class="hljs-keyword">new</span> ArrayList&lt;ItemLayout&gt;();
+        
+    <span class="hljs-comment">// Row Layout</span>
+    RowLayout rowLayout1 = <span class="hljs-keyword">new</span> RowLayout();
+    ArrayList&lt;FieldLayout&gt; fieldsRowLayout1: <span class="hljs-keyword">new</span> ArrayList&lt;FieldLayout&gt;();
+    
+    FieldLayout singleFieldRowLayout1 = <span class="hljs-keyword">new</span> FieldLayout();
+    singleFieldRowLayout1.setCode(<span class="hljs-string">"Text"</span>);
+    singleFieldRowLayout1.setType(FieldType.SINGLE_LINE_TEXT.rawValue);
+    FieldSize singleFieldSizeRowLayout1 = <span class="hljs-keyword">new</span> FieldSize();
+    singleFieldSizeRowLayout1.setWidth(<span class="hljs-string">"193"</span>);
+    singleFieldRowLayout.setSize(singleFieldSizeRowLayout1);
+    fieldsRowLayout1.add(singleFieldRowLayout1!);
+    
+    FieldLayout richTextFieldRowLayout1 = <span class="hljs-keyword">new</span> FieldLayout();
+    richTextFieldRowLayout1.setCode(<span class="hljs-string">"Rich_text"</span>);
+    richTextFieldRowLayout1.setType(FieldType.RICH_TEXT.rawValue);
+    FieldSize richTextFieldSizeRowLayout1 = <span class="hljs-keyword">new</span> FieldSize();
+    richTextFieldSizeRowLayout1.setWidth(<span class="hljs-string">"315"</span>)
+    richTextFieldSizeRowLayout1.setInnerHeight(<span class="hljs-string">"125"</span>)
+    richTextFieldRowLayout1.setSize(richTextFieldSizeRowLayout1)
+    fieldsRowLayout1.add(richTextFieldRowLayout1!)
+    
+    rowLayout1.setFields(fieldsRowLayout1)
+    
+    <span class="hljs-comment">// Subtable Layout</span>
+    SubTableLayout subTableLayout = <span class="hljs-keyword">new</span> SubTableLayout();
+    ArrayList&lt;FieldLayout&gt; fieldSubTableLayout = <span class="hljs-keyword">new</span> ArrayList&lt;FieldLayout&gt;();
+    
+    FieldLayout singleFieldSubTableLayout1 = <span class="hljs-keyword">new</span> FieldLayout();
+    singleFieldSubTableLayout1.setCode(<span class="hljs-string">"Text_0"</span>);
+    singleFieldSubTableLayout1.setType(FieldType.SINGLE_LINE_TEXT.rawValue);
+    FieldSize singleFieldSizeSubTableLayout1 = <span class="hljs-keyword">new</span> FieldSize();
+    singleFieldSizeSubTableLayout1.setWidth(<span class="hljs-string">"193"</span>);
+    singleFieldSubTableLayout1.setSize(singleFieldSizeSubTableLayout1);
+    
+    fieldSubTableLayout.add(singleFieldSubTableLayout1!);
+    subTableLayout.setFields(fieldSubTableLayout);
+    subTableLayout.setCode(<span class="hljs-string">"Table"</span>);
+    
+    <span class="hljs-comment">// GROUP Layout</span>
+    GroupLayout groupLayout = <span class="hljs-keyword">new</span> GroupLayout();
+    ArrayList&lt;RowLayout&gt; rowLayoutInGroup = <span class="hljs-keyword">new</span> ArrayList&lt;RowLayout&gt;();
+    <span class="hljs-comment">// Row Layout</span>
+    RowLayout firstRowLayoutInGroup = <span class="hljs-keyword">new</span> RowLayout();
+    ArrayList&lt;FieldLayout&gt; fieldsInRowLayoutInGroup = <span class="hljs-keyword">new</span> ArrayList&lt;FieldLayout&gt;()
+    <span class="hljs-comment">// Numeric Field Layout</span>
+    FieldLayout numericFieldInRowLayoutInGroup = <span class="hljs-keyword">new</span> FieldLayout();
+    numericFieldInRowLayoutInGroup.setCode(<span class="hljs-string">"Number"</span>);
+    numericFieldInRowLayoutInGroup.setType(FieldType.NUMBER.rawValue);
+    <span class="hljs-comment">// field size</span>
+    FieldSize numericFieldSizeInRowLayoutInGroup = <span class="hljs-keyword">new</span> FieldSize();
+    numericFieldSizeInRowLayoutInGroup.setWidth(<span class="hljs-string">"200"</span>)
+    numericFieldInRowLayoutInGroup.setSize(numericFieldSizeInRowLayoutInGroup)
+    
+    fieldsInRowLayoutInGroup.append(numericFieldInRowLayoutInGroup!)
+    firstRowLayoutInGroup.setFields(fieldsInRowLayoutInGroup)
+    rowLayoutInGroup.append(firstRowLayoutInGroup!)
+    groupLayout.setLayout(rowLayoutInGroup)
+    groupLayout.setCode(<span class="hljs-string">"Field_group"</span>)
+    
+    <span class="hljs-comment">// Append layout</span>
+    itemLayoutRequest.add(rowLayout1!)
+    itemLayoutRequest.add(subTableLayout!)
+    itemLayoutRequest.add(groupLayout!)
+    
+    App appManagerment = <span class="hljs-keyword">new</span> App(connection);
+    BasicResponse res = appManagerment.updateFormLayout(appId, itemLayoutRequest);
+
+</code></pre>
+<p></details></p>
+<h3><a class="anchor" aria-hidden="true" id="getgeneralsettingsinteger-app-languagesetting-lang-boolean-ispreview"></a><a href="#getgeneralsettingsinteger-app-languagesetting-lang-boolean-ispreview" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>getGeneralSettings(Integer app, LanguageSetting lang, Boolean isPreview)</h3>
+<p>Gets the description, name, icon, revision and color theme of an App.</p>
+<p>**Parameter **</p>
+<table>
+<thead>
+<tr><th>Name</th><th>Type</th><th>Required</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td>app</td><td>Integer</td><td>yes</td><td>The kintone app id</td></tr>
+<tr><td>lang</td><td>LanguageSetting</td><td>(optional)</td><td>The localized language to retrieve the data in language constants</td></tr>
+<tr><td>isPreview</td><td>Boolean</td><td>(optional)</td><td>Get general settings of the app with a <a href="https://developer.kintone.io/hc/en-us/articles/115005509288">pre-live settings</a>.</td></tr>
+</tbody>
+</table>
+<p><strong>Return</strong></p>
+<p><a href="../model/app/general/general-settings">GeneralSettings</a></p>
+<p><strong>Sample code</strong></p>
+<p><details class="tab-container" open>
+<Summary>get GeneralSettings</Summary></p>
+<p><strong>Source code</strong></p>
+<pre><code class="hljs css language-java">
+    <span class="hljs-keyword">int</span> appId = {your_app_id};
+    LanguageSetting lang = {your_language_code} <span class="hljs-comment">// LanguageSetting( EN | JA | ZH ). Ex: LanguageSetting.JA</span>
+    <span class="hljs-keyword">boolean</span> isPreview = <span class="hljs-keyword">true</span>
+    
+    App appManagerment = <span class="hljs-keyword">new</span> App(connection);
+    GeneralSettings res = appManagerment.getGeneralSettings(appId, lang, isPreview);
+
+</code></pre>
+<p></details></p>
+<h3><a class="anchor" aria-hidden="true" id="updategeneralsettingsinteger-app-generalsettings-generalsettings-integer-revision"></a><a href="#updategeneralsettingsinteger-app-generalsettings-generalsettings-integer-revision" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>updateGeneralSettings(Integer app, GeneralSettings generalSettings, Integer revision)</h3>
+<p>Updates the description, name, icon, revision and color theme of an App.</p>
+<p>**Parameter **</p>
+<table>
+<thead>
+<tr><th>Name</th><th>Type</th><th>Required</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td>app</td><td>Integer</td><td>yes</td><td>The kintone app id</td></tr>
+<tr><td>generalSettings</td><td>GeneralSettings</td><td>(Conditional)</td><td>The description, name, icon, revision and color theme of an App.<br>The request will fail if the revision number is not the latest revision.<br>The revision will not be checked if ignored, or -1 is specified.</td></tr>
+</tbody>
+</table>
+<p><strong>Return</strong></p>
+<p><a href="../model/app/basic-response">BasicResponse</a></p>
+<p><strong>Sample code</strong></p>
+<p><details class="tab-container" open>
+<Summary>update general settings</Summary></p>
+<p><strong>Source code</strong></p>
+<pre><code class="hljs css language-java">
+    <span class="hljs-keyword">int</span> appId = {your_app_id};
+    
+    GeneralSettings appGeneralSetting = <span class="hljs-keyword">new</span> GeneralSettings();
+    appGeneralSetting.setName(<span class="hljs-string">"GetViewsApp_Test"</span>);
+    appGeneralSetting.setDescription(<span class="hljs-string">"&lt;div&gt;A list of great places to go!&lt;/div&gt;"</span>);
+    Icon iconModel = <span class="hljs-keyword">new</span> Icon(<span class="hljs-string">"APP39"</span>, Icon.IconType.PRESET);
+    appGeneralSetting.setIcon(iconModel);
+    appGeneralSetting.setTheme(GeneralSettings.IconTheme.WHITE);
+    
+    App appManagerment = <span class="hljs-keyword">new</span> App(connection);
+    BasicResponse res = appManagerment.updateGeneralSettings(appId, appGeneralSetting);
+
+</code></pre>
+<p></details></p>
+<h3><a class="anchor" aria-hidden="true" id="getviewsinteger-app-languagesetting-lang-boolean-ispreview"></a><a href="#getviewsinteger-app-languagesetting-lang-boolean-ispreview" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>getViews(Integer app, LanguageSetting lang, Boolean isPreview)</h3>
+<p>Gets the View settings of an App.</p>
+<p>**Parameter **</p>
+<table>
+<thead>
+<tr><th>Name</th><th>Type</th><th>Required</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td>app</td><td>Integer</td><td>yes</td><td>The kintone app id</td></tr>
+<tr><td>lang</td><td>LanguageSetting</td><td>(optional)</td><td>The localized language to retrieve the data in language constants</td></tr>
+<tr><td>isPreview</td><td>Boolean</td><td>(optional)</td><td>Get views of the app with a pre-live settings when isPreview param is set <b>true</b>.</td></tr>
+</tbody>
+</table>
+<p><strong>Return</strong></p>
+<p><a href="../model/app/view/update-views-response">GetViewsResponse</a></p>
+<p><strong>Sample code</strong></p>
+<p><details class="tab-container" open>
+<Summary>get Views</Summary></p>
+<p><strong>Source code</strong></p>
+<pre><code class="hljs css language-java">
+    <span class="hljs-keyword">int</span> appId = {your_app_id}
+    LanguageSetting lang = LanguageSetting.EN <span class="hljs-comment">// LanguageSetting( EN | JA | ZH ). Ex: LanguageSetting.JA</span>
+    <span class="hljs-keyword">boolean</span> isPreview = <span class="hljs-keyword">true</span>
+    
+    App appManagerment = <span class="hljs-keyword">new</span> App(connection);
+    GetViewsResponse res = app.getViews(appId, lang, isPreview);
+
+</code></pre>
+<p></details></p>
+<h3><a class="anchor" aria-hidden="true" id="updateviewsinteger-app-hashmap-string-viewmodel-views-integer-revision"></a><a href="#updateviewsinteger-app-hashmap-string-viewmodel-views-integer-revision" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>updateViews(Integer app, HashMap&lt;String, ViewModel&gt; views, Integer revision)</h3>
+<p>Updates the View settings of an App.</p>
+<p>**Parameter **</p>
+<table>
+<thead>
+<tr><th>Name</th><th>Type</th><th>Required</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td>app</td><td>Integer</td><td>yes</td><td>The kintone app id</td></tr>
+<tr><td>views</td><td>HashMap&lt;String, View&gt;</td><td>yes</td><td>An object of data of Views.</td></tr>
+<tr><td>revision</td><td>Integer</td><td>(optional)</td><td>Specify the revision number of the settings that will be deployed.<br>The request will fail if the revision number is not the latest revision.<br>The revision will not be checked if this parameter is ignored, or -1 is specified.</td></tr>
+</tbody>
+</table>
+<p><strong>Return</strong></p>
+<p><a href="../model/app/view/update-views-response">UpdateViewsResponse</a></p>
+<p><strong>Sample code</strong></p>
+<p><details class="tab-container" open>
+<Summary>update Views</Summary></p>
+<p><strong>Source code</strong></p>
+<pre><code class="hljs css language-java">
+    <span class="hljs-keyword">int</span> appId = {your_app_id)}
+    <span class="hljs-keyword">int</span> revision = {your_lastest_revision} <span class="hljs-comment">//default: revision = -1</span>
+    
+    HashMap&lt;String, ViewModel&gt; viewEntry = <span class="hljs-keyword">new</span> HashMap&lt;String: ViewModel&gt;();
+    ViewModel updateViewModel = <span class="hljs-keyword">new</span> ViewModel();
+    updateViewModel.setName(<span class="hljs-string">"ViewTest"</span>)
+    updateViewModel.setSort(<span class="hljs-string">"Record_number desc"</span>)
+    updateViewModel.setType(ViewModel.ViewType.LIST)
+    updateViewModel.setFilterCond(<span class="hljs-string">"Created_datetime = LAST_WEEK()"</span>)
+    updateViewModel.setIndex(<span class="hljs-number">1</span>)
+    ArrayList&lt;String&gt; fieldsViews = <span class="hljs-keyword">new</span> ArrayList&lt;String&gt;();
+    fieldsViews.add(<span class="hljs-string">"Text"</span>);
+    fieldsViews.add(<span class="hljs-string">"Text_Area"</span>);
+    fieldsViews.add(<span class="hljs-string">"Created_datetime"</span>);
+    updateViewModel.setFields(fieldsViews);
+    viewEntry.put(<span class="hljs-string">"ViewTest"</span>, updateViewModel);
+    
+    ViewModel updateViewModel2 = <span class="hljs-keyword">new</span> ViewModel();
+    updateViewModel2.setName(<span class="hljs-string">"ViewTest2"</span>)
+    updateViewModel2.setSort(<span class="hljs-string">"Record_number asc"</span>)
+    updateViewModel2.setType(ViewModel.ViewType.LIST)
+    updateViewModel2.setFilterCond(<span class="hljs-string">"Created_datetime &gt; LAST_WEEK()"</span>)
+    updateViewModel2.setIndex(<span class="hljs-number">0</span>)
+    
+    ArrayList&lt;String&gt; fieldsInViews2 = <span class="hljs-keyword">new</span> ArrayList&lt;String&gt;();
+    fieldsInViews2.add(<span class="hljs-string">"Text_Area"</span>);
+    fieldsInViews2.add(<span class="hljs-string">"Created_datetime"</span>);
+    updateViewModel2.setFields(fieldsInViews2);
+
+    viewEntry.put(<span class="hljs-string">"ViewTest2"</span>, updateViewModel2);
+    
+    App appManagerment = <span class="hljs-keyword">new</span> App(connection);
+    UpdateViewsResponse res = appManagerment.updateViews(appId, viewEntry, revision);
+    
+</code></pre>
+<p></details></p>
+<h2><a class="anchor" aria-hidden="true" id="reference"></a><a href="#reference" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Reference</h2>
+<ul>
+<li><p><a href="https://developer.kintone.io/hc/en-us/articles/212494888">Get App</a></p></li>
+<li><p><a href="https://developer.kintone.io/hc/en-us/articles/115005336727">Get Apps</a></p></li>
+<li><p><a href="https://developer.kintone.io/hc/en-us/articles/115005509288">Get Form fields</a></p></li>
+<li><p><a href="https://developer.kintone.io/hc/en-us/articles/115005506868">Add Form fields</a></p></li>
+<li><p><a href="https://developer.kintone.io/hc/en-us/articles/115005507788">Update Form fields</a></p></li>
+<li><p><a href="https://developer.kintone.io/hc/en-us/articles/115005341187">Delete Form fields</a></p></li>
+<li><p><a href="https://developer.kintone.io/hc/en-us/articles/115005509068">Get Form Layout</a></p></li>
+<li><p><a href="https://developer.kintone.io/hc/en-us/articles/115005341427">Update Form Layout</a></p></li>
+<li><p><a href="https://developer.kintone.io/hc/en-us/articles/115004712547">Add Preview App</a></p></li>
+<li><p><a href="https://developer.kintone.io/hc/en-us/articles/115004881348">Deploy App Settings</a></p></li>
+<li><p><a href="https://developer.kintone.io/hc/en-us/articles/115004890947">Get App Deploy Status</a></p></li>
+<li><p><a href="https://developer.kintone.io/hc/en-us/articles/115004401787">Get Views</a></p></li>
+<li><p><a href="https://developer.kintone.io/hc/en-us/articles/115004880588">Update Views</a></p></li>
+<li><p><a href="https://developer.kintone.io/hc/en-us/articles/115004811668">Get General Settings</a></p></li>
+<li><p><a href="https://developer.kintone.io/hc/en-us/articles/115004868628">Update General Settings</a></p></li>
+</ul>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/kintone-java-sdk/docs/reference/bulk-request"><span class="arrow-prev">← </span><span class="function-name-prevnext">BulkRequest</span></a><a class="docs-next button" href="/kintone-java-sdk/docs/reference/kintone-api-exception"><span class="function-name-prevnext">kintoneAPIException</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#constructor">Constructor</a><ul class="toc-headings"><li><a href="#parameter"><strong>Parameter</strong></a></li><li><a href="#sample-code"><strong>Sample code</strong></a></li></ul></li><li><a href="#methods">Methods</a><ul class="toc-headings"><li><a href="#getappinteger-appid">getApp(Integer appId)</a></li><li><a href="#getappsinteger-offset-integer-limit">getApps(Integer offset, Integer limit)</a></li><li><a href="#getappsbyidslist-ids-integer-offset-integer-limit">getAppsByIDs(List ids, Integer offset, Integer limit)</a></li><li><a href="#getappsbycodeslist-codes-integer-offset-integer-limit">getAppsByCodes(List codes, Integer offset, Integer limit)</a></li><li><a href="#getappsbynamestring-name-integer-offset-integer-limit">getAppsByName(String name, Integer offset, Integer limit)</a></li><li><a href="#getappsbyspaceidslist-spaceids-integer-offset-integer-limit">getAppsBySpaceIDs(List spaceIds, Integer offset, Integer limit)</a></li><li><a href="#addpreviewappstring-name-integer-space-integer-thread">addPreviewApp(String name, Integer space, Integer thread)</a></li><li><a href="#deployappsettingsarray-apps-boolean-revert">deployAppSettings(Array apps, Boolean revert)</a></li><li><a href="#getappdeploystatuslist-apps">getAppDeployStatus(List apps)</a></li><li><a href="#getformfieldsinteger-app-languagesetting-lang-boolean-ispreview">getFormFields(Integer app, LanguageSetting lang, Boolean isPreview)</a></li><li><a href="#addformfieldsinteger-app-hashmap-fields-integer-revision">addFormFields(Integer app, HashMap fields, Integer revision)</a></li><li><a href="#updateformfieldsinteger-app-hashmap-fields-integer-revision">updateFormFields(Integer app, HashMap fields, Integer revision)</a></li><li><a href="#deleteformfieldsinteger-app-arraylist-fields-integer-revision">deleteFormFields(Integer app, ArrayList fields, Integer revision)</a></li><li><a href="#getformlayoutinteger-appid-boolean-ispreview">getFormLayout(Integer appId, Boolean isPreview)</a></li><li><a href="#updateformlayoutinteger-app-arraylist-layout-integer-revision">updateFormLayout(Integer app, ArrayList layout, Integer revision)</a></li><li><a href="#getgeneralsettingsinteger-app-languagesetting-lang-boolean-ispreview">getGeneralSettings(Integer app, LanguageSetting lang, Boolean isPreview)</a></li><li><a href="#updategeneralsettingsinteger-app-generalsettings-generalsettings-integer-revision">updateGeneralSettings(Integer app, GeneralSettings generalSettings, Integer revision)</a></li><li><a href="#getviewsinteger-app-languagesetting-lang-boolean-ispreview">getViews(Integer app, LanguageSetting lang, Boolean isPreview)</a></li><li><a href="#updateviewsinteger-app-hashmap-views-integer-revision">updateViews(Integer app, HashMap views, Integer revision)</a></li></ul></li><li><a href="#reference">Reference</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/kintone-java-sdk/" class="nav-home"><img src="/kintone-java-sdk/img/header.ico" alt="kintone-java-sdk" width="66" height="58"/></a><div><h5>Docs</h5><a href="/kintone-java-sdk/docs/en/doc1.html">Getting Started (or other categories)</a><a href="/kintone-java-sdk/docs/en/doc2.html">Guides (or other categories)</a><a href="/kintone-java-sdk/docs/en/doc3.html">API Reference (or other categories)</a></div><div><h5>Community</h5><a href="/kintone-java-sdk/en/users.html">User Showcase</a><a href="https://stackoverflow.com/questions/tagged/" target="_blank" rel="noreferrer noopener">Stack Overflow</a><a href="https://discordapp.com/">Project Chat</a><a href="https://twitter.com/" target="_blank" rel="noreferrer noopener">Twitter</a></div><div><h5>More</h5><a href="/kintone-java-sdk/blog">Blog</a><a href="https://github.com/">GitHub</a><a class="github-button" data-icon="octicon-star" data-count-href="/facebook/docusaurus/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://opensource.facebook.com/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/kintone-java-sdk/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a><section class="copyright">Copyright © 2019 Cybozu</section></footer></div></body></html>
