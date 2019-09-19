@@ -1,7 +1,7 @@
 ---
 id: bulk-request-response
 title: BulkRequestResponse 
-sidebar_label: BulkRequestResponse Model
+sidebar_label: BulkRequestResponse
 ---
 
 List response form bulk request

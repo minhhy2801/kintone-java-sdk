@@ -1,7 +1,7 @@
 ---
 id: record-model
-title: Record Model
-sidebar_label: Record Model
+title: Record
+sidebar_label: Record
 ---
 
 General record response, using for data response from the kintone app

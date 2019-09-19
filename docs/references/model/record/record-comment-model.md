@@ -1,7 +1,7 @@
 ---
 id: record-comment-model
-title: Record Comment Model
-sidebar_label: Record Comment Model
+title: Record Comment
+sidebar_label: Record Comment
 ---
 
 General comment structure of the record on kintone restAPI

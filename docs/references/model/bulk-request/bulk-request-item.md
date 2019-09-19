@@ -1,7 +1,7 @@
 ---
 id: bulk-request-item
 title: BulkRequestItem
-sidebar_label: BulkRequestItem Model
+sidebar_label: BulkRequestItem
 ---
 
 An item of the bulk request

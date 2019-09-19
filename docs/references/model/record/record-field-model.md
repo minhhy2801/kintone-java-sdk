@@ -1,7 +1,7 @@
 ---
 id: record-field-model
-title: Record Field Model
-sidebar_label: Record Field Model
+title: Record Field
+sidebar_label: Record Field
 ---
 
 ## FieldValue
