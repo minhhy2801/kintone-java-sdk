@@ -24,9 +24,9 @@ const siteConfig = {
   title: 'kintone-java-sdk', // Title for your website.
   tagline: 'A website for testing',
   url: 'https://minhhy2801.github.io', 
-  baseUrl: '/docs-kintone-java-sdk/',
-  projectName: 'Docs kintone-java-sdk',
-  organizationName: 'kintone-java-sdk',
+  baseUrl: '/kintone-java-sdk/',
+  projectName: 'kintone-java-sdk',
+  organizationName: 'minhhy2801',
   // For github.io type URLs, you would set the url and baseUrl like:
   //   url: 'https://facebook.github.io',
   //   baseUrl: '/test-site/',
@@ -37,10 +37,7 @@ const siteConfig = {
 
   // For no header links in the top nav bar -> headerLinks: [],
   headerLinks: [
-    {doc: 'doc1', label: 'Docs'},
-    {doc: 'doc4', label: 'API'},
-    {page: 'help', label: 'Help'},
-    {blog: true, label: 'Blog'},
+    {search: true},
   ],
 
   // If you have users set above, you add it here:
@@ -53,9 +50,13 @@ const siteConfig = {
 
   /* Colors for website */
   colors: {
-    primaryColor: '#648079',
-    secondaryColor: '#465954',
+    primaryColor: '#03a9f4',
+    secondaryColor: '#6f3f07',
   },
+  // colors: {
+  //   primaryColor: '#648079',
+  //   secondaryColor: '#465954',
+  // },
 
   /* Custom fonts for website */
   /*
@@ -90,7 +91,12 @@ const siteConfig = {
   // Open Graph and Twitter card images.
   ogImage: 'img/undraw_online.svg',
   twitterImage: 'img/undraw_tweetstorm.svg',
-
+  scripts: [
+    '/kintone-java-sdk/js/extra.js'
+  ],
+  stylesheets: [
+    '/kintone-java-sdk/css/custom.css'
+  ],
   // For sites with a sizable amount of content, set collapsible to true.
   // Expand/collapse the links and subcategories under categories.
   // docsSideNavCollapsible: true,

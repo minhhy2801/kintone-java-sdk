@@ -1,10 +1,34 @@
 {
   "docs": {
-    "Docusaurus": ["doc1"],
-    "First Category": ["doc2"],
-    "Second Category": ["doc3"]
-  },
-  "docs-other": {
-    "First Category": ["doc4", "doc5"]
+    "kintone java SDK": [
+      "home",
+      "getting-started/quickstart"
+    ],
+    "API Reference": [
+      "references/authentication",
+      "references/connection",
+      "references/record",
+      "references/record-cursor",
+      "references/bulk-request",
+      "references/app",
+      "references/kintone-api-exception",
+      "references/bulks-exception",
+      "references/file",
+      {
+        "type": "subcategory",
+        "label": "Model",
+        "ids": [
+          "references/model/record/record-model",
+          "references/model/record/record-comment-model",
+          "references/model/record/record-field-model",
+          "references/model/member/member-model",
+          "references/model/bulk-request/bulk-request-item",
+          "references/model/bulk-request/bulk-request-model",
+          "references/model/bulk-request/bulk-request-response",
+          "references/model/cursor/record-cursor"
+        ]
+      }
+
+    ]
   }
 }
