@@ -1,0 +1,161 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Form Fields · kintone-java-sdk</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="Get a list of fields and their settings."/><meta name="docsearch:version" content="0.5.1"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Form Fields · kintone-java-sdk"/><meta property="og:type" content="website"/><meta property="og:url" content="https://minhhy2801.github.io/kintone-java-sdk/"/><meta property="og:description" content="Get a list of fields and their settings."/><meta property="og:image" content="https://minhhy2801.github.io/kintone-java-sdk/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://minhhy2801.github.io/kintone-java-sdk/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="/kintone-java-sdk/img/favicon.ico"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><link rel="stylesheet" href="/kintone-java-sdk/css/custom.css"/><script type="text/javascript" src="/kintone-java-sdk/js/extra.js"></script><script src="/kintone-java-sdk/js/scrollSpy.js"></script><link rel="stylesheet" href="/kintone-java-sdk/css/main.css"/><script src="/kintone-java-sdk/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/kintone-java-sdk/"><img class="logo" src="/kintone-java-sdk/img/header.png" alt="kintone-java-sdk"/><h2 class="headerTitleWithLogo">kintone-java-sdk</h2></a><a href="/kintone-java-sdk/versions"><h3>0.5.1</h3></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a target="_self"></a></li></ul></nav></div></header></div></div><div class="navPusher singleRowMobileNav"><div class="docMainWrapper wrapper"><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">Form Fields</h1></header><article><div><span><p>Get a list of fields and their settings.</p>
+<blockquote>
+<ul>
+<li>Permissions to view the App is needed.</li>
+<li>API Tokens cannot be used with this API.</li>
+</ul>
+</blockquote>
+<h2><a class="anchor" aria-hidden="true" id="formfields"></a><a href="#formfields" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>FormFields</h2>
+<h3><a class="anchor" aria-hidden="true" id="methods"></a><a href="#methods" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Methods</h3>
+<h3><a class="anchor" aria-hidden="true" id="getapp"></a><a href="#getapp" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>getApp()</h3>
+<p>Get the app</p>
+<p><strong>Parameter</strong></p>
+<p>(none)</p>
+<p><strong>Return</strong></p>
+<p>Integer</p>
+<p><strong>Sample code</strong></p>
+<p><details class="tab-container" open>
+<Summary>get App</Summary></p>
+<p><strong>Source code</strong></p>
+<pre><code class="hljs css language-java">Integer app = formfields.getApp();
+</code></pre>
+<p></details></p>
+<h3><a class="anchor" aria-hidden="true" id="getrevision"></a><a href="#getrevision" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>getRevision()</h3>
+<p>Get the revision</p>
+<p><strong>Parameter</strong></p>
+<p>(none)</p>
+<p><strong>Return</strong></p>
+<p>Integer</p>
+<p><strong>Sample code</strong></p>
+<p><details class="tab-container" open>
+<Summary>get Revision</Summary></p>
+<p><strong>Source code</strong></p>
+<pre><code class="hljs css language-java"><span class="hljs-keyword">int</span> revision = formfields.getRevision();
+</code></pre>
+<p></details></p>
+<h3><a class="anchor" aria-hidden="true" id="getproperties"></a><a href="#getproperties" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>getProperties()</h3>
+<p>Get the properties</p>
+<p><strong>Parameter</strong></p>
+<p>(none)</p>
+<p><strong>Return</strong></p>
+<p>Map&lt;String, <a href="#field">Field</a>&gt;</p>
+<p><strong>Sample code</strong></p>
+<p><details class="tab-container" open>
+<Summary>get Properties</Summary></p>
+<p><strong>Source code</strong></p>
+<pre><code class="hljs css language-java">Map&lt;String, Field&gt; properties = formfields.getProperties();
+</code></pre>
+<p></details></p>
+<h2><a class="anchor" aria-hidden="true" id="fieldgroup"></a><a href="#fieldgroup" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>FieldGroup</h2>
+<p>!!! warning
+- extend the abstract class  &quot;<a href="#field">Field</a>&quot;</p>
+<h3><a class="anchor" aria-hidden="true" id="methods-1"></a><a href="#methods-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Methods</h3>
+<h3><a class="anchor" aria-hidden="true" id="getlabel"></a><a href="#getlabel" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>getLabel()</h3>
+<p>Get the label</p>
+<p><strong>Parameter</strong></p>
+<p>(none)</p>
+<p><strong>Return</strong></p>
+<p>String</p>
+<p><strong>Sample code</strong></p>
+<p><details class="tab-container" open>
+<Summary>get Label</Summary></p>
+<p><strong>Source code</strong></p>
+<pre><code class="hljs css language-java">String label = fieldGroup.getLabel();
+</code></pre>
+<p></details></p>
+<h3><a class="anchor" aria-hidden="true" id="getnolabel"></a><a href="#getnolabel" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>getNoLabel()</h3>
+<p>Get the noLabel</p>
+<p><strong>Parameter</strong></p>
+<p>(none)</p>
+<p><strong>Return</strong></p>
+<p>Boolean</p>
+<p><strong>Sample code</strong></p>
+<p><details class="tab-container" open>
+<Summary>get NoLabel</Summary></p>
+<p><strong>Source code</strong></p>
+<pre><code class="hljs css language-java">Boolean noLabel = fieldGroup.getNoLabel();
+</code></pre>
+<p></details></p>
+<h3><a class="anchor" aria-hidden="true" id="getopengroup"></a><a href="#getopengroup" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>getOpenGroup()</h3>
+<p>Get the openGroup</p>
+<p><strong>Parameter</strong></p>
+<p>(none)</p>
+<p><strong>Return</strong></p>
+<p>Boolean</p>
+<p><strong>Sample code</strong></p>
+<p><details class="tab-container" open>
+<Summary>get OpenGroup</Summary></p>
+<p><strong>Source code</strong></p>
+<pre><code class="hljs css language-java">Boolean openGroup = fieldGroup.getOpenGroup();
+</code></pre>
+<p></details></p>
+<h2><a class="anchor" aria-hidden="true" id="fieldmapping"></a><a href="#fieldmapping" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>FieldMapping</h2>
+<h3><a class="anchor" aria-hidden="true" id="methods-2"></a><a href="#methods-2" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Methods</h3>
+<h3><a class="anchor" aria-hidden="true" id="getfield"></a><a href="#getfield" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>getField()</h3>
+<p>Get the field</p>
+<p><strong>Parameter</strong></p>
+<p>(none)</p>
+<p><strong>Return</strong></p>
+<p>String</p>
+<p><strong>Sample code</strong></p>
+<p><details class="tab-container" open>
+<Summary>get Field</Summary></p>
+<p><strong>Source code</strong></p>
+<pre><code class="hljs css language-java">String field = fieldMapping.getField();
+</code></pre>
+<p></details></p>
+<h3><a class="anchor" aria-hidden="true" id="getrelatedfields"></a><a href="#getrelatedfields" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>getRelatedFields()</h3>
+<p>Get the relatedFields</p>
+<p><strong>Parameter</strong></p>
+<p>(none)</p>
+<p><strong>Return</strong></p>
+<p>String</p>
+<p><strong>Sample code</strong></p>
+<p><details class="tab-container" open>
+<Summary>get Related Fields</Summary></p>
+<p><strong>Source code</strong></p>
+<pre><code class="hljs css language-java">String relatedFields = fieldMapping.getRelatedFields();
+</code></pre>
+<p></details></p>
+<h2><a class="anchor" aria-hidden="true" id="subtablefield"></a><a href="#subtablefield" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>SubTableField</h2>
+<p>!!! warning
+- extend the abstract class  &quot;<a href="#field">Field</a>&quot;</p>
+<h3><a class="anchor" aria-hidden="true" id="methods-3"></a><a href="#methods-3" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Methods</h3>
+<p></details></p>
+<h3><a class="anchor" aria-hidden="true" id="getfields"></a><a href="#getfields" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>getFields()</h3>
+<p>Get the fields</p>
+<p><strong>Parameter</strong></p>
+<p>(none)</p>
+<p><strong>Return</strong></p>
+<p>Map&lt;String, <a href="../input/form-fields-input#abstractinputfield">AbstractInputField</a>&gt;</p>
+<p><strong>Sample code</strong></p>
+<p><details class="tab-container" open>
+<Summary>get Fields</Summary></p>
+<p><strong>Source code</strong></p>
+<pre><code class="hljs css language-java">Map&lt;String, AbstractInputField&gt; fields = subTableField.getFields();    
+</code></pre>
+<p></details></p>
+<h2><a class="anchor" aria-hidden="true" id="field"></a><a href="#field" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Field</h2>
+<p>!!! warning
+- This class is an abstract class.</p>
+<h3><a class="anchor" aria-hidden="true" id="methods-4"></a><a href="#methods-4" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Methods</h3>
+<h3><a class="anchor" aria-hidden="true" id="getcode"></a><a href="#getcode" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>getCode()</h3>
+<p>Get the code</p>
+<p><strong>Parameter</strong></p>
+<p>(none)</p>
+<p><strong>Return</strong></p>
+<p>String</p>
+<h3><a class="anchor" aria-hidden="true" id="gettype"></a><a href="#gettype" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>getType()</h3>
+<p>Get the type</p>
+<p><strong>Parameter</strong></p>
+<p>(none)</p>
+<p><strong>Return</strong></p>
+<p>LayoutType</p>
+<h2><a class="anchor" aria-hidden="true" id="reference"></a><a href="#reference" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Reference</h2>
+<ul>
+<li><a href="https://developer.kintone.io/hc/en-us/articles/212494888">Get App</a></li>
+<li><a href="https://developer.kintone.io/hc/en-us/articles/115005336727">Get Apps</a></li>
+<li><a href="https://developer.kintone.io/hc/en-us/articles/115005509288">Get Form fields</a></li>
+<li><a href="https://developer.kintone.io/hc/en-us/articles/115005509068">Get Form Layout</a></li>
+</ul>
+</span></div></article></div><div class="docs-prevnext"></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#formfields">FormFields</a><ul class="toc-headings"><li><a href="#methods">Methods</a></li><li><a href="#getapp">getApp()</a></li><li><a href="#getrevision">getRevision()</a></li><li><a href="#getproperties">getProperties()</a></li></ul></li><li><a href="#fieldgroup">FieldGroup</a><ul class="toc-headings"><li><a href="#methods-1">Methods</a></li><li><a href="#getlabel">getLabel()</a></li><li><a href="#getnolabel">getNoLabel()</a></li><li><a href="#getopengroup">getOpenGroup()</a></li></ul></li><li><a href="#fieldmapping">FieldMapping</a><ul class="toc-headings"><li><a href="#methods-2">Methods</a></li><li><a href="#getfield">getField()</a></li><li><a href="#getrelatedfields">getRelatedFields()</a></li></ul></li><li><a href="#subtablefield">SubTableField</a><ul class="toc-headings"><li><a href="#methods-3">Methods</a></li><li><a href="#getfields">getFields()</a></li></ul></li><li><a href="#field">Field</a><ul class="toc-headings"><li><a href="#methods-4">Methods</a></li><li><a href="#getcode">getCode()</a></li><li><a href="#gettype">getType()</a></li></ul></li><li><a href="#reference">Reference</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/kintone-java-sdk/" class="nav-home"><img src="/kintone-java-sdk/img/header.ico" alt="kintone-java-sdk" width="66" height="58"/></a><div><h5>Docs</h5><a href="/kintone-java-sdk/docs/en/doc1.html">Getting Started (or other categories)</a><a href="/kintone-java-sdk/docs/en/doc2.html">Guides (or other categories)</a><a href="/kintone-java-sdk/docs/en/doc3.html">API Reference (or other categories)</a></div><div><h5>Community</h5><a href="/kintone-java-sdk/en/users.html">User Showcase</a><a href="https://stackoverflow.com/questions/tagged/" target="_blank" rel="noreferrer noopener">Stack Overflow</a><a href="https://discordapp.com/">Project Chat</a><a href="https://twitter.com/" target="_blank" rel="noreferrer noopener">Twitter</a></div><div><h5>More</h5><a href="/kintone-java-sdk/blog">Blog</a><a href="https://github.com/">GitHub</a><a class="github-button" data-icon="octicon-star" data-count-href="/facebook/docusaurus/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://opensource.facebook.com/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/kintone-java-sdk/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a><section class="copyright">Copyright © 2019 Cybozu</section></footer></div></body></html>

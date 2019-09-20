@@ -1,0 +1,1068 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Record · kintone-java-sdk</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="Provide manipulate functions on records: get, update, delete, update the record status &amp; assignees in the kintone app"/><meta name="docsearch:version" content="0.5.0"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Record · kintone-java-sdk"/><meta property="og:type" content="website"/><meta property="og:url" content="https://minhhy2801.github.io/kintone-java-sdk/"/><meta property="og:description" content="Provide manipulate functions on records: get, update, delete, update the record status &amp; assignees in the kintone app"/><meta property="og:image" content="https://minhhy2801.github.io/kintone-java-sdk/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://minhhy2801.github.io/kintone-java-sdk/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="/kintone-java-sdk/img/favicon.ico"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><link rel="stylesheet" href="/kintone-java-sdk/css/custom.css"/><script type="text/javascript" src="/kintone-java-sdk/js/extra.js"></script><script src="/kintone-java-sdk/js/scrollSpy.js"></script><link rel="stylesheet" href="/kintone-java-sdk/css/main.css"/><script src="/kintone-java-sdk/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/kintone-java-sdk/"><img class="logo" src="/kintone-java-sdk/img/header.png" alt="kintone-java-sdk"/><h2 class="headerTitleWithLogo">kintone-java-sdk</h2></a><a href="/kintone-java-sdk/versions"><h3>0.5.0</h3></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a target="_self"></a></li></ul></nav></div></header></div></div><div class="navPusher singleRowMobileNav"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>API Reference</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">kintone java SDK</h3><ul class=""><li class="navListItem"><a class="navItem" href="/kintone-java-sdk/docs/0.5.0/home">Home</a></li><li class="navListItem"><a class="navItem" href="/kintone-java-sdk/docs/0.5.0/getting-started/quickstart">Quickstart</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">API Reference</h3><ul class=""><li class="navListItem"><a class="navItem" href="/kintone-java-sdk/docs/0.5.0/reference/authentication">Authentication</a></li><li class="navListItem"><a class="navItem" href="/kintone-java-sdk/docs/0.5.0/reference/connection">Connection</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/kintone-java-sdk/docs/0.5.0/reference/record">Record</a></li><li class="navListItem"><a class="navItem" href="/kintone-java-sdk/docs/0.5.0/reference/record-cursor">RecordCursor</a></li><li class="navListItem"><a class="navItem" href="/kintone-java-sdk/docs/0.5.0/reference/bulk-request">BulkRequest</a></li><li class="navListItem"><a class="navItem" href="/kintone-java-sdk/docs/0.5.0/reference/bulks-exception">BulksException</a></li><li class="navListItem"><a class="navItem" href="/kintone-java-sdk/docs/0.5.0/reference/app">App</a></li><li class="navListItem"><a class="navItem" href="/kintone-java-sdk/docs/0.5.0/reference/kintone-api-exception">kintoneAPIException</a></li><li class="navListItem"><a class="navItem" href="/kintone-java-sdk/docs/0.5.0/reference/file">File</a></li><li class="navListItem"><a class="navItem" href="/kintone-java-sdk/docs/0.5.0/reference/model">Model</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">Record</h1></header><article><div><span><p>Provide manipulate functions on records: get, update, delete, update the record status &amp; assignees in the kintone app</p>
+<h2><a class="anchor" aria-hidden="true" id="constructor"></a><a href="#constructor" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Constructor</h2>
+<p><strong>Parameter</strong></p>
+<table>
+<thead>
+<tr><th>Name</th><th>Type</th><th>Required</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td>connection</td><td><a href="./connection">Connection</a></td><td>yes</td><td>The connection module of this SDK.</td></tr>
+</tbody>
+</table>
+<p><strong>Sample code</strong></p>
+<p><details class="tab-container" open>
+<Summary>Init record module</Summary></p>
+<p><strong>Source code</strong></p>
+<pre><code class="hljs css language-java">
+String USERNAME = <span class="hljs-string">"YOUR_USERNAME"</span>;
+String PASSWORD = <span class="hljs-string">"YOUR_PASSWORD"</span>;
+
+<span class="hljs-comment">// Init authenticationAuth</span>
+Auth kintoneAuthWithPassword = <span class="hljs-keyword">new</span> Auth();
+kintoneAuthWithPassword.setPasswordAuth(USERNAME, PASSWORD);
+
+<span class="hljs-comment">// Init Connection without "guest space ID"</span>
+Connection kintoneOnDemoDomain = <span class="hljs-keyword">new</span> Connection(<span class="hljs-string">"sample.domain.dot"</span>, kintoneAuthWithPassword);
+
+<span class="hljs-comment">// Init Record Module</span>
+Record kintoneRecordManager = <span class="hljs-keyword">new</span> Record(kintoneOnDemoDomain);
+</code></pre>
+<p></details></p>
+<h2><a class="anchor" aria-hidden="true" id="methods"></a><a href="#methods" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Methods</h2>
+<h3><a class="anchor" aria-hidden="true" id="getrecordapp-id"></a><a href="#getrecordapp-id" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>getRecord(app, id)</h3>
+<blockquote>
+<p>Retrieves details of 1 record from an app.</p>
+</blockquote>
+<p><strong>Parameter</strong></p>
+<table>
+<thead>
+<tr><th>Name</th><th>Type</th><th>Required</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td>app</td><td>Integer</td><td>yes</td><td>The kintone app ID</td></tr>
+<tr><td>id</td><td>Integer</td><td>yes</td><td>The record ID in kintone app</td></tr>
+</tbody>
+</table>
+<p><strong>Return</strong></p>
+<p><a href="./model/record/record-model#getrecordresponse">GetRecordResponse</a></p>
+<p><strong>Sample code</strong></p>
+<p><details class="tab-container" open>
+<Summary>Get record</Summary></p>
+<p><strong>Source code</strong></p>
+<pre><code class="hljs css language-java">
+String USERNAME = <span class="hljs-string">"YOUR_USERNAME"</span>;
+String PASSWORD = <span class="hljs-string">"YOUR_PASSWORD"</span>;
+
+<span class="hljs-comment">// Init authenticationAuth</span>
+Auth kintoneAuthWithPassword = <span class="hljs-keyword">new</span> Auth();
+kintoneAuthWithPassword.setPasswordAuth(USERNAME, PASSWORD);
+
+<span class="hljs-comment">// Init Connection without "guest space ID"</span>
+Connection kintoneOnDemoDomain = <span class="hljs-keyword">new</span> Connection(<span class="hljs-string">"sample.domain.dot"</span>, kintoneAuthWithPassword);
+
+<span class="hljs-comment">// Init Record Module</span>
+Record kintoneRecordManager = <span class="hljs-keyword">new</span> Record(kintoneOnDemoDomain);
+
+<span class="hljs-comment">// execute GET RECORD API</span>
+Integer appID = <span class="hljs-number">1</span>;
+Integer recordID = <span class="hljs-number">1</span>;
+GetRecordResponse response = kintoneRecordManager.getRecord(appID, recordID);
+</code></pre>
+<p></details></p>
+<h3><a class="anchor" aria-hidden="true" id="getrecordsapp-query-fields-totalcount"></a><a href="#getrecordsapp-query-fields-totalcount" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>getRecords(app, query, fields, totalCount)</h3>
+<blockquote>
+<p>Retrieves details of multiple records from an app using a query string.</p>
+</blockquote>
+<p><strong>Parameter</strong></p>
+<table>
+<thead>
+<tr><th>Name</th><th>Type</th><th>Required</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td>app</td><td>Integer</td><td>yes</td><td>The kintone app ID</td></tr>
+<tr><td>query</td><td>String</td><td>(optional)</td><td><a href="https://developer.kintone.io/hc/en-us/articles/213149287#getrecords">The query string</a> that will specify what records will be responded.</td></tr>
+<tr><td>fields</td><td>ArrayList&lt;String&gt;</td><td>(optional)</td><td>List of field codes you want in the response.</td></tr>
+<tr><td>totalCount</td><td>Boolean</td><td>(optional)</td><td>If &quot;true&quot;, the request will retrieve total count of records match with query conditions.</td></tr>
+</tbody>
+</table>
+<p><strong>Return</strong></p>
+<p><a href="./model/record/record-model#getrecordsresponse">GetRecordsResponse</a></p>
+<p><strong>Sample code</strong></p>
+<p><details class="tab-container" open>
+<Summary>Get records</Summary></p>
+<p><strong>Source code</strong></p>
+<pre><code class="hljs css language-java">String USERNAME = <span class="hljs-string">"YOUR_USERNAME"</span>;
+String PASSWORD = <span class="hljs-string">"YOUR_PASSWORD"</span>;
+
+<span class="hljs-comment">// Init authenticationAuth</span>
+Auth kintoneAuthWithPassword = <span class="hljs-keyword">new</span> Auth();
+kintoneAuthWithPassword.setPasswordAuth(USERNAME, PASSWORD);
+
+<span class="hljs-comment">// Init Connection without "guest space ID"</span>
+Connection kintoneOnDemoDomain = <span class="hljs-keyword">new</span> Connection(<span class="hljs-string">"sample.domain.dot"</span>, kintoneAuthWithPassword);
+
+<span class="hljs-comment">// Init Record Module</span>
+Record kintoneRecordManager = <span class="hljs-keyword">new</span> Record(kintoneOnDemoDomain);
+
+<span class="hljs-comment">// execute GET RECORDS API</span>
+Integer appID = <span class="hljs-number">1</span>;
+String query = <span class="hljs-string">"$id &gt;="</span> +  <span class="hljs-number">1</span> + <span class="hljs-string">"and $id &lt;="</span> + <span class="hljs-number">10</span> + <span class="hljs-string">"order by $id asc"</span>;
+GetRecordsResponse response = kintoneRecordManager.getRecords(appID, query, <span class="hljs-keyword">null</span>, <span class="hljs-keyword">true</span>);
+</code></pre>
+<p></details></p>
+<h3><a class="anchor" aria-hidden="true" id="getallrecordsbycursorinteger-app-string-query-array-string-fields"></a><a href="#getallrecordsbycursorinteger-app-string-query-array-string-fields" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>getAllRecordsByCursor(Integer app, String query, Array&lt;String&gt; fields)</h3>
+<blockquote>
+<p>Retrieves details of all records from an app using a query string.</p>
+</blockquote>
+<p><strong>Parameter</strong></p>
+<table>
+<thead>
+<tr><th>Name</th><th>Type</th><th>Required</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td>app</td><td>Integer</td><td>yes</td><td>The kintone app ID</td></tr>
+<tr><td>query</td><td>String</td><td>(optional)</td><td><a href="https://developer.kintone.io/hc/en-us/articles/213149287#getrecords">The query string</a> that will specify what records will be responded.</td></tr>
+<tr><td>fields</td><td>ArrayList&lt;String&gt;</td><td>(optional)</td><td>List of field codes you want in the response.</td></tr>
+</tbody>
+</table>
+<p><strong>Return</strong>
+<a href="./model/record/record-model#getrecordsresponse">GetRecordsResponse</a></p>
+<p><strong>Sample code</strong></p>
+<p><details class="tab-container" open>
+<Summary>Get all records by cursor</Summary></p>
+<p><strong>Source code</strong></p>
+<pre><code class="hljs css language-java">    String USERNAME = <span class="hljs-string">"YOUR_USERNAME"</span>;
+    String PASSWORD = <span class="hljs-string">"YOUR_PASSWORD"</span>;
+
+    <span class="hljs-comment">// Init authenticationAuth</span>
+    Auth kintoneAuthWithPassword = <span class="hljs-keyword">new</span> Auth();
+    kintoneAuthWithPassword.setPasswordAuth(USERNAME, PASSWORD);
+
+    <span class="hljs-comment">// Init Connection without "guest space ID"</span>
+    Connection kintoneOnDemoDomain = <span class="hljs-keyword">new</span> Connection(<span class="hljs-string">"sample.domain.dot"</span>, kintoneAuthWithPassword);
+
+    <span class="hljs-comment">// Init Record Module</span>
+    Record kintoneRecordManager = <span class="hljs-keyword">new</span> Record(kintoneOnDemoDomain);
+
+    <span class="hljs-comment">// execute GET RECORDS API</span>
+    Integer appID = <span class="hljs-number">1</span>;
+    String query = <span class="hljs-string">"$id &gt;="</span> +  <span class="hljs-number">1</span> + <span class="hljs-string">"and $id &lt;="</span> + <span class="hljs-number">10</span> + <span class="hljs-string">"order by $id asc"</span>;
+    GetRecordsResponse response = kintoneRecordManager.getAllRecordsByCursor(appID, query, <span class="hljs-keyword">null</span>);
+</code></pre>
+<p></details></p>
+<h3><a class="anchor" aria-hidden="true" id="addrecordapp-record"></a><a href="#addrecordapp-record" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>addRecord(app, record)</h3>
+<blockquote>
+<p>Add one record to an app.</p>
+</blockquote>
+<p><strong>Parameter</strong></p>
+<table>
+<thead>
+<tr><th>Name</th><th>Type</th><th>Required</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td>app</td><td>Integer</td><td>yes</td><td>The kintone app ID</td></tr>
+<tr><td>record</td><td>HashMap&lt;String, <a href="./model/record/record-field-model#fieldvalue">FieldValue</a>&gt;</td><td>(optional)</td><td>The record data to be add to kintone app. About the format, please look the sample below or <a href="#reference">reference</a> at the end of this page</td></tr>
+</tbody>
+</table>
+<p><strong>Return</strong></p>
+<p><a href="./model/record/record-model#addrecordresponse">AddRecordResponse</a></p>
+<p><strong>Sample code</strong></p>
+<p><details class="tab-container" open>
+<Summary>Add record</Summary></p>
+<p><strong>Source code</strong></p>
+<pre><code class="hljs css language-java">String USERNAME = <span class="hljs-string">"YOUR_USERNAME"</span>;
+String PASSWORD = <span class="hljs-string">"YOUR_PASSWORD"</span>;
+
+<span class="hljs-comment">// Init authenticationAuth</span>
+Auth kintoneAuthWithPassword = <span class="hljs-keyword">new</span> Auth();
+kintoneAuthWithPassword.setPasswordAuth(USERNAME, PASSWORD);
+
+<span class="hljs-comment">// Init Connection without "guest space ID"</span>
+Connection kintoneOnDemoDomain = <span class="hljs-keyword">new</span> Connection(<span class="hljs-string">"sample.domain.dot"</span>, kintoneAuthWithPassword);
+
+<span class="hljs-comment">// Init Record Module</span>
+Record kintoneRecordManager = <span class="hljs-keyword">new</span> Record(kintoneOnDemoDomain);
+
+<span class="hljs-comment">// execute ADD RECORD API</span>
+Integer appID = <span class="hljs-number">1</span>;
+HashMap&amp;lt;String, FieldValue&amp;gt; record = <span class="hljs-keyword">new</span> HashMap&amp;lt;String, FieldValue&amp;gt;();
+
+FieldValue fv = <span class="hljs-keyword">new</span> FieldValue();
+fv.setType(FieldType.SINGLE_LINE_TEXT);
+fv.setValue(<span class="hljs-string">"sample_AddRecord"</span>);
+record.put(<span class="hljs-string">"FieldCode1"</span>, fv);
+
+AddRecordResponse response = kintoneRecordManager.addRecord(appID, record);
+</code></pre>
+<p></details></p>
+<h3><a class="anchor" aria-hidden="true" id="addrecordsapp-records"></a><a href="#addrecordsapp-records" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>addRecords(app, records)</h3>
+<blockquote>
+<p>Add multiple records to an app.</p>
+</blockquote>
+<p><strong>Parameter</strong></p>
+<table>
+<thead>
+<tr><th>Name</th><th>Type</th><th>Required</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td>app</td><td>Integer</td><td>yes</td><td>The kintone app ID</td></tr>
+<tr><td>records</td><td>ArrayList&lt;HashMap&lt;String, <a href="./model/record/record-field-model#fieldvalue">FieldValue</a>&gt;&gt;</td><td>yes</td><td>List of records data to be add to kintone app. About the format, please look the sample below or <a href="#reference">reference</a> at the end of this page.</td></tr>
+</tbody>
+</table>
+<p><strong>Return</strong></p>
+<p><a href="./model/record/record-model#addrecordsresponse">AddRecordsResponse</a></p>
+<p><strong>Sample code</strong></p>
+<p><details class="tab-container" open>
+<Summary>Add multi records</Summary></p>
+<p><strong>Source code</strong></p>
+<pre><code class="hljs css language-java">String USERNAME = <span class="hljs-string">"YOUR_USERNAME"</span>;
+String PASSWORD = <span class="hljs-string">"YOUR_PASSWORD"</span>;
+
+<span class="hljs-comment">// Init authenticationAuth</span>
+Auth kintoneAuthWithPassword = <span class="hljs-keyword">new</span> Auth();
+kintoneAuthWithPassword.setPasswordAuth(USERNAME, PASSWORD);
+
+<span class="hljs-comment">// Init Connection without "guest space ID"</span>
+Connection kintoneOnDemoDomain = <span class="hljs-keyword">new</span> Connection(<span class="hljs-string">"sample.domain.dot"</span>, kintoneAuthWithPassword);
+
+<span class="hljs-comment">// Init Record Module</span>
+Record kintoneRecordManager = <span class="hljs-keyword">new</span> Record(kintoneOnDemoDomain);
+
+<span class="hljs-comment">// execute ADD RECORDS API</span>
+Integer appID = <span class="hljs-number">1</span>;
+ArrayList&amp;lt;HashMap&amp;lt;String, FieldValue&amp;gt;&gt; records = <span class="hljs-keyword">new</span> ArrayList&amp;lt;HashMap&amp;lt;String, FieldValue&amp;gt;&gt;();
+HashMap&amp;lt;String, FieldValue&amp;gt; record1 = <span class="hljs-keyword">new</span> HashMap&amp;lt;String, FieldValue&amp;gt;();
+HashMap&amp;lt;String, FieldValue&amp;gt; record2 = <span class="hljs-keyword">new</span> HashMap&amp;lt;String, FieldValue&amp;gt;();
+
+FieldValue fv = <span class="hljs-keyword">new</span> FieldValue();
+fv.setType(FieldType.SINGLE_LINE_TEXT);
+fv.setValue(<span class="hljs-string">"sample_AddRecords1"</span>);
+
+FieldValue fv2 = <span class="hljs-keyword">new</span> FieldValue();
+fv2.setType(FieldType.SINGLE_LINE_TEXT);
+fv2.setValue(<span class="hljs-string">"sample_AddRecords2"</span>);
+
+record1.put(<span class="hljs-string">"FieldCode1"</span>, fv);
+record2.put(<span class="hljs-string">"FieldCode1"</span>, fv2);
+
+records.add(record1);
+records.add(record2);
+
+AddRecordsResponse response = kintoneRecordManager.addRecords(appID, records);
+</code></pre>
+<p></details></p>
+<h3><a class="anchor" aria-hidden="true" id="updaterecordbyidapp-id-record-revision"></a><a href="#updaterecordbyidapp-id-record-revision" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>updateRecordByID(app, id, record, revision)</h3>
+<blockquote>
+<p>Updates details of 1 record in an app by specifying its record number.</p>
+</blockquote>
+<p><strong>Parameter</strong></p>
+<table>
+<thead>
+<tr><th>Name</th><th>Type</th><th>Required</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td>app</td><td>Integer</td><td>yes</td><td>The kintone app ID</td></tr>
+<tr><td>id</td><td>Integer</td><td>yes</td><td>The record ID on kintone app</td></tr>
+<tr><td>record</td><td>HashMap&lt;String, <a href="./model/record/record-field-model#fieldvalue">FieldValue</a>&gt;</td><td>yes</td><td>The record data to be update in  kintone app. About the format, please look the sample below or <a href="#reference">reference</a> at the end of this page.</td></tr>
+<tr><td>revision</td><td>Integer</td><td>(optional)</td><td>The revision number of record</td></tr>
+</tbody>
+</table>
+<p><strong>Return</strong></p>
+<p><a href="./model/record/record-model#updaterecordresponse">UpdateRecordResponse</a></p>
+<p><strong>Sample code</strong></p>
+<p><details class="tab-container" open>
+<Summary>Update record by ID</Summary></p>
+<p><strong>Source code</strong></p>
+<pre><code class="hljs css language-java">String USERNAME = <span class="hljs-string">"YOUR_USERNAME"</span>;
+String PASSWORD = <span class="hljs-string">"YOUR_PASSWORD"</span>;
+
+<span class="hljs-comment">// Init authenticationAuth</span>
+Auth kintoneAuthWithPassword = <span class="hljs-keyword">new</span> Auth();
+kintoneAuthWithPassword.setPasswordAuth(USERNAME, PASSWORD);
+
+<span class="hljs-comment">// Init Connection without "guest space ID"</span>
+Connection kintoneOnDemoDomain = <span class="hljs-keyword">new</span> Connection(<span class="hljs-string">"sample.domain.dot"</span>, kintoneAuthWithPassword);
+
+<span class="hljs-comment">// Init Record Module</span>
+Record kintoneRecordManager = <span class="hljs-keyword">new</span> Record(kintoneOnDemoDomain);
+
+<span class="hljs-comment">// execute UPDATE RECORD API</span>
+Integer appID = <span class="hljs-number">1</span>;
+Integer recordID = <span class="hljs-number">1</span>;
+Integer revision = <span class="hljs-number">1</span>;
+
+HashMap&amp;lt;String, FieldValue&amp;gt; record = <span class="hljs-keyword">new</span> HashMap&amp;lt;String, FieldValue&amp;gt;();
+
+FieldValue fv = <span class="hljs-keyword">new</span> FieldValue();
+fv.setType(FieldType.SINGLE_LINE_TEXT);
+fv.setValue(<span class="hljs-string">"sample_updateRecordById"</span>);
+
+record.put(<span class="hljs-string">"FieldCode1"</span>, fv);
+
+UpdateRecordResponse response = kintoneRecordManager.updateRecordByID(appID, recordID, record, revision);
+</code></pre>
+<p></details></p>
+<h3><a class="anchor" aria-hidden="true" id="updaterecordbyupdatekeyapp-updatekey-record-revision"></a><a href="#updaterecordbyupdatekeyapp-updatekey-record-revision" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>updateRecordByUpdateKey(app, updateKey, record, revision)</h3>
+<p>Updates details of 1 record in an app by unique key.</p>
+<p><strong>Parameter</strong></p>
+<table>
+<thead>
+<tr><th>Name</th><th>Type</th><th>Required</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td>app</td><td>Integer</td><td>yes</td><td>The kintone app ID</td></tr>
+<tr><td>updateKey</td><td><a href="./model/record/record-model#recordupdatekey">RecordUpdateKey</a></td><td>yes</td><td>The unique key of the record to be updated. About the format, please look the sample below or <a href="#reference">reference</a> at the end of this page.</td></tr>
+<tr><td>record</td><td>HashMap&lt;String, <a href="./model/record/record-field-model#fieldvalue">FieldValue</a>&gt;</td><td>yes</td><td>The record data will be added to kintone app. About the format, please look the sample below or <a href="#reference">reference</a> at the end of this page.</td></tr>
+<tr><td>revision</td><td>Integer</td><td>(optional)</td><td>The revision number of record</td></tr>
+</tbody>
+</table>
+<p><strong>Return</strong></p>
+<p><a href="./model/record/record-model#updaterecordresponse">UpdateRecordResponse</a></p>
+<p><strong>Sample code</strong></p>
+<p><details class="tab-container" open>
+<Summary>Update record by UpdateKey</Summary></p>
+<p><strong>Source code</strong></p>
+<pre><code class="hljs css language-java">String USERNAME = <span class="hljs-string">"YOUR_USERNAME"</span>;
+String PASSWORD = <span class="hljs-string">"YOUR_PASSWORD"</span>;
+
+<span class="hljs-comment">// Init authenticationAuth</span>
+Auth kintoneAuthWithPassword = <span class="hljs-keyword">new</span> Auth();
+kintoneAuthWithPassword.setPasswordAuth(USERNAME, PASSWORD);
+
+<span class="hljs-comment">// Init Connection without "guest space ID"</span>
+Connection kintoneOnDemoDomain = <span class="hljs-keyword">new</span> Connection(<span class="hljs-string">"sample.domain.dot"</span>, kintoneAuthWithPassword);
+
+<span class="hljs-comment">// Init Record Module</span>
+Record kintoneRecordManager = <span class="hljs-keyword">new</span> Record(kintoneOnDemoDomain);
+
+<span class="hljs-comment">// execute UPDATE RECORD API</span>
+Integer appID = <span class="hljs-number">1</span>;
+HashMap&amp;lt;String, FieldValue&amp;gt; record = <span class="hljs-keyword">new</span> HashMap&amp;lt;String, FieldValue&amp;gt;();
+RecordUpdateKey uKey = <span class="hljs-keyword">new</span> RecordUpdateKey(<span class="hljs-string">"文字列__1行__0"</span>, <span class="hljs-string">"unique_value1"</span>);
+Integer revision = <span class="hljs-number">1</span>;
+
+FieldValue fv = <span class="hljs-keyword">new</span> FieldValue();
+fv.setType(FieldType.SINGLE_LINE_TEXT);
+fv.setValue(<span class="hljs-string">"sample_updateRecordByUpdateKey"</span>);
+
+record.put(<span class="hljs-string">"FieldCode1"</span>, fv);
+
+UpdateRecordResponse response = kintoneRecordManager.updateRecordByUpdateKey(appID, uKey, record, revision);
+</code></pre>
+<p></details></p>
+<h3><a class="anchor" aria-hidden="true" id="updaterecordsapp-records"></a><a href="#updaterecordsapp-records" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>updateRecords(app, records)</h3>
+<blockquote>
+<p>Updates details of multiple records in an app, by specifying their record number, or a different unique key.</p>
+</blockquote>
+<p><strong>Parameter</strong></p>
+<table>
+<thead>
+<tr><th>Name</th><th>Type</th><th>Required</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td>app</td><td>Integer</td><td>yes</td><td>The kintone app ID</td></tr>
+<tr><td>records</td><td>ArrayList&lt;<a href="./model/record/record-model#recordupdateitem">RecordUpdateItem</a>&gt;</td><td>yes</td><td>The record data will be added to kintone app. About the format, please look the sample below or <a href="#reference">reference</a> at the end of this page.</td></tr>
+</tbody>
+</table>
+<p><strong>Return</strong></p>
+<p><a href="./model/record/record-model#updaterecordsresponse">UpdateRecordsResponse</a></p>
+<p><strong>Sample code</strong></p>
+<p><details class="tab-container" open>
+<Summary>Update multi records</Summary></p>
+<p><strong>Source code</strong></p>
+<pre><code class="hljs css language-java">String USERNAME = <span class="hljs-string">"YOUR_USERNAME"</span>;
+String PASSWORD = <span class="hljs-string">"YOUR_PASSWORD"</span>;
+
+<span class="hljs-comment">// Init authenticationAuth</span>
+Auth kintoneAuthWithPassword = <span class="hljs-keyword">new</span> Auth();
+kintoneAuthWithPassword.setPasswordAuth(USERNAME, PASSWORD);
+
+<span class="hljs-comment">// Init Connection without "guest space ID"</span>
+Connection kintoneOnDemoDomain = <span class="hljs-keyword">new</span> Connection(<span class="hljs-string">"sample.domain.dot"</span>, kintoneAuthWithPassword);
+
+<span class="hljs-comment">// Init Record Module</span>
+Record kintoneRecordManager = <span class="hljs-keyword">new</span> Record(kintoneOnDemoDomain);
+
+<span class="hljs-comment">// execute UPDATE RECORDS API</span>
+Integer appID = <span class="hljs-number">1</span>;
+HashMap&amp;lt;String, FieldValue&amp;gt; record1 = <span class="hljs-keyword">new</span> HashMap&amp;lt;String, FieldValue&amp;gt;();
+HashMap&amp;lt;String, FieldValue&amp;gt; record2 = <span class="hljs-keyword">new</span> HashMap&amp;lt;String, FieldValue&amp;gt;();
+
+FieldValue fv1 = <span class="hljs-keyword">new</span> FieldValue();
+fv1.setType(FieldType.SINGLE_LINE_TEXT);
+fv1.setValue(<span class="hljs-string">"test_updateRecords1"</span>);
+
+FieldValue fv2 = <span class="hljs-keyword">new</span> FieldValue();
+fv2.setType(FieldType.SINGLE_LINE_TEXT);
+fv2.setValue(<span class="hljs-string">"test_updateRecords2"</span>);
+
+record1.put(<span class="hljs-string">"FieldCode1"</span>, fv1);
+record2.put(<span class="hljs-string">"FieldCode1"</span>, fv2);
+
+ArrayList&amp;lt;RecordUpdateItem&amp;gt; records = <span class="hljs-keyword">new</span> ArrayList&amp;lt;RecordUpdateItem&amp;gt;();
+records.add(<span class="hljs-keyword">new</span> RecordUpdateItem(<span class="hljs-number">1</span>, <span class="hljs-keyword">null</span>, <span class="hljs-keyword">null</span>, record1));
+records.add(<span class="hljs-keyword">new</span> RecordUpdateItem(<span class="hljs-number">2</span>, <span class="hljs-keyword">null</span>, <span class="hljs-keyword">null</span>, record2));
+
+UpdateRecordsResponse response = kintoneRecordManager.updateRecords(appID, records);
+</code></pre>
+<p></details></p>
+<h3><a class="anchor" aria-hidden="true" id="deleterecordsapp-ids"></a><a href="#deleterecordsapp-ids" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>deleteRecords(app, ids)</h3>
+<blockquote>
+<p>Deletes multiple records in an app.</p>
+</blockquote>
+<p><strong>Parameter</strong></p>
+<table>
+<thead>
+<tr><th>Name</th><th>Type</th><th>Required</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td>app</td><td>Integer</td><td>yes</td><td>The kintone app ID</td></tr>
+<tr><td>ids</td><td>ArrayList&lt;Integer&gt;</td><td>yes</td><td>The list ids of record will be delete.</td></tr>
+</tbody>
+</table>
+<p><strong>Return</strong></p>
+<p>(none)</p>
+<p><strong>Sample code</strong></p>
+<p><details class="tab-container" open>
+<Summary>Delete multi record</Summary></p>
+<p><strong>Source code</strong></p>
+<pre><code class="hljs css language-java">String USERNAME = <span class="hljs-string">"YOUR_USERNAME"</span>;
+String PASSWORD = <span class="hljs-string">"YOUR_PASSWORD"</span>;
+
+<span class="hljs-comment">// Init authenticationAuth</span>
+Auth kintoneAuthWithPassword = <span class="hljs-keyword">new</span> Auth();
+kintoneAuthWithPassword.setPasswordAuth(USERNAME, PASSWORD);
+
+<span class="hljs-comment">// Init Connection without "guest space ID"</span>
+Connection kintoneOnDemoDomain = <span class="hljs-keyword">new</span> Connection(<span class="hljs-string">"sample.domain.dot"</span>, kintoneAuthWithPassword);
+
+<span class="hljs-comment">// Init Record Module</span>
+Record kintoneRecordManager = <span class="hljs-keyword">new</span> Record(kintoneOnDemoDomain);
+
+<span class="hljs-comment">// execute DELETE RECORDS API</span>
+Integer appID = <span class="hljs-number">1</span>;
+ArrayList&amp;lt;Integer&amp;gt; ids = <span class="hljs-keyword">new</span> ArrayList&amp;lt;Integer&amp;gt;();
+ids.add(<span class="hljs-number">1</span>);
+ids.add(<span class="hljs-number">2</span>);
+
+kintoneRecordManager.deleteRecords(appID, ids);
+</code></pre>
+<p></details></p>
+<h3><a class="anchor" aria-hidden="true" id="deleterecordswithrevisionapp-idswithrevision"></a><a href="#deleterecordswithrevisionapp-idswithrevision" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>deleteRecordsWithRevision(app, idsWithRevision)</h3>
+<blockquote>
+<p>Deletes multiple records in an app with revision.</p>
+</blockquote>
+<p><strong>Parameter</strong></p>
+<table>
+<thead>
+<tr><th>Name</th><th>Type</th><th>Required</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td>app</td><td>Integer</td><td>yes</td><td>The kintone app ID</td></tr>
+<tr><td>idsWithRevision</td><td>HashTable&lt;Integer, Integer&gt;</td><td>yes</td><td>(<strong>key</strong>: <code>The Id of record</code>, <strong>value</strong>: <code>The Revision of record.</code>)</td></tr>
+</tbody>
+</table>
+<p><strong>Return</strong></p>
+<p>(none)</p>
+<p><strong>Sample code</strong></p>
+<p><details class="tab-container" open>
+<Summary>Delete record with revision</Summary></p>
+<p><strong>Source code</strong></p>
+<pre><code class="hljs css language-java">String USERNAME = <span class="hljs-string">"YOUR_USERNAME"</span>;
+String PASSWORD = <span class="hljs-string">"YOUR_PASSWORD"</span>;
+
+<span class="hljs-comment">// Init authenticationAuth</span>
+Auth kintoneAuthWithPassword = <span class="hljs-keyword">new</span> Auth();
+kintoneAuthWithPassword.setPasswordAuth(USERNAME, PASSWORD);
+
+<span class="hljs-comment">// Init Connection without "guest space ID"</span>
+Connection kintoneOnDemoDomain = <span class="hljs-keyword">new</span> Connection(<span class="hljs-string">"sample.domain.dot"</span>, kintoneAuthWithPassword);
+
+<span class="hljs-comment">// Init Record Module</span>
+Record kintoneRecordManager = <span class="hljs-keyword">new</span> Record(kintoneOnDemoDomain);
+
+<span class="hljs-comment">// execute DELETE RECORDS API</span>
+Integer appID = <span class="hljs-number">1</span>;
+HashMap&amp;lt;Integer, Integer&amp;gt; idsWithRevision = <span class="hljs-keyword">new</span> HashMap&amp;lt;Integer, Integer&amp;gt;();
+
+idsWithRevision.put(<span class="hljs-number">1</span>, <span class="hljs-number">1</span>);
+idsWithRevision.put(<span class="hljs-number">2</span>, <span class="hljs-keyword">null</span>);
+idsWithRevision.put(<span class="hljs-number">3</span>, -<span class="hljs-number">1</span>);
+
+kintoneRecordManager.deleteRecordsWithRevision(appID, idsWithRevision);
+</code></pre>
+<p></details></p>
+<h3><a class="anchor" aria-hidden="true" id="updaterecordassigneesapp-id-assignees-revision"></a><a href="#updaterecordassigneesapp-id-assignees-revision" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>updateRecordAssignees(app, id, assignees, revision)</h3>
+<blockquote>
+<p>Update assignees of a record.</p>
+</blockquote>
+<p><strong>Parameter</strong></p>
+<table>
+<thead>
+<tr><th>Name</th><th>Type</th><th>Required</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td>app</td><td>Integer</td><td>yes</td><td>The kintone app ID</td></tr>
+<tr><td>id</td><td>Integer</td><td>yes</td><td>The record ID of kintone app</td></tr>
+<tr><td>assignees</td><td>ArrayList&lt;String&gt;</td><td>yes</td><td>The user code(s) of the assignee(s)</td></tr>
+<tr><td>revision</td><td>Integer</td><td>(option)</td><td>The revision number of record</td></tr>
+</tbody>
+</table>
+<p><strong>Return</strong></p>
+<p><a href="./model/record/record-model#updaterecordresponse">UpdateRecordResponse</a></p>
+<p><strong>Sample code</strong></p>
+<p><details class="tab-container" open>
+<Summary>update record Assignees</Summary></p>
+<p><strong>Source code</strong></p>
+<pre><code class="hljs css language-java">String USERNAME = <span class="hljs-string">"YOUR_USERNAME"</span>;
+String PASSWORD = <span class="hljs-string">"YOUR_PASSWORD"</span>;
+
+<span class="hljs-comment">// Init authenticationAuth</span>
+Auth kintoneAuthWithPassword = <span class="hljs-keyword">new</span> Auth();
+kintoneAuthWithPassword.setPasswordAuth(USERNAME, PASSWORD);
+
+<span class="hljs-comment">// Init Connection without "guest space ID"</span>
+Connection kintoneOnDemoDomain = <span class="hljs-keyword">new</span> Connection(<span class="hljs-string">"sample.domain.dot"</span>, kintoneAuthWithPassword);
+
+<span class="hljs-comment">// Init Record Module</span>
+Record kintoneRecordManager = <span class="hljs-keyword">new</span> Record(kintoneOnDemoDomain);
+
+<span class="hljs-comment">// execute UPDATE RECORD API</span>
+Integer appID = <span class="hljs-number">1</span>;
+Integer recordID =<span class="hljs-number">1</span>;
+ArrayList&amp;lt;String&amp;gt; assignees = <span class="hljs-keyword">new</span> ArrayList&amp;lt;String&amp;gt;();
+assignees.add(<span class="hljs-string">"sample_user"</span>);
+Integer revision = <span class="hljs-number">1</span>;
+
+UpdateRecordResponse response = kintoneRecordManager.updateRecordAssignees(appID, recordID, assignees, revision);
+</code></pre>
+<p></details></p>
+<h3><a class="anchor" aria-hidden="true" id="updaterecordstatusapp-id-action-assignee-revision"></a><a href="#updaterecordstatusapp-id-action-assignee-revision" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>updateRecordStatus(app, id, action, assignee, revision)</h3>
+<blockquote>
+<p>Updates the Status of a record of an app.</p>
+</blockquote>
+<p><strong>Parameter</strong></p>
+<table>
+<thead>
+<tr><th>Name</th><th>Type</th><th>Required</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td>app</td><td>Integer</td><td>yes</td><td>The kintone app ID.</td></tr>
+<tr><td>id</td><td>Integer</td><td>yes</td><td>The record ID on kintone app.</td></tr>
+<tr><td>action</td><td>String</td><td>yes</td><td>The Action name will be run.</td></tr>
+<tr><td>assignee</td><td>String</td><td>(Conditionally required)</td><td>The next Assignee. Specify the Assignee's log in name.</br>Required, if the &quot;Assignee List&quot; of the current status is set to &quot;User chooses one assignee from the list to take action&quot;, and a selectable assignee exists.</td></tr>
+<tr><td>revision</td><td>Integer</td><td>(optional)</td><td>The revision of record</td></tr>
+</tbody>
+</table>
+<p><strong>Return</strong></p>
+<p><a href="./model/record/record-model#updaterecordresponse">UpdateRecordResponse</a></p>
+<p><strong>Sample code</strong></p>
+<p><details class="tab-container" open>
+<Summary>Update record status</Summary></p>
+<p><strong>Source code</strong></p>
+<pre><code class="hljs css language-java">String USERNAME = <span class="hljs-string">"YOUR_USERNAME"</span>;
+String PASSWORD = <span class="hljs-string">"YOUR_PASSWORD"</span>;
+
+<span class="hljs-comment">// Init authenticationAuth</span>
+Auth kintoneAuthWithPassword = <span class="hljs-keyword">new</span> Auth();
+kintoneAuthWithPassword.setPasswordAuth(USERNAME, PASSWORD);
+
+<span class="hljs-comment">// Init Connection without "guest space ID"</span>
+Connection kintoneOnDemoDomain = <span class="hljs-keyword">new</span> Connection(<span class="hljs-string">"sample.domain.dot"</span>, kintoneAuthWithPassword);
+
+<span class="hljs-comment">// Init Record Module</span>
+Record kintoneRecordManager = <span class="hljs-keyword">new</span> Record(kintoneOnDemoDomain);
+
+<span class="hljs-comment">// execute UPDATE RECORD API</span>
+Integer appID = <span class="hljs-number">1</span>;
+Integer recordID =<span class="hljs-number">1</span>;
+String assignee = <span class="hljs-string">"sample_user"</span>;
+String action = <span class="hljs-string">"処理開始"</span>;
+Integer revision = <span class="hljs-number">1</span>;
+
+UpdateRecordResponse response = kintoneRecordManager.updateRecordStatus(appID, recordID, action, assignee, revision);
+</code></pre>
+<p></details></p>
+<h3><a class="anchor" aria-hidden="true" id="updaterecordsstatusapp-records"></a><a href="#updaterecordsstatusapp-records" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>updateRecordsStatus(app, records)</h3>
+<blockquote>
+<p>Updates the Status of multiple records of an app.</p>
+</blockquote>
+<p><strong>Parameter</strong></p>
+<table>
+<thead>
+<tr><th>Name</th><th>Type</th><th>Required</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td>app</td><td>Integer</td><td>yes</td><td>The kintone app ID</td></tr>
+<tr><td>records</td><td>ArrayList&lt;<a href="./model/record/record-model#recordupdatestatusitem">RecordUpdateStatusItem</a>&gt;</td><td>yes</td><td>The recod status data. See belowsample codee or <a href="#reference">reference</a> at the end of this page to know format.</td></tr>
+</tbody>
+</table>
+<p><strong>Return</strong></p>
+<p><a href="./model/record/record-model#updaterecordsresponse">UpdateRecordsResponse</a></p>
+<p><strong>Sample code</strong></p>
+<p><details class="tab-container" open>
+<Summary>Update multi record status</Summary></p>
+<p><strong>Source code</strong></p>
+<pre><code class="hljs css language-java">String USERNAME = <span class="hljs-string">"YOUR_USERNAME"</span>;
+String PASSWORD = <span class="hljs-string">"YOUR_PASSWORD"</span>;
+
+<span class="hljs-comment">// Init authenticationAuth</span>
+Auth kintoneAuthWithPassword = <span class="hljs-keyword">new</span> Auth();
+kintoneAuthWithPassword.setPasswordAuth(USERNAME, PASSWORD);
+
+<span class="hljs-comment">// Init Connection without "guest space ID"</span>
+Connection kintoneOnDemoDomain = <span class="hljs-keyword">new</span> Connection(<span class="hljs-string">"sample.domain.dot"</span>, kintoneAuthWithPassword);
+
+<span class="hljs-comment">// Init Record Module</span>
+Record kintoneRecordManager = <span class="hljs-keyword">new</span> Record(kintoneOnDemoDomain);
+
+<span class="hljs-comment">// execute UPDATE RECORDS API</span>
+Integer appID = <span class="hljs-number">1</span>;
+ArrayList&amp;lt;RecordUpdateStatusItem&amp;gt; rusi = <span class="hljs-keyword">new</span> ArrayList&amp;lt;RecordUpdateStatusItem&amp;gt;();
+
+String action = <span class="hljs-string">"処理開始"</span>;
+String assignee = <span class="hljs-string">"sample_user1"</span>;
+Integer recordID1 =<span class="hljs-number">1</span>;
+Integer recordID2 =<span class="hljs-number">2</span>;
+Integer recordID3 =<span class="hljs-number">3</span>;
+Integer revision1 = <span class="hljs-number">1</span>;
+Integer revision2 = <span class="hljs-keyword">null</span>;
+Integer revision3 = -<span class="hljs-number">1</span>;
+
+rusi.add(<span class="hljs-keyword">new</span> RecordUpdateStatusItem(action, assignee, recordID1, revision1));
+rusi.add(<span class="hljs-keyword">new</span> RecordUpdateStatusItem(action, assignee, recordID2, revision2));
+rusi.add(<span class="hljs-keyword">new</span> RecordUpdateStatusItem(action, assignee, recordID3, revision3));
+UpdateRecordsResponse response = kintoneRecordManager.updateRecordsStatus(appID, rusi);
+</code></pre>
+<p></details></p>
+<h3><a class="anchor" aria-hidden="true" id="getcommentsapp-record-order-offset-limit"></a><a href="#getcommentsapp-record-order-offset-limit" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>getComments(app, record, order, offset, limit)</h3>
+<p><strong>Parameter</strong></p>
+<table>
+<thead>
+<tr><th>Name</th><th>Type</th><th>Required</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td>app</td><td>Integer</td><td>yes</td><td>The kintone app ID</td></tr>
+<tr><td>record</td><td>Integer</td><td>yes</td><td>The kintone app ID</td></tr>
+<tr><td>order</td><td>String</td><td>(optional)</td><td>The sort order of the Comment ID. Please select <strong>asc</strong> or <strong>desc</strong></td></tr>
+<tr><td>offset</td><td>Integer</td><td>(optional)</td><td>The number of first comments will be ignored.</td></tr>
+<tr><td>limit</td><td>Integer</td><td>(optional)</td><td>The number of records to retrieve.</td></tr>
+</tbody>
+</table>
+<p><strong>Return</strong></p>
+<p><a href="./model/record/record-comment-model#getcommentsresponse">GetCommentsResponse</a></p>
+<p><strong>Sample code</strong></p>
+<p><details class="tab-container" open>
+<Summary>Get comments</Summary></p>
+<p><strong>Source code</strong></p>
+<pre><code class="hljs css language-java">String USERNAME = <span class="hljs-string">"YOUR_USERNAME"</span>;
+String PASSWORD = <span class="hljs-string">"YOUR_PASSWORD"</span>;
+
+<span class="hljs-comment">// Init authenticationAuth</span>
+Auth kintoneAuthWithPassword = <span class="hljs-keyword">new</span> Auth();
+kintoneAuthWithPassword.setPasswordAuth(USERNAME, PASSWORD);
+
+<span class="hljs-comment">// Init Connection without "guest space ID"</span>
+Connection kintoneOnDemoDomain = <span class="hljs-keyword">new</span> Connection(<span class="hljs-string">"sample.domain.dot"</span>, kintoneAuthWithPassword);
+
+<span class="hljs-comment">// Init Record Module</span>
+Record kintoneRecordManager = <span class="hljs-keyword">new</span> Record(kintoneOnDemoDomain);
+
+<span class="hljs-comment">// execute GET RECORD_COMMENTS  API</span>
+Integer appID = <span class="hljs-number">1</span>;
+Integer recordID = <span class="hljs-number">1</span>;
+String order = <span class="hljs-string">"asc"</span>;
+Integer offsset = <span class="hljs-number">1</span>;
+Integer limit = <span class="hljs-number">2</span>;
+
+GetCommentsResponse response = kintoneRecordManager.getComments(appID, recordID, order, offsset, limit);
+</code></pre>
+<p></details></p>
+<h3><a class="anchor" aria-hidden="true" id="addcommentapp-record-comment"></a><a href="#addcommentapp-record-comment" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>addComment(app, record, comment)</h3>
+<p><strong>Parameter</strong></p>
+<table>
+<thead>
+<tr><th>Name</th><th>Type</th><th>Required</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td>app</td><td>Integer</td><td>yes</td><td>The kintone app ID</td></tr>
+<tr><td>record</td><td>Integer</td><td>yes</td><td>The kintone app ID</td></tr>
+<tr><td>comment</td><td><a href="../record-comment-model#commentcontent">CommentContent</a></td><td>yes</td><td>About the format, please look the sample below or <a href="#reference">reference</a> at the end of this page.</td></tr>
+</tbody>
+</table>
+<p><strong>Return</strong></p>
+<p><a href="../record-comment-model#addcommentresponse">AddCommentResponse</a></p>
+<p><strong>Sample code</strong></p>
+<p><details class="tab-container" open>
+<Summary>Add comment</Summary></p>
+<p><strong>Source code</strong></p>
+<pre><code class="hljs css language-java">String USERNAME = <span class="hljs-string">"YOUR_USERNAME"</span>;
+String PASSWORD = <span class="hljs-string">"YOUR_PASSWORD"</span>;
+
+<span class="hljs-comment">// Init authenticationAuth</span>
+Auth kintoneAuthWithPassword = <span class="hljs-keyword">new</span> Auth();
+kintoneAuthWithPassword.setPasswordAuth(USERNAME, PASSWORD);
+
+<span class="hljs-comment">// Init Connection without "guest space ID"</span>
+Connection kintoneOnDemoDomain = <span class="hljs-keyword">new</span> Connection(<span class="hljs-string">"sample.domain.dot"</span>, kintoneAuthWithPassword);
+
+<span class="hljs-comment">// Init Record Module</span>
+Record kintoneRecordManager = <span class="hljs-keyword">new</span> Record(kintoneOnDemoDomain);
+
+<span class="hljs-comment">// execute ADD RECORD_COMMENT  API</span>
+Integer app = <span class="hljs-number">1</span>;
+Integer record = <span class="hljs-number">1</span>;
+CommentContent comment = <span class="hljs-keyword">new</span> CommentContent();
+ArrayList&amp;lt;CommentMention&amp;gt; mentionList = <span class="hljs-keyword">new</span> ArrayList&amp;lt;CommentMention&amp;gt;();
+CommentMention mention = <span class="hljs-keyword">new</span> CommentMention();
+mention.setCode(<span class="hljs-string">"sample_user"</span>);
+mention.setType(<span class="hljs-string">"USER"</span>);
+mentionList.add(mention);
+comment.setText(<span class="hljs-string">"test comment"</span>);
+comment.setMentions(mentionList);
+
+AddCommentResponse response = kintoneRecordManager.addComment(app, record, comment);
+</code></pre>
+<p></details></p>
+<h3><a class="anchor" aria-hidden="true" id="deletecommentapp-record-comment"></a><a href="#deletecommentapp-record-comment" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>deleteComment(app, record, comment)</h3>
+<p><strong>Parameter</strong></p>
+<table>
+<thead>
+<tr><th>Name</th><th>Type</th><th>Required</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td>app</td><td>Integer</td><td>yes</td><td>The kintone app ID</td></tr>
+<tr><td>record</td><td>Integer</td><td>yes</td><td>The record ID on kintone app</td></tr>
+<tr><td>comment</td><td>Integer</td><td>yes</td><td>The comment ID on kintone record</td></tr>
+</tbody>
+</table>
+<p><strong>Return</strong></p>
+<p>(none)</p>
+<p><strong>Sample code</strong></p>
+<p><details class="tab-container" open>
+<Summary>Delete comment</Summary></p>
+<p><strong>Source code</strong></p>
+<pre><code class="hljs css language-java">String USERNAME = <span class="hljs-string">"YOUR_USERNAME"</span>;
+String PASSWORD = <span class="hljs-string">"YOUR_PASSWORD"</span>;
+
+<span class="hljs-comment">// Init authenticationAuth</span>
+Auth kintoneAuthWithPassword = <span class="hljs-keyword">new</span> Auth();
+kintoneAuthWithPassword.setPasswordAuth(USERNAME, PASSWORD);
+
+<span class="hljs-comment">// Init Connection without "guest space ID"</span>
+Connection kintoneOnDemoDomain = <span class="hljs-keyword">new</span> Connection(<span class="hljs-string">"sample.domain.dot"</span>, kintoneAuthWithPassword);
+
+<span class="hljs-comment">// Init Record Module</span>
+Record kintoneRecordManager = <span class="hljs-keyword">new</span> Record(kintoneOnDemoDomain);
+
+<span class="hljs-comment">// execute DELETE RECORD_COMMENT API</span>
+Integer app = <span class="hljs-number">1</span>;
+Integer record = <span class="hljs-number">1</span>;
+Integer comment = <span class="hljs-number">1</span>;
+
+kintoneRecordManager.deleteComment(app, record, comment);
+</code></pre>
+<p></details></p>
+<h3><a class="anchor" aria-hidden="true" id="getallrecordsbyqueryapp-query-fields-totalcount"></a><a href="#getallrecordsbyqueryapp-query-fields-totalcount" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>getAllRecordsByQuery(app, query, fields, totalCount)</h3>
+<p><strong>Parameter</strong></p>
+<table>
+<thead>
+<tr><th>Name</th><th>Type</th><th>Required</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td>app</td><td>Integer</td><td>yes</td><td>The kintone app ID</td></tr>
+<tr><td>query</td><td>String</td><td>(optional)</td><td>The query string that will specify what records will be responded.</td></tr>
+<tr><td>fields</td><td>ArrayList&lt;String&gt;</td><td>(optional)</td><td>List of field codes you want in the response.</td></tr>
+<tr><td>totalCount</td><td>Boolean</td><td>(optional)</td><td>If &quot;true&quot;, the request will retrieve total count of records match with query conditions.</td></tr>
+</tbody>
+</table>
+<p><strong>Return</strong></p>
+<p><a href="./model/record/record-model#getrecordsresponse">GetRecordsResponse</a></p>
+<p><strong>Sample code</strong></p>
+<p><details class="tab-container" open>
+<Summary>Get all records by query</Summary></p>
+<p><strong>Source code</strong></p>
+<pre><code class="hljs css language-java">Integer appID = {YOUR_APP_ID};
+String query = {YOUR_QUERY};
+ArrayList&amp;lt;String&amp;gt; fields = <span class="hljs-keyword">new</span> ArrayList&amp;lt;String&amp;gt;();
+GetRecordsResponse getAllRecords = kintoneRecordManager.getAllRecordsByQuery(appID, query, fields);
+</code></pre>
+<p></details></p>
+<h3><a class="anchor" aria-hidden="true" id="deleteallrecordsbyqueryinteger-app-string-query"></a><a href="#deleteallrecordsbyqueryinteger-app-string-query" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>deleteAllRecordsByQuery(Integer app, String query)</h3>
+<blockquote>
+<p>Delete all records by indicating query. Can delete over 2000 records, but can't do rollback.</p>
+</blockquote>
+<p><strong>Parameter</strong></p>
+<table>
+<thead>
+<tr><th>Name</th><th>Type</th><th>Required</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td>app</td><td>Integer</td><td>yes</td><td>The kintone app ID</td></tr>
+<tr><td>query</td><td>String</td><td>(optional)</td><td>The query string that will specify what records will be responded. If nothing is specified, fields will be returned from all accessible records. The query detail can't indicate <strong>limit</strong> and <strong>offset</strong>.</td></tr>
+</tbody>
+</table>
+<p><strong>Return</strong></p>
+<p>(none)</p>
+<p><strong>Sample code</strong></p>
+<p><details class="tab-container" open>
+<Summary>Delete all records by query</Summary></p>
+<p><strong>Source code</strong></p>
+<pre><code class="hljs css language-java">Integer appID = <span class="hljs-number">114</span>;
+String query = <span class="hljs-string">"$id &gt;="</span> +  <span class="hljs-number">1</span> + <span class="hljs-string">"and $id &lt;="</span> + <span class="hljs-number">10</span> + <span class="hljs-string">"order by $id asc"</span>;
+<span class="hljs-keyword">try</span> {
+    <span class="hljs-comment">// Init Record Module</span>
+    Record kintoneRecord = <span class="hljs-keyword">new</span> Record(kintoneConnection);
+    BulkRequestResponse bulkRequestResponse = kintoneRecord.deleteAllRecordsByQuery(appID, query);
+} <span class="hljs-keyword">catch</span> (BulksException e) {
+    System.out.println(e.getResults());
+    <span class="hljs-comment">// Ex: If User delete 6000 records:</span>
+    <span class="hljs-comment">// Case 1: If there error occur in record 0</span>
+    <span class="hljs-comment">// Err response:</span>
+    <span class="hljs-comment">// [KintoneAPIException]</span>
+    <span class="hljs-comment">// Case 2: the error occur in record 4000</span>
+    <span class="hljs-comment">// err response</span>
+    <span class="hljs-comment">// [</span>
+    <span class="hljs-comment">//    BulkRequestResponse,</span>
+    <span class="hljs-comment">//    BulkRequestResponse,</span>
+    <span class="hljs-comment">//    BulkRequestResponse,</span>
+    <span class="hljs-comment">//    BulkRequestResponse,</span>
+    <span class="hljs-comment">//    BulkRequestResponse,</span>
+    <span class="hljs-comment">//    BulkRequestResponse,</span>
+    <span class="hljs-comment">//    BulkRequestResponse,</span>
+    <span class="hljs-comment">//    BulkRequestResponse,</span>
+    <span class="hljs-comment">//    BulkRequestResponse,</span>
+    <span class="hljs-comment">//    BulkRequestResponse,</span>
+    <span class="hljs-comment">//    BulkRequestResponse,</span>
+    <span class="hljs-comment">//    BulkRequestResponse,</span>
+    <span class="hljs-comment">//    BulkRequestResponse,</span>
+    <span class="hljs-comment">//    BulkRequestResponse,</span>
+    <span class="hljs-comment">//    BulkRequestResponse,</span>
+    <span class="hljs-comment">//    BulkRequestResponse,</span>
+    <span class="hljs-comment">//    KintoneAPIException</span>
+    <span class="hljs-comment">//  ]</span>
+}
+</code></pre>
+<p></details></p>
+<h3><a class="anchor" aria-hidden="true" id="updateallrecordsinteger-app-arraylist-recordupdateitem-records"></a><a href="#updateallrecordsinteger-app-arraylist-recordupdateitem-records" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>updateAllRecords(Integer app, ArrayList&lt;RecordUpdateItem&gt; records)</h3>
+<blockquote>
+<p>Update all records to the kintone app</p>
+</blockquote>
+<p><strong>Parameter</strong></p>
+<table>
+<thead>
+<tr><th>Name</th><th>Type</th><th>Required</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td>app</td><td>Integer</td><td>yes</td><td>The kintone app ID</td></tr>
+<tr><td>records</td><td>Array&lt;<a href="./model/record/record-model#recordupdateitem">RecordUpdateItem</a>&gt;</td><td>yes</td><td>The records data which will update to kintone app</td></tr>
+</tbody>
+</table>
+<p><strong>Return</strong></p>
+<p>(none)</p>
+<p><strong>Sample code</strong></p>
+<p><details class="tab-container" open>
+<Summary>update all records</Summary></p>
+<p><strong>Source code</strong></p>
+<pre><code class="hljs css language-java">Integer appID = <span class="hljs-number">114</span>;
+HashMap &amp;lt;String, FieldValue&amp;gt; record = <span class="hljs-keyword">new</span> HashMap();
+ 
+FieldValue fv = <span class="hljs-keyword">new</span> FieldValue();
+fv.setType(FieldType.SINGLE_LINE_TEXT);
+fv.setValue(<span class="hljs-string">"test_updateRecords3x"</span>);
+ 
+record.put(<span class="hljs-string">"文字列__1行"</span>, fv);
+ 
+ArrayList&amp;lt;RecordUpdateItem&amp;gt; records = <span class="hljs-keyword">new</span> ArrayList&amp;lt;RecordUpdateItem&amp;gt;();
+records.add(<span class="hljs-keyword">new</span> RecordUpdateItem(<span class="hljs-number">58178</span>, <span class="hljs-keyword">null</span>, <span class="hljs-keyword">null</span>, record));
+<span class="hljs-keyword">try</span> {
+    BulkRequestResponse bulkRequestResponse = <span class="hljs-keyword">this</span>.passwordAuthRecordManagerment.updateAllRecords(appID, records);
+    UpdateRecordsResponse updateRecordsResponse =  (UpdateRecordsResponse) bulkRequestResponse.getResults().get(<span class="hljs-number">0</span>);
+    System.out.println(<span class="hljs-string">"record ID: "</span> + updateRecordsResponse.getRecords().get(<span class="hljs-number">0</span>).getID());
+    System.out.println(<span class="hljs-string">"revision: "</span> + updateRecordsResponse.getRecords().get(<span class="hljs-number">0</span>).getRevision());
+    <span class="hljs-comment">/*
+    output:
+        record ID: 58178   // record ID
+        revision: 5  // revision
+    */</span>
+} <span class="hljs-keyword">catch</span> (BulksException e) {
+    System.out.println(e.getResults());
+ 
+    <span class="hljs-comment">// Ex: If User update 6000 records:</span>
+    <span class="hljs-comment">// Case 1: If there error occur in record 0</span>
+    <span class="hljs-comment">// Err response:</span>
+    <span class="hljs-comment">// [KintoneAPIException]</span>
+    <span class="hljs-comment">// Case 2: the error occur in record 4000</span>
+    <span class="hljs-comment">// err response</span>
+    <span class="hljs-comment">// [</span>
+    <span class="hljs-comment">//    UpdateRecordsResponse,</span>
+    <span class="hljs-comment">//    UpdateRecordsResponse,</span>
+    <span class="hljs-comment">//    UpdateRecordsResponse,</span>
+    <span class="hljs-comment">//    UpdateRecordsResponse,</span>
+    <span class="hljs-comment">//    UpdateRecordsResponse,</span>
+    <span class="hljs-comment">//    UpdateRecordsResponse,</span>
+    <span class="hljs-comment">//    UpdateRecordsResponse,</span>
+    <span class="hljs-comment">//    UpdateRecordsResponse,</span>
+    <span class="hljs-comment">//    UpdateRecordsResponse,</span>
+    <span class="hljs-comment">//    UpdateRecordsResponse,</span>
+    <span class="hljs-comment">//    UpdateRecordsResponse,</span>
+    <span class="hljs-comment">//    UpdateRecordsResponse,</span>
+    <span class="hljs-comment">//    UpdateRecordsResponse,</span>
+    <span class="hljs-comment">//    UpdateRecordsResponse,</span>
+    <span class="hljs-comment">//    UpdateRecordsResponse,</span>
+    <span class="hljs-comment">//    UpdateRecordsResponse,</span>
+    <span class="hljs-comment">//    UpdateRecordsResponse,</span>
+    <span class="hljs-comment">//    UpdateRecordsResponse,</span>
+    <span class="hljs-comment">//    UpdateRecordsResponse,</span>
+    <span class="hljs-comment">//    UpdateRecordsResponse,</span>
+    <span class="hljs-comment">//    KintoneAPIException</span>
+    <span class="hljs-comment">//  ]</span>
+}
+
+</code></pre>
+<p></details></p>
+<h3><a class="anchor" aria-hidden="true" id="addallrecordsinteger-app-arraylist-hashmap-lt-string-fieldvalue-model-record-record-field-model-fieldvalue-records"></a><a href="#addallrecordsinteger-app-arraylist-hashmap-lt-string-fieldvalue-model-record-record-field-model-fieldvalue-records" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>addAllRecords(Integer app, ArrayList&lt;HashMap&lt;String, <a href="./model/record/record-field-model#fieldvalue">FieldValue</a>&gt;&gt; records)</h3>
+<blockquote>
+<p>Add all records to the kintone app</p>
+</blockquote>
+<p><strong>Parameter</strong></p>
+<table>
+<thead>
+<tr><th>Name</th><th>Type</th><th>Required</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td>app</td><td>Integer</td><td>yes</td><td>The kintone app ID</td></tr>
+<tr><td>records</td><td>Array&lt;HashTable&lt;String, <a href="./model/record/record-field-model#fieldvalue">FieldValue</a>&gt;&gt;</td><td>yes</td><td>The records data which will add to kintone app</td></tr>
+</tbody>
+</table>
+<p><strong>Return</strong></p>
+<p>(none)</p>
+<p><strong>Sample code</strong></p>
+<p><details class="tab-container" open>
+<Summary>update all records</Summary></p>
+<p><strong>Source code</strong></p>
+<pre><code class="hljs css language-java">Integer appID = <span class="hljs-number">114</span>;
+ArrayList&amp;lt;HashMap&amp;lt;String, FieldValue&amp;gt;&amp;gt; records = <span class="hljs-keyword">new</span> ArrayList&amp;lt;HashMap&amp;lt;String, FieldValue&amp;gt;&amp;gt;();
+ 
+HashMap&amp;lt;String, FieldValue&amp;gt; record = <span class="hljs-keyword">new</span> HashMap&amp;lt;String, FieldValue&amp;gt;();
+ 
+FieldValue fv = <span class="hljs-keyword">new</span> FieldValue();
+fv.setType(FieldType.SINGLE_LINE_TEXT);
+fv.setValue(<span class="hljs-string">"test_updateRecords3x"</span>);
+ 
+record.put(<span class="hljs-string">"文字列__1行"</span>, fv);
+records.add(record);
+<span class="hljs-keyword">try</span> {
+    BulkRequestResponse bulkRequestResponse = <span class="hljs-keyword">this</span>.passwordAuthRecordManagerment.addAllRecords(appID, records);
+    AddRecordsResponse addRecordsResponse =  (AddRecordsResponse) bulkRequestResponse.getResults().get(<span class="hljs-number">0</span>);
+    System.out.println(<span class="hljs-string">"record ID: "</span> + addRecordsResponse.getIDs().get(<span class="hljs-number">0</span>));
+    System.out.println(<span class="hljs-string">"revision: "</span> + addRecordsResponse.getRevisions().get(<span class="hljs-number">0</span>));
+    <span class="hljs-comment">/*
+    output:
+        record ID: 58179   // record ID
+        revision: 1  // revision
+    */</span>
+} <span class="hljs-keyword">catch</span> (BulksException e) {
+    System.out.println(e.getResults());
+ 
+    <span class="hljs-comment">// Ex: User update 6000 records:</span>
+    <span class="hljs-comment">// Case 1: If there error occur in record 0</span>
+    <span class="hljs-comment">// err response:[KintoneAPIException]</span>
+    
+    <span class="hljs-comment">// Case 2: the error occur in record 4000</span>
+    <span class="hljs-comment">// err response:</span>
+    <span class="hljs-comment">//  [</span>
+    <span class="hljs-comment">//    AddRecordsResponse,</span>
+    <span class="hljs-comment">//    AddRecordsResponse,</span>
+    <span class="hljs-comment">//    AddRecordsResponse,</span>
+    <span class="hljs-comment">//    AddRecordsResponse,</span>
+    <span class="hljs-comment">//    AddRecordsResponse,</span>
+    <span class="hljs-comment">//    AddRecordsResponse,</span>
+    <span class="hljs-comment">//    AddRecordsResponse,</span>
+    <span class="hljs-comment">//    AddRecordsResponse,</span>
+    <span class="hljs-comment">//    AddRecordsResponse,</span>
+    <span class="hljs-comment">//    AddRecordsResponse,</span>
+    <span class="hljs-comment">//    AddRecordsResponse,</span>
+    <span class="hljs-comment">//    AddRecordsResponse,</span>
+    <span class="hljs-comment">//    AddRecordsResponse,</span>
+    <span class="hljs-comment">//    AddRecordsResponse,</span>
+    <span class="hljs-comment">//    AddRecordsResponse,</span>
+    <span class="hljs-comment">//    AddRecordsResponse,</span>
+    <span class="hljs-comment">//    AddRecordsResponse,</span>
+    <span class="hljs-comment">//    AddRecordsResponse,</span>
+    <span class="hljs-comment">//    AddRecordsResponse,</span>
+    <span class="hljs-comment">//    AddRecordsResponse,</span>
+    <span class="hljs-comment">//    KintoneAPIException</span>
+    <span class="hljs-comment">//  ]</span>
+}
+</code></pre>
+<p></details></p>
+<h2><a class="anchor" aria-hidden="true" id="reference"></a><a href="#reference" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Reference</h2>
+<ul>
+<li><a href="https://developer.kintone.io/hc/en-us/articles/213149287/">Get Record</a> <code>on developer network</code></li>
+<li><a href="https://developer.kintone.io/hc/en-us/articles/212494628/">Add Record</a><code>on developer network</code></li>
+<li><a href="https://developer.kintone.io/hc/en-us/articles/213149027/">Update Record</a><code>on developer network</code></li>
+<li><a href="https://developer.kintone.io/hc/en-us/articles/212494558/">Delete Record</a><code>on developer network</code></li>
+<li><a href="https://developer.kintone.io/hc/en-us/articles/219105188">Get Comments</a><code>on developer network</code></li>
+<li><a href="https://developer.kintone.io/hc/en-us/articles/219501367">Add Comment</a><code>on developer network</code></li>
+<li><a href="https://developer.kintone.io/hc/en-us/articles/219562607">Delete Comment</a><code>on developer network</code></li>
+<li><a href="https://developer.kintone.io/hc/en-us/articles/213149747">Update Record Status</a><code>on developer network</code></li>
+<li><a href="https://developer.kintone.io/hc/en-us/articles/219563427">Update Record Assignees</a><code>on developer network</code></li>
+</ul>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/kintone-java-sdk/docs/0.5.0/reference/connection"><span class="arrow-prev">← </span><span>Connection</span></a><a class="docs-next button" href="/kintone-java-sdk/docs/0.5.0/reference/record-cursor"><span class="function-name-prevnext">RecordCursor</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#constructor">Constructor</a></li><li><a href="#methods">Methods</a><ul class="toc-headings"><li><a href="#getrecordapp-id">getRecord(app, id)</a></li><li><a href="#getrecordsapp-query-fields-totalcount">getRecords(app, query, fields, totalCount)</a></li><li><a href="#getallrecordsbycursorinteger-app-string-query-array-fields">getAllRecordsByCursor(Integer app, String query, Array fields)</a></li><li><a href="#addrecordapp-record">addRecord(app, record)</a></li><li><a href="#addrecordsapp-records">addRecords(app, records)</a></li><li><a href="#updaterecordbyidapp-id-record-revision">updateRecordByID(app, id, record, revision)</a></li><li><a href="#updaterecordbyupdatekeyapp-updatekey-record-revision">updateRecordByUpdateKey(app, updateKey, record, revision)</a></li><li><a href="#updaterecordsapp-records">updateRecords(app, records)</a></li><li><a href="#deleterecordsapp-ids">deleteRecords(app, ids)</a></li><li><a href="#deleterecordswithrevisionapp-idswithrevision">deleteRecordsWithRevision(app, idsWithRevision)</a></li><li><a href="#updaterecordassigneesapp-id-assignees-revision">updateRecordAssignees(app, id, assignees, revision)</a></li><li><a href="#updaterecordstatusapp-id-action-assignee-revision">updateRecordStatus(app, id, action, assignee, revision)</a></li><li><a href="#updaterecordsstatusapp-records">updateRecordsStatus(app, records)</a></li><li><a href="#getcommentsapp-record-order-offset-limit">getComments(app, record, order, offset, limit)</a></li><li><a href="#addcommentapp-record-comment">addComment(app, record, comment)</a></li><li><a href="#deletecommentapp-record-comment">deleteComment(app, record, comment)</a></li><li><a href="#getallrecordsbyqueryapp-query-fields-totalcount">getAllRecordsByQuery(app, query, fields, totalCount)</a></li><li><a href="#deleteallrecordsbyqueryinteger-app-string-query">deleteAllRecordsByQuery(Integer app, String query)</a></li><li><a href="#updateallrecordsinteger-app-arraylist-records">updateAllRecords(Integer app, ArrayList records)</a></li><li><a href="#addallrecordsinteger-app-arraylist-gt-records">addAllRecords(Integer app, ArrayList&gt; records)</a></li></ul></li><li><a href="#reference">Reference</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/kintone-java-sdk/" class="nav-home"><img src="/kintone-java-sdk/img/header.ico" alt="kintone-java-sdk" width="66" height="58"/></a><div><h5>Docs</h5><a href="/kintone-java-sdk/docs/en/doc1.html">Getting Started (or other categories)</a><a href="/kintone-java-sdk/docs/en/doc2.html">Guides (or other categories)</a><a href="/kintone-java-sdk/docs/en/doc3.html">API Reference (or other categories)</a></div><div><h5>Community</h5><a href="/kintone-java-sdk/en/users.html">User Showcase</a><a href="https://stackoverflow.com/questions/tagged/" target="_blank" rel="noreferrer noopener">Stack Overflow</a><a href="https://discordapp.com/">Project Chat</a><a href="https://twitter.com/" target="_blank" rel="noreferrer noopener">Twitter</a></div><div><h5>More</h5><a href="/kintone-java-sdk/blog">Blog</a><a href="https://github.com/">GitHub</a><a class="github-button" data-icon="octicon-star" data-count-href="/facebook/docusaurus/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://opensource.facebook.com/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/kintone-java-sdk/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a><section class="copyright">Copyright © 2019 Cybozu</section></footer></div></body></html>

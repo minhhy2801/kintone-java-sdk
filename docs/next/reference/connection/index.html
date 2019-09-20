@@ -134,12 +134,14 @@ connection.setHeader(key, value);
 <tr><th>Name</th><th>Type</th><th>Required</th><th>Description</th></tr>
 </thead>
 <tbody>
-<tr><td>proxyHost</td><td>String</td><td>yes</td><td>The proxy host name</td></tr>
-<tr><td>proxyPort</td><td>Integer</td><td>yes</td><td>The proxy port number</td></tr>
+<tr><td>host</td><td>String</td><td>yes</td><td>The proxy host name</td></tr>
+<tr><td>port</td><td>Integer</td><td>yes</td><td>The proxy port number</td></tr>
+<tr><td>username</td><td>String</td><td>(optional)</td><td>User name of the proxy</td></tr>
+<tr><td>password</td><td>String</td><td>(optional)</td><td>Password of the proxy</td></tr>
 </tbody>
 </table>
 <p><strong>Return</strong></p>
-<p>(none)</p>
+<p><a href="./connection">Connection</a></p>
 <p><strong>Sample code</strong></p>
 <p><details class="tab-container" open>
 <Summary>Set the proxy of the request</Summary></p>
@@ -182,8 +184,8 @@ connection.setProxy(proxyHost, proxyPort, proxyUsername, proxyPassword);
 </tbody>
 </table>
 <p><strong>Return</strong></p>
-<p><a href="../connection">Connection</a></p>
-<p><strong class="tab-name">Source code</strong></p>
+<p><a href="./connection">Connection</a></p>
+<p><strong>Source code</strong></p>
 <p><details class="tab-container" open>
 <Summary>Set the proxy of the request</Summary></p>
 <p><strong>Source code</strong></p>
