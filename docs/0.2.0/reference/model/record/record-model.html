@@ -1,0 +1,465 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Record Model · kintone-java-sdk</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="General record response, using for data response from the kintone app"/><meta name="docsearch:version" content="0.2.0"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Record Model · kintone-java-sdk"/><meta property="og:type" content="website"/><meta property="og:url" content="https://minhhy2801.github.io/kintone-java-sdk/"/><meta property="og:description" content="General record response, using for data response from the kintone app"/><meta property="og:image" content="https://minhhy2801.github.io/kintone-java-sdk/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://minhhy2801.github.io/kintone-java-sdk/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="/kintone-java-sdk/img/favicon.ico"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><link rel="stylesheet" href="/kintone-java-sdk/css/custom.css"/><script type="text/javascript" src="/kintone-java-sdk/js/extra.js"></script><script src="/kintone-java-sdk/js/scrollSpy.js"></script><link rel="stylesheet" href="/kintone-java-sdk/css/main.css"/><script src="/kintone-java-sdk/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/kintone-java-sdk/"><img class="logo" src="/kintone-java-sdk/img/header.png" alt="kintone-java-sdk"/><h2 class="headerTitleWithLogo">kintone-java-sdk</h2></a><a href="/kintone-java-sdk/versions"><h3>0.2.0</h3></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a target="_self"></a></li></ul></nav></div></header></div></div><div class="navPusher singleRowMobileNav"><div class="docMainWrapper wrapper"><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">Record Model</h1></header><article><div><span><p>General record response, using for data response from the kintone app</p>
+<h2><a class="anchor" aria-hidden="true" id="getrecordresponse"></a><a href="#getrecordresponse" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>GetRecordResponse</h2>
+<h3><a class="anchor" aria-hidden="true" id="methods"></a><a href="#methods" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Methods</h3>
+<h3><a class="anchor" aria-hidden="true" id="getrecord"></a><a href="#getrecord" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>getRecord()</h3>
+<blockquote>
+<p>get the Record data response.</p>
+</blockquote>
+<p><strong>Parameter</strong></p>
+<p>(none)</p>
+<p><strong>Return</strong></p>
+<p>HashMap&lt;String, <a href="./record-field-model#fieldvalue">FieldValue</a>&gt;</p>
+<p><strong>Sample code</strong></p>
+<p><details class="tab-container" open>
+<Summary>get the Record data response.</Summary></p>
+<p><strong>Source code</strong></p>
+<pre><code class="hljs css language-java"><span class="hljs-comment">// execute GET RECORD API</span>
+Integer appID = <span class="hljs-number">1</span>;
+Integer recordID =<span class="hljs-number">1</span>;
+GetRecordResponse response = kintoneRecordManager.getRecord(appID, recordID);
+
+HashMap&lt;String, FieldValue&gt; resultRecord = response.getRecord();
+</code></pre>
+<p></details></p>
+<h2><a class="anchor" aria-hidden="true" id="getrecordsresponse"></a><a href="#getrecordsresponse" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>GetRecordsResponse</h2>
+<h3><a class="anchor" aria-hidden="true" id="methods-1"></a><a href="#methods-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Methods</h3>
+<h3><a class="anchor" aria-hidden="true" id="getrecords"></a><a href="#getrecords" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>getRecords()</h3>
+<blockquote>
+<p>get the Records data response.</p>
+</blockquote>
+<p><strong>Parameter</strong></p>
+<p>(none)</p>
+<p><strong>Return</strong></p>
+<p>ArrayList&lt;HashMap&lt;String, <a href="./record-field-model#fieldvalue">FieldValue</a>&gt;&gt;</p>
+<p><strong>Sample code</strong></p>
+<p><details class="tab-container" open>
+<Summary>get the Records data response</Summary></p>
+<p><strong>Source code</strong></p>
+<pre><code class="hljs css language-java"><span class="hljs-comment">// execute GET RECORDS API</span>
+Integer appID = <span class="hljs-number">1</span>;
+String query = <span class="hljs-string">"$id &gt;="</span> +  <span class="hljs-number">1</span> + <span class="hljs-string">"and $id &lt;="</span> + <span class="hljs-number">10</span> + <span class="hljs-string">"order by $id asc"</span>;
+GetRecordsResponse response = kintoneRecordManager.getRecords(appID, query, <span class="hljs-keyword">null</span>, <span class="hljs-keyword">true</span>);
+
+ArrayList&lt;HashMap&lt;String, FieldValue&gt;&gt; resultRecords = response.getRecords();
+</code></pre>
+<p></details></p>
+<h3><a class="anchor" aria-hidden="true" id="gettotalcount"></a><a href="#gettotalcount" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>getTotalCount()</h3>
+<blockquote>
+<p>get the number of records response.</p>
+</blockquote>
+<p><strong>Parameter</strong></p>
+<p>(none)</p>
+<p><strong>Return</strong></p>
+<p>Integer</p>
+<p><strong>Sample code</strong></p>
+<p><details class="tab-container" open>
+<Summary>get the number of records response</Summary></p>
+<p><strong>Source code</strong></p>
+<pre><code class="hljs css language-java"><span class="hljs-comment">// execute GET RECORDS API</span>
+Integer appID = <span class="hljs-number">1</span>;
+String query = <span class="hljs-string">"$id &gt;="</span> +  <span class="hljs-number">1</span> + <span class="hljs-string">"and $id &lt;="</span> + <span class="hljs-number">10</span> + <span class="hljs-string">"order by $id asc"</span>;
+GetRecordsResponse response = kintoneRecordManager.getRecords(appID, query, <span class="hljs-keyword">null</span>, <span class="hljs-keyword">true</span>);
+
+Integer count =  response.getTotalCount();
+</code></pre>
+<p></details></p>
+<h2><a class="anchor" aria-hidden="true" id="addrecordresponse"></a><a href="#addrecordresponse" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>AddRecordResponse</h2>
+<h3><a class="anchor" aria-hidden="true" id="methods-2"></a><a href="#methods-2" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Methods</h3>
+<h3><a class="anchor" aria-hidden="true" id="getid"></a><a href="#getid" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>getID()</h3>
+<blockquote>
+<p>get the the ID of record added.</p>
+</blockquote>
+<p><strong>Parameter</strong></p>
+<p>(none)</p>
+<p><strong>Return</strong></p>
+<p>Integer</p>
+<p><strong>Sample code</strong></p>
+<p><details class="tab-container" open>
+<Summary>get the the ID of record added</Summary></p>
+<p><strong>Source code</strong></p>
+<pre><code class="hljs css language-java"><span class="hljs-comment">// execute ADD RECORD API</span>
+Integer appID = <span class="hljs-number">1</span>;
+HashMap&lt;String, FieldValue&gt; record = <span class="hljs-keyword">new</span> HashMap&lt;String, FieldValue&gt;();
+
+FieldValue fv = <span class="hljs-keyword">new</span> FieldValue();
+fv.setType(FieldType.SINGLE_LINE_TEXT);
+fv.setValue(<span class="hljs-string">"sample_AddRecord"</span>);
+record.put(<span class="hljs-string">"FieldCode1"</span>, fv);
+
+AddRecordResponse response = kintoneRecordManager.addRecord(appID, record);
+
+Integer resultID = response.getID();
+</code></pre>
+<p></details></p>
+<h3><a class="anchor" aria-hidden="true" id="getrevision"></a><a href="#getrevision" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>getRevision()</h3>
+<blockquote>
+<p>get the revision number of record added.</p>
+</blockquote>
+<p><strong>Parameter</strong></p>
+<p>(none)</p>
+<p><strong>Return</strong></p>
+<p>Integer</p>
+<p><strong>Sample code</strong></p>
+<p><details class="tab-container" open>
+<Summary>get the revision number of record added</Summary></p>
+<p><strong>Source code</strong></p>
+<pre><code class="hljs css language-java"><span class="hljs-comment">// execute ADD RECORD API</span>
+Integer appID = <span class="hljs-number">1</span>;
+HashMap&lt;String, FieldValue&gt; record = <span class="hljs-keyword">new</span> HashMap&lt;String, FieldValue&gt;();
+
+FieldValue fv = <span class="hljs-keyword">new</span> FieldValue();
+fv.setType(FieldType.SINGLE_LINE_TEXT);
+fv.setValue(<span class="hljs-string">"sample_AddRecord"</span>);
+record.put(<span class="hljs-string">"FieldCode1"</span>, fv);
+
+AddRecordResponse response = kintoneRecordManager.addRecord(appID, record);
+
+Integer resultRevision = response.getRevision();
+</code></pre>
+<p></details></p>
+<h2><a class="anchor" aria-hidden="true" id="addrecordsresponse"></a><a href="#addrecordsresponse" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>AddRecordsResponse</h2>
+<h3><a class="anchor" aria-hidden="true" id="methods-3"></a><a href="#methods-3" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Methods</h3>
+<h3><a class="anchor" aria-hidden="true" id="getids"></a><a href="#getids" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>getIDs()</h3>
+<blockquote>
+<p>get the array of added records ID.</p>
+</blockquote>
+<p><strong>Parameter</strong></p>
+<p>(none)</p>
+<p><strong>Return</strong></p>
+<p>ArrayList&lt;Integer&gt;</p>
+<p><strong>Sample code</strong></p>
+<p><details class="tab-container" open>
+<Summary>get the array of added records ID</Summary></p>
+<p><strong>Source code</strong></p>
+<pre><code class="hljs css language-java"><span class="hljs-comment">// execute ADD RECORDS API</span>
+Integer appID = <span class="hljs-number">1</span>;
+ArrayList&lt;HashMap&lt;String, FieldValue&gt;&gt; records = <span class="hljs-keyword">new</span> ArrayList&lt;HashMap&lt;String, FieldValue&gt;&gt;();
+HashMap&lt;String, FieldValue&gt; record1 = <span class="hljs-keyword">new</span> HashMap&lt;String, FieldValue&gt;();
+HashMap&lt;String, FieldValue&gt; record2 = <span class="hljs-keyword">new</span> HashMap&lt;String, FieldValue&gt;();
+
+FieldValue fv = <span class="hljs-keyword">new</span> FieldValue();
+fv.setType(FieldType.SINGLE_LINE_TEXT);
+fv.setValue(<span class="hljs-string">"sample_AddRecords1"</span>);
+
+FieldValue fv2 = <span class="hljs-keyword">new</span> FieldValue();
+fv2.setType(FieldType.SINGLE_LINE_TEXT);
+fv2.setValue(<span class="hljs-string">"sample_AddRecords2"</span>);
+
+record1.put(<span class="hljs-string">"FieldCode1"</span>, fv);
+record2.put(<span class="hljs-string">"FieldCode1"</span>, fv2);
+
+records.add(record1);
+records.add(record2);
+
+AddRecordsResponse response = kintoneRecordManager.addRecords(appID, records);
+
+ArrayList&lt;Integer&gt; resultIDs = response.getIDs();
+</code></pre>
+<p></details></p>
+<h3><a class="anchor" aria-hidden="true" id="getrevisions"></a><a href="#getrevisions" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>getRevisions()</h3>
+<blockquote>
+<p>get the array of added records revision number.</p>
+</blockquote>
+<p><strong>Parameter</strong></p>
+<p>(none)</p>
+<p><strong>Return</strong></p>
+<p>ArrayList&lt;Integer&gt;</p>
+<p><strong>Sample code</strong></p>
+<p><details class="tab-container" open>
+<Summary>get the array of added records revision number</Summary></p>
+<p><strong>Source code</strong></p>
+<pre><code class="hljs css language-java"><span class="hljs-comment">// execute ADD RECORDS API</span>
+Integer appID = <span class="hljs-number">1</span>;
+ArrayList&lt;HashMap&lt;String, FieldValue&gt;&gt; records = <span class="hljs-keyword">new</span> ArrayList&lt;HashMap&lt;String, FieldValue&gt;&gt;();
+HashMap&lt;String, FieldValue&gt; record1 = <span class="hljs-keyword">new</span> HashMap&lt;String, FieldValue&gt;();
+HashMap&lt;String, FieldValue&gt; record2 = <span class="hljs-keyword">new</span> HashMap&lt;String, FieldValue&gt;();
+
+FieldValue fv = <span class="hljs-keyword">new</span> FieldValue();
+fv.setType(FieldType.SINGLE_LINE_TEXT);
+fv.setValue(<span class="hljs-string">"sample_AddRecords1"</span>);
+
+FieldValue fv2 = <span class="hljs-keyword">new</span> FieldValue();
+fv2.setType(FieldType.SINGLE_LINE_TEXT);
+fv2.setValue(<span class="hljs-string">"sample_AddRecords2"</span>);
+
+record1.put(<span class="hljs-string">"FieldCode1"</span>, fv);
+record2.put(<span class="hljs-string">"FieldCode1"</span>, fv2);
+
+records.add(record1);
+records.add(record2);
+
+AddRecordsResponse response = kintoneRecordManager.addRecords(appID, records);
+
+ArrayList&lt;Integer&gt; resultRevisions = response.getRevisions();
+</code></pre>
+<p></details></p>
+<h2><a class="anchor" aria-hidden="true" id="updaterecordresponse"></a><a href="#updaterecordresponse" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>UpdateRecordResponse</h2>
+<h3><a class="anchor" aria-hidden="true" id="methods-4"></a><a href="#methods-4" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Methods</h3>
+<h3><a class="anchor" aria-hidden="true" id="getrevision-1"></a><a href="#getrevision-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>getRevision()</h3>
+<blockquote>
+<p>get the revision number of record updated.</p>
+</blockquote>
+<p><strong>Parameter</strong></p>
+<p>(none)</p>
+<p><strong>Return</strong></p>
+<p>Integer</p>
+<p><strong>Sample code</strong></p>
+<p><details class="tab-container" open>
+<Summary>get the revision number of record updated</Summary></p>
+<p><strong>Source code</strong></p>
+<pre><code class="hljs css language-java"><span class="hljs-comment">// execute UPDATE RECORD API</span>
+Integer appID = <span class="hljs-number">1</span>;
+Integer recordID = <span class="hljs-number">1</span>;
+HashMap&lt;String, FieldValue&gt; record = <span class="hljs-keyword">new</span> HashMap&lt;String, FieldValue&gt;();
+Integer revision = <span class="hljs-number">1</span>;
+
+FieldValue fv = <span class="hljs-keyword">new</span> FieldValue();
+fv.setType(FieldType.SINGLE_LINE_TEXT);
+fv.setValue(<span class="hljs-string">"sample_updateRecordById"</span>);
+
+record.put(<span class="hljs-string">"FieldCode1"</span>, fv);
+
+UpdateRecordResponse response = kintoneRecordManager.updateRecordByID(appID, recordID, record, revision);
+
+Integer resultRevision = response.getRevision();
+</code></pre>
+<p></details></p>
+<h2><a class="anchor" aria-hidden="true" id="updaterecordsresponse"></a><a href="#updaterecordsresponse" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>UpdateRecordsResponse</h2>
+<h3><a class="anchor" aria-hidden="true" id="methods-5"></a><a href="#methods-5" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Methods</h3>
+<h3><a class="anchor" aria-hidden="true" id="getrecords-1"></a><a href="#getrecords-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>getRecords()</h3>
+<blockquote>
+<p>get the array of added records ID with revision.</p>
+</blockquote>
+<p><strong>Parameter</strong></p>
+<p>(none)</p>
+<p><strong>Return</strong></p>
+<p>ArrayList&lt;<a href="#recordupdateresponseitem">RecordUpdateResponseItem</a>&gt;</p>
+<p><strong>Sample code</strong></p>
+<p><details class="tab-container" open>
+<Summary>get the array of added records ID with revision</Summary></p>
+<p><strong>Source code</strong></p>
+<pre><code class="hljs css language-java"><span class="hljs-comment">// execute UPDATE RECORDS API</span>
+Integer appID = <span class="hljs-number">1</span>;
+HashMap&lt;String, FieldValue&gt; record1 = <span class="hljs-keyword">new</span> HashMap&lt;String, FieldValue&gt;();
+HashMap&lt;String, FieldValue&gt; record2 = <span class="hljs-keyword">new</span> HashMap&lt;String, FieldValue&gt;();
+
+Integer recordId1 = <span class="hljs-number">1</span>;
+Integer recordId2 = <span class="hljs-number">2</span>;
+
+FieldValue fv1 = <span class="hljs-keyword">new</span> FieldValue();
+fv1.setType(FieldType.SINGLE_LINE_TEXT);
+fv1.setValue(<span class="hljs-string">"test_updateRecords1"</span>);
+
+FieldValue fv2 = <span class="hljs-keyword">new</span> FieldValue();
+fv2.setType(FieldType.SINGLE_LINE_TEXT);
+fv2.setValue(<span class="hljs-string">"test_updateRecords2"</span>);
+
+record1.put(<span class="hljs-string">"FieldCode1"</span>, fv1);
+record2.put(<span class="hljs-string">"FieldCode1"</span>, fv2);
+
+ArrayList&lt;RecordUpdateItem&gt; records = <span class="hljs-keyword">new</span> ArrayList&lt;RecordUpdateItem&gt;();
+records.add(<span class="hljs-keyword">new</span> RecordUpdateItem(recordId1, <span class="hljs-keyword">null</span>, <span class="hljs-keyword">null</span>, record1));
+records.add(<span class="hljs-keyword">new</span> RecordUpdateItem(recordId2, <span class="hljs-keyword">null</span>, <span class="hljs-keyword">null</span>, record2));
+
+UpdateRecordsResponse response = kintoneRecordManager.updateRecords(appID, records);
+
+ArrayList&lt;RecordUpdateResponseItem&gt; resultRuris = response.getRecords();
+</code></pre>
+<p></details></p>
+<h2><a class="anchor" aria-hidden="true" id="recordupdateresponseitem"></a><a href="#recordupdateresponseitem" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>RecordUpdateResponseItem</h2>
+<h3><a class="anchor" aria-hidden="true" id="methods-6"></a><a href="#methods-6" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Methods</h3>
+<h3><a class="anchor" aria-hidden="true" id="getid-1"></a><a href="#getid-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>getID()</h3>
+<blockquote>
+<p>get the the ID of record updated.</p>
+</blockquote>
+<p><strong>Parameter</strong></p>
+<p>(none)</p>
+<p><strong>Return</strong></p>
+<p>Integer</p>
+<p><strong>Sample code</strong></p>
+<p><details class="tab-container" open>
+<Summary>get the the ID of record updated</Summary></p>
+<p><strong>Source code</strong></p>
+<pre><code class="hljs css language-java"><span class="hljs-comment">// execute UPDATE RECORDS API</span>
+Integer appID = <span class="hljs-number">1</span>;
+HashMap&lt;String, FieldValue&gt; record1 = <span class="hljs-keyword">new</span> HashMap&lt;String, FieldValue&gt;();
+HashMap&lt;String, FieldValue&gt; record2 = <span class="hljs-keyword">new</span> HashMap&lt;String, FieldValue&gt;();
+
+Integer recordId1 = <span class="hljs-number">1</span>;
+Integer recordId2 = <span class="hljs-number">2</span>;
+
+FieldValue fv1 = <span class="hljs-keyword">new</span> FieldValue();
+fv1.setType(FieldType.SINGLE_LINE_TEXT);
+fv1.setValue(<span class="hljs-string">"test_updateRecords1"</span>);
+
+FieldValue fv2 = <span class="hljs-keyword">new</span> FieldValue();
+fv2.setType(FieldType.SINGLE_LINE_TEXT);
+fv2.setValue(<span class="hljs-string">"test_updateRecords2"</span>);
+
+record1.put(<span class="hljs-string">"FieldCode1"</span>, fv1);
+record2.put(<span class="hljs-string">"FieldCode1"</span>, fv2);
+
+ArrayList&lt;RecordUpdateItem&gt; records = ArrayList&lt;RecordUpdateItem&gt;();
+records.add(<span class="hljs-keyword">new</span> RecordUpdateItem(recordId1, <span class="hljs-keyword">null</span>, <span class="hljs-keyword">null</span>, record1));
+records.add(<span class="hljs-keyword">new</span> RecordUpdateItem(recordId2, <span class="hljs-keyword">null</span>, <span class="hljs-keyword">null</span>, record2));
+
+UpdateRecordsResponse response = kintoneRecordManager.updateRecords(appID, records);
+
+ArrayList&lt;RecordUpdateResponseItem&gt; resultRuris = response.getRecords();
+RecordUpdateResponseItem resultRusi = resultRuris.get(<span class="hljs-number">0</span>);
+
+Integer resultID = resultRusi.getID();
+</code></pre>
+<p></details></p>
+<h3><a class="anchor" aria-hidden="true" id="getrevision-2"></a><a href="#getrevision-2" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>getRevision()</h3>
+<blockquote>
+<p>get the revision number of record updated.</p>
+</blockquote>
+<p><strong>Parameter</strong></p>
+<p>(none)</p>
+<p><strong>Return</strong></p>
+<p>Integer</p>
+<p><strong>Sample code</strong></p>
+<p><details class="tab-container" open>
+<Summary>get the revision number of record updated</Summary></p>
+<p><strong>Source code</strong></p>
+<pre><code class="hljs css language-java"><span class="hljs-comment">// execute UPDATE RECORDS API</span>
+Integer appID = <span class="hljs-number">1</span>;
+HashMap&lt;String, FieldValue&gt; record1 = <span class="hljs-keyword">new</span> HashMap&lt;String, FieldValue&gt;();
+HashMap&lt;String, FieldValue&gt; record2 = <span class="hljs-keyword">new</span> HashMap&lt;String, FieldValue&gt;();
+
+Integer recordId1 = <span class="hljs-number">1</span>;
+Integer recordId2 = <span class="hljs-number">2</span>;
+
+FieldValue fv1 = <span class="hljs-keyword">new</span> FieldValue();
+fv1.setType(FieldType.SINGLE_LINE_TEXT);
+fv1.setValue(<span class="hljs-string">"test_updateRecords1"</span>);
+
+FieldValue fv2 = <span class="hljs-keyword">new</span> FieldValue();
+fv2.setType(FieldType.SINGLE_LINE_TEXT);
+fv2.setValue(<span class="hljs-string">"test_updateRecords2"</span>);
+
+record1.put(<span class="hljs-string">"FieldCode1"</span>, fv1);
+record2.put(<span class="hljs-string">"FieldCode1"</span>, fv2);
+
+ArrayList&lt;RecordUpdateItem&gt; records = <span class="hljs-keyword">new</span> ArrayList&lt;RecordUpdateItem&gt;();
+records.add(<span class="hljs-keyword">new</span> RecordUpdateItem(recordId1, <span class="hljs-keyword">null</span>, <span class="hljs-keyword">null</span>, record1));
+records.add(<span class="hljs-keyword">new</span> RecordUpdateItem(recordId2, <span class="hljs-keyword">null</span>, <span class="hljs-keyword">null</span>, record2));
+
+UpdateRecordsResponse response = kintoneRecordManager.updateRecords(appID, records);
+
+ArrayList&lt;RecordUpdateResponseItem&gt; resultRuris = response.getRecords();
+RecordUpdateResponseItem resultRusi = resultRuris.get(<span class="hljs-number">0</span>);
+
+Integer resultRevision = resultRusi.getRevision();
+</code></pre>
+<p></details></p>
+<h2><a class="anchor" aria-hidden="true" id="recordupdateitem"></a><a href="#recordupdateitem" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>RecordUpdateItem</h2>
+<h3><a class="anchor" aria-hidden="true" id="constructor"></a><a href="#constructor" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Constructor</h3>
+<p><strong>Parameter</strong></p>
+<table>
+<thead>
+<tr><th>Name</th><th>type</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td>id</td><td>Integer</td><td>The ID of the record.</td></tr>
+<tr><td>revision</td><td>Integer</td><td>The revision number of the record.</td></tr>
+<tr><td>updateKey</td><td><a href="#recordupdatekey">RecordUpdateKey</a></td><td>The unique key of the record to be updated. Required, if id will not be specified. To specify this field, the field must have the &quot;Prohibit duplicate values&quot; option turned on.</td></tr>
+<tr><td>record</td><td>HashMap&lt;String, <a href="./record-field-model#fieldvalue">FieldValue</a>&gt;</td><td>The data to update record.</td></tr>
+</tbody>
+</table>
+<p><strong>Sample code</strong></p>
+<p><details class="tab-container" open>
+<Summary>init RecordUpdateItem class</Summary></p>
+<p><strong>Source code</strong></p>
+<pre><code class="hljs css language-java"><span class="hljs-comment">// execute UPDATE RECORDS API</span>
+Integer appID = <span class="hljs-number">1</span>;
+HashMap&lt;String, FieldValue&gt; record1 = <span class="hljs-keyword">new</span> HashMap&lt;String, FieldValue&gt;();
+HashMap&lt;String, FieldValue&gt; record2 = <span class="hljs-keyword">new</span> HashMap&lt;String, FieldValue&gt;();
+
+Integer recordId1 = <span class="hljs-number">1</span>;
+Integer recordId2 = <span class="hljs-number">2</span>;
+
+FieldValue fv1 = <span class="hljs-keyword">new</span> FieldValue();
+fv1.setType(FieldType.SINGLE_LINE_TEXT);
+fv1.setValue(<span class="hljs-string">"test_updateRecords1"</span>);
+
+FieldValue fv2 = <span class="hljs-keyword">new</span> FieldValue();
+fv2.setType(FieldType.SINGLE_LINE_TEXT);
+fv2.setValue(<span class="hljs-string">"test_updateRecords2"</span>);
+
+record1.put(<span class="hljs-string">"FieldCode1"</span>, fv1);
+record2.put(<span class="hljs-string">"FieldCode1"</span>, fv2);
+
+RecordUpdateItem updateItem1 = <span class="hljs-keyword">new</span> RecordUpdateItem(recordId1, <span class="hljs-keyword">null</span>, <span class="hljs-keyword">null</span>, record1);
+RecordUpdateItem updateItem2 = <span class="hljs-keyword">new</span> RecordUpdateItem(recordId2, <span class="hljs-keyword">null</span>, <span class="hljs-keyword">null</span>, record2);
+
+ArrayList&lt;RecordUpdateItem&gt; records = <span class="hljs-keyword">new</span> ArrayList&lt;RecordUpdateItem&gt;();
+records.add(updateItem1);
+records.add(updateItem2);
+
+UpdateRecordsResponse response = kintoneRecordManager.updateRecords(appID, records);
+</code></pre>
+<p></details></p>
+<h3><a class="anchor" aria-hidden="true" id="methods-7"></a><a href="#methods-7" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Methods</h3>
+<p>(none)</p>
+<h2><a class="anchor" aria-hidden="true" id="recordupdatekey"></a><a href="#recordupdatekey" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>RecordUpdateKey</h2>
+<h3><a class="anchor" aria-hidden="true" id="constructor-1"></a><a href="#constructor-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Constructor</h3>
+<p><strong>Parameter</strong></p>
+<table>
+<thead>
+<tr><th>Name</th><th>type</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td>field</td><td>String</td><td>The field code of unique key in the kintone app.</td></tr>
+<tr><td>value</td><td>String</td><td>The field value in the record.</td></tr>
+</tbody>
+</table>
+<p><strong>Sample code</strong></p>
+<p><details class="tab-container" open>
+<Summary>init RecordUpdateKey class</Summary></p>
+<p><strong>Source code</strong></p>
+<pre><code class="hljs css language-java">
+String field = <span class="hljs-string">"field_code"</span>;
+String value = <span class="hljs-string">"unique_value1"</span>;
+RecordUpdateKey uKey = <span class="hljs-keyword">new</span> RecordUpdateKey(field, value);
+</code></pre>
+<p></details></p>
+<h3><a class="anchor" aria-hidden="true" id="methods-8"></a><a href="#methods-8" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Methods</h3>
+<p>(none)</p>
+<h2><a class="anchor" aria-hidden="true" id="recordupdatestatusitem"></a><a href="#recordupdatestatusitem" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>RecordUpdateStatusItem</h2>
+<h3><a class="anchor" aria-hidden="true" id="constructor-2"></a><a href="#constructor-2" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Constructor</h3>
+<p><strong>Parameter</strong></p>
+<table>
+<thead>
+<tr><th>Name</th><th>type</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td>action</td><td>String</td><td>The Action name of the action you want.</td></tr>
+<tr><td>assignee</td><td>String</td><td>(Optional) The next Assignee. Specify the Assignee's log in name..</td></tr>
+<tr><td>id</td><td>Integer</td><td>The record ID.</td></tr>
+<tr><td>revision</td><td>Integer</td><td>(Optional) The revision number of the record before updating the status.If the specified revision is not the latest revision, the request will result in an error.</td></tr>
+</tbody>
+</table>
+<p><strong>Sample code</strong></p>
+<p><details class="tab-container" open>
+<Summary>init RecordUpdateStatusItem class</Summary></p>
+<p><strong>Source code</strong></p>
+<pre><code class="hljs css language-java"><span class="hljs-comment">// execute UPDATE RECORDS API</span>
+Integer appID = <span class="hljs-number">1</span>;
+String action = <span class="hljs-string">"処理開始"</span>;
+String assignee = <span class="hljs-string">"sample_user1"</span>;
+Integer recordID =<span class="hljs-number">1</span>;
+Integer revision = <span class="hljs-number">1</span>;
+
+ArrayList&lt;RecordUpdateStatusItem&gt; rusi = <span class="hljs-keyword">new</span> ArrayList&lt;RecordUpdateStatusItem&gt;();
+
+RecordUpdateStatusItem updateStatusItem = <span class="hljs-keyword">new</span> RecordUpdateStatusItem(action, assignee, recordID, revision);
+
+rusi.add(updateStatusItem);
+UpdateRecordsResponse response = kintoneRecordManager.updateRecordsStatus(appID, rusi);
+</code></pre>
+<p></details></p>
+<h3><a class="anchor" aria-hidden="true" id="methods-9"></a><a href="#methods-9" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Methods</h3>
+<p>(none)</p>
+</span></div></article></div><div class="docs-prevnext"></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#getrecordresponse">GetRecordResponse</a><ul class="toc-headings"><li><a href="#methods">Methods</a></li><li><a href="#getrecord">getRecord()</a></li></ul></li><li><a href="#getrecordsresponse">GetRecordsResponse</a><ul class="toc-headings"><li><a href="#methods-1">Methods</a></li><li><a href="#getrecords">getRecords()</a></li><li><a href="#gettotalcount">getTotalCount()</a></li></ul></li><li><a href="#addrecordresponse">AddRecordResponse</a><ul class="toc-headings"><li><a href="#methods-2">Methods</a></li><li><a href="#getid">getID()</a></li><li><a href="#getrevision">getRevision()</a></li></ul></li><li><a href="#addrecordsresponse">AddRecordsResponse</a><ul class="toc-headings"><li><a href="#methods-3">Methods</a></li><li><a href="#getids">getIDs()</a></li><li><a href="#getrevisions">getRevisions()</a></li></ul></li><li><a href="#updaterecordresponse">UpdateRecordResponse</a><ul class="toc-headings"><li><a href="#methods-4">Methods</a></li><li><a href="#getrevision-1">getRevision()</a></li></ul></li><li><a href="#updaterecordsresponse">UpdateRecordsResponse</a><ul class="toc-headings"><li><a href="#methods-5">Methods</a></li><li><a href="#getrecords-1">getRecords()</a></li></ul></li><li><a href="#recordupdateresponseitem">RecordUpdateResponseItem</a><ul class="toc-headings"><li><a href="#methods-6">Methods</a></li><li><a href="#getid-1">getID()</a></li><li><a href="#getrevision-2">getRevision()</a></li></ul></li><li><a href="#recordupdateitem">RecordUpdateItem</a><ul class="toc-headings"><li><a href="#constructor">Constructor</a></li><li><a href="#methods-7">Methods</a></li></ul></li><li><a href="#recordupdatekey">RecordUpdateKey</a><ul class="toc-headings"><li><a href="#constructor-1">Constructor</a></li><li><a href="#methods-8">Methods</a></li></ul></li><li><a href="#recordupdatestatusitem">RecordUpdateStatusItem</a><ul class="toc-headings"><li><a href="#constructor-2">Constructor</a></li><li><a href="#methods-9">Methods</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/kintone-java-sdk/" class="nav-home"><img src="/kintone-java-sdk/img/header.ico" alt="kintone-java-sdk" width="66" height="58"/></a><div><h5>Docs</h5><a href="/kintone-java-sdk/docs/en/doc1.html">Getting Started (or other categories)</a><a href="/kintone-java-sdk/docs/en/doc2.html">Guides (or other categories)</a><a href="/kintone-java-sdk/docs/en/doc3.html">API Reference (or other categories)</a></div><div><h5>Community</h5><a href="/kintone-java-sdk/en/users.html">User Showcase</a><a href="https://stackoverflow.com/questions/tagged/" target="_blank" rel="noreferrer noopener">Stack Overflow</a><a href="https://discordapp.com/">Project Chat</a><a href="https://twitter.com/" target="_blank" rel="noreferrer noopener">Twitter</a></div><div><h5>More</h5><a href="/kintone-java-sdk/blog">Blog</a><a href="https://github.com/">GitHub</a><a class="github-button" data-icon="octicon-star" data-count-href="/facebook/docusaurus/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://opensource.facebook.com/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/kintone-java-sdk/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a><section class="copyright">Copyright © 2019 Cybozu</section></footer></div></body></html>
