@@ -13,7 +13,7 @@ sidebar_label: Connection
 | Name| Type| Required| Description |
 | --- | --- | --- | --- |
 | domain | String | yes | The Domain name or FQDN
-| auth | [Auth](../authentication) | yes | The authentication object
+| auth | [Auth](./authentication) | yes | The authentication object
 | guestSpaceID | Integer | (optional) | The guest space id. Use this parameter to connect to kintone guest space.
 
 **Sample code**

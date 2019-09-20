@@ -46,7 +46,7 @@ Auth kintoneAuth = new Auth();
 
 **Return**
 
-[Auth](../authentication)
+[Auth](./authentication)
 
 **Sample code**
 
@@ -76,7 +76,7 @@ kintoneAuth.setPasswordAuth(username, password);
 
 **Return**
 
-[Auth](../authentication)
+[Auth](./authentication)
 
 
 <details class="tab-container" open>
@@ -105,7 +105,7 @@ kintoneAuth.setApiToken(apiToken);
 
 **Return**
 
-[Auth](../authentication)
+[Auth](./authentication)
 
 **Sample code**
 
