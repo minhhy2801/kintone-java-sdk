@@ -1,7 +1,8 @@
 ---
-id: app-model
+id: version-0.2.0-app-model
 title: AppModel
 sidebar_label: AppModel
+original_id: app-model
 ---
 
 Gets the basic information about the app.

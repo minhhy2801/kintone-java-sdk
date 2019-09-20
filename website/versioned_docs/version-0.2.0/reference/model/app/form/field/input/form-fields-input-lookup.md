@@ -1,7 +1,8 @@
 ---
-id: form-fields-input-time
-title: Time
-sidebar_label: Time
+id: version-0.2.0-form-fields-input-lookup
+title: Lookup
+sidebar_label: Lookup
+original_id: form-fields-input-lookup
 ---
 
 Get a list of fields and their settings.
@@ -9,16 +10,16 @@ Get a list of fields and their settings.
 >- Permissions to view the App is needed.
 >- API Tokens cannot be used with this API.
 
-## DateField
+## LookupField
 
 !!! warning
     - extend the abstract class  "[AbstractInputField](./form-fields-input#abstractinputfield)"
 
 ### Methods
 
-### getUnique()
+### getLookup()
 
-Get the unique
+Get the lookup
 
 **Parameter**
 
@@ -26,11 +27,27 @@ Get the unique
 
 **Return**
 
-Boolean
+[LookupItem](#lookupitem)
 
-### getDefaultValue()
+## LookupItem
 
-Get the defaultValue
+### Methods
+
+### getFieldMapping()
+
+Get the fieldMapping
+
+**Parameter**
+
+(none)
+
+**Return**
+
+List<[FieldMapping](../form-fields/#fieldmapping)\>
+
+### getFilterCond()
+
+Get the filterCond
 
 **Parameter**
 
@@ -40,28 +57,9 @@ Get the defaultValue
 
 String
 
-### getDefaultNowValue()
+### getLookupPickerFields()
 
-Get the defaultNowValue
-
-**Parameter**
-
-(none)
-
-**Return**
-
-Boolean
-
-## DateTimeField
-
-!!! warning
-    - extend the abstract class  "[AbstractInputField](./form-fields-input#abstractinputfield)"
-
-### Methods
-
-### getUnique()
-
-Get the unique
+Get the lookupPickerFields
 
 **Parameter**
 
@@ -69,23 +67,11 @@ Get the unique
 
 **Return**
 
-Boolean
+List<String\>
 
-### getDefaultValue()
+### getRelatedApp()
 
-Get the defaultValue
-
-**Parameter**
-
-(none)
-
-**Return**
-
-String
-
-### getDefaultNowValue()
-
-Get the defaultNowValue
+Get the relatedApp
 
 **Parameter**
 
@@ -93,18 +79,13 @@ Get the defaultNowValue
 
 **Return**
 
-Boolean
+[RelatedApp](../../form-fields-related_record#relatedapp)
 
-## TimeField
+**Sample code**
 
-!!! warning
-    - extend the abstract class  "[AbstractInputField](./form-fields-input#abstractinputfield)"
+### getRelatedKeyField()
 
-### Methods
-
-### getDefaultValue()
-
-Get the defaultValue
+Get the relatedKeyField
 
 **Parameter**
 
@@ -114,9 +95,9 @@ Get the defaultValue
 
 String
 
-### getDefaultNowValue()
+### getSort()
 
-Get the defaultNowValue
+Get the sort
 
 **Parameter**
 
@@ -124,7 +105,7 @@ Get the defaultNowValue
 
 **Return**
 
-Boolean
+String
 
 ## Reference
 

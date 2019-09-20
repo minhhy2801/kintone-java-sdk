@@ -1,7 +1,8 @@
 ---
-id: form-fields-input-selection
+id: version-0.2.0-form-fields-input-selection
 title: Selection
 sidebar_label: Selection
+original_id: form-fields-input-selection
 ---
 
 Get a list of fields and their settings.

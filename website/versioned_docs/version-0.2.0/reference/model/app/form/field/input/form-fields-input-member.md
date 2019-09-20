@@ -1,7 +1,8 @@
 ---
-id: form-fields-input-member
+id: version-0.2.0-form-fields-input-member
 title: Member
 sidebar_label: Member
+original_id: form-fields-input-member
 ---
 
 Get a list of fields and their settings.

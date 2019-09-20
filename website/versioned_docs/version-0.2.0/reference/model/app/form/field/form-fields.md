@@ -1,7 +1,8 @@
 ---
-id: form-fields
+id: version-0.2.0-form-fields
 title: Form Fields
 sidebar_label: FormFields
+original_id: form-fields
 ---
 
 Get a list of fields and their settings.

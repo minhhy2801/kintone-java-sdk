@@ -1,7 +1,8 @@
 ---
-id: app
+id: version-0.2.0-app
 title: App
 sidebar_label: App
+original_id: app
 ---
 
 Gets general information of an App, including the name, description, related Space, creator and updater information.

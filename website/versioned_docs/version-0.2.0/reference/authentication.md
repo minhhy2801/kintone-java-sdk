@@ -1,7 +1,8 @@
 ---
-id: authentication
+id: version-0.2.0-authentication
 title: Authentication
 sidebar_label: Authentication
+original_id: authentication
 ---
 
 Authentication module will be used by [Connection](./connection).

@@ -1,7 +1,8 @@
 ---
-id: form-fields-related_record
+id: version-0.2.0-form-fields-related_record
 title: Related Record
 sidebar_label: RelatedRecord
+original_id: form-fields-related_record
 ---
 
 Get a list of fields and their settings.

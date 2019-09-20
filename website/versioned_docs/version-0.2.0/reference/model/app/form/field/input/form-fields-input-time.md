@@ -1,7 +1,8 @@
 ---
-id: form-fields-input-time
+id: version-0.2.0-form-fields-input-time
 title: Time
 sidebar_label: Time
+original_id: form-fields-input-time
 ---
 
 Get a list of fields and their settings.

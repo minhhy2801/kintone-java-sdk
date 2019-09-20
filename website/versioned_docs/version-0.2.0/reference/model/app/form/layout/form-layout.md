@@ -1,7 +1,8 @@
 ---
-id: form-layout
+id: version-0.2.0-form-layout
 title: Form Layout
 sidebar_label: FormLayout
+original_id: form-layout
 ---
 
 Get the layout of a form.

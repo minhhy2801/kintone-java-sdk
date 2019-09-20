@@ -1,7 +1,8 @@
 ---
-id: bulk-request-model
+id: version-0.2.0-bulk-request-model
 title: Bulk Request Model
 sidebar_label: BulkRequestModel
+original_id: bulk-request-model
 ---
 
 Store a list of requests and responses for a bulk request.

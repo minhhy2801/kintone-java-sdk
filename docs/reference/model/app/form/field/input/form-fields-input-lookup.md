@@ -18,7 +18,7 @@ Get a list of fields and their settings.
 
 ### getLookup()
 
-> Get the lookup
+Get the lookup
 
 **Parameter**
 
@@ -28,26 +28,13 @@ Get a list of fields and their settings.
 
 [LookupItem](#lookupitem)
 
-**Sample code**
-
-<details class="tab-container" open>
-<Summary>get Lookup</Summary>
-
-**Source code**
-
-```java
-LookupItem lookup = lookupField.getLookup();
-```
-
-</details>
-
 ## LookupItem
 
 ### Methods
 
 ### getFieldMapping()
 
-> Get the fieldMapping
+Get the fieldMapping
 
 **Parameter**
 
@@ -57,22 +44,9 @@ LookupItem lookup = lookupField.getLookup();
 
 List<[FieldMapping](../form-fields/#fieldmapping)\>
 
-**Sample code**
-
-<details class="tab-container" open>
-<Summary>get Field Mapping</Summary>
-
-**Source code**
-
-```java
-List<FieldMapping> fieldMapping = lookupItem.getFieldMapping();
-```
-
-</details>
-
 ### getFilterCond()
 
-> Get the filterCond
+Get the filterCond
 
 **Parameter**
 
@@ -82,22 +56,9 @@ List<FieldMapping> fieldMapping = lookupItem.getFieldMapping();
 
 String
 
-**Sample code**
-
-<details class="tab-container" open>
-<Summary>get Filter Cond</Summary>
-
-**Source code**
-
-```java
-String filterCond = lookupItem.getFilterCond();
-```
-
-</details>
-
 ### getLookupPickerFields()
 
-> Get the lookupPickerFields
+Get the lookupPickerFields
 
 **Parameter**
 
@@ -107,22 +68,9 @@ String filterCond = lookupItem.getFilterCond();
 
 List<String\>
 
-**Sample code**
-
-<details class="tab-container" open>
-<Summary>get Lookup Picker Fields</Summary>
-
-**Source code**
-
-```java
-List<String> lookupPickerFields = lookupItem.getLookupPickerFields();
-```
-
-</details>
-
 ### getRelatedApp()
 
-> Get the relatedApp
+Get the relatedApp
 
 **Parameter**
 
@@ -134,20 +82,9 @@ List<String> lookupPickerFields = lookupItem.getLookupPickerFields();
 
 **Sample code**
 
-<details class="tab-container" open>
-<Summary>get Related App</Summary>
-
-**Source code**
-
-```java
-RelatedApp relatedApp = lookupItem.getRelatedApp();
-```
-
-</details>
-
 ### getRelatedKeyField()
 
-> Get the relatedKeyField
+Get the relatedKeyField
 
 **Parameter**
 
@@ -156,23 +93,10 @@ RelatedApp relatedApp = lookupItem.getRelatedApp();
 **Return**
 
 String
-
-**Sample code**
-
-<details class="tab-container" open>
-<Summary>get Related App</Summary>
-
-**Source code**
-
-```java
-String relatedKeyField = lookupItem.getRelatedKeyField();
-```
-
-</details>
 
 ### getSort()
 
-> Get the sort
+Get the sort
 
 **Parameter**
 
@@ -182,22 +106,9 @@ String relatedKeyField = lookupItem.getRelatedKeyField();
 
 String
 
-**Sample code**
-
-<details class="tab-container" open>
-<Summary>get Sort</Summary>
-
-**Source code**
-
-```java
-String sort = lookupItem.getSort();
-```
-
-</details>
-
 ## Reference
 
-- [Get App](https://developer.kintone.io/hc/en-us/articles/212494888)`on developer network`
-- [Get Apps](https://developer.kintone.io/hc/en-us/articles/115005336727)`on developer network`
-- [Get Form fields](https://developer.kintone.io/hc/en-us/articles/115005509288)`on developer network`
-- [Get Form Layout](https://developer.kintone.io/hc/en-us/articles/115005509068)`on developer network`
+- [Get App](https://developer.kintone.io/hc/en-us/articles/212494888)
+- [Get Apps](https://developer.kintone.io/hc/en-us/articles/115005336727)
+- [Get Form fields](https://developer.kintone.io/hc/en-us/articles/115005509288)
+- [Get Form Layout](https://developer.kintone.io/hc/en-us/articles/115005509068)

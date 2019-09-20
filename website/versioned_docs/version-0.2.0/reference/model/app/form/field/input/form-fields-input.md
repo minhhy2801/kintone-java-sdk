@@ -1,7 +1,8 @@
 ---
-id: form-fields-input
+id: version-0.2.0-form-fields-input
 title: Input
 sidebar_label: Input
+original_id: form-fields-input
 ---
 
 Get a list of fields and their settings.
