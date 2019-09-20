@@ -1,7 +1,8 @@
 ---
-id: connection
+id: version-0.5.0-connection
 title: Connection
 sidebar_label: Connection
+original_id: connection
 ---
 
 [Connection](#) module will used as a connector to connect to kintone Rest API

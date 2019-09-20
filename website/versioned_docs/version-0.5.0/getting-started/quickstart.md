@@ -1,7 +1,8 @@
 ---
-id: quickstart
+id: version-0.5.0-quickstart
 title: Quickstart
 sidebar_label: Quickstart
+original_id: quickstart
 ---
 
 ## Requirement
