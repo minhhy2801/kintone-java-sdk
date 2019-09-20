@@ -6,19 +6,19 @@ sidebar_label: Lookup
 
 Get a list of fields and their settings.
 
-- Permissions to view the App is needed.
-- API Tokens cannot be used with this API.
+>- Permissions to view the App is needed.
+>- API Tokens cannot be used with this API.
 
 ## LookupField
 
 !!! warning
-    - extend the abstract class  "[AbstractInputField](../form-fields-input/#abstractinputfield.md)"
+    - extend the abstract class  "[AbstractInputField](./form-fields-input#abstractinputfield)"
 
 ### Methods
 
-#### getLookup()
+### getLookup()
 
-Get the lookup
+> Get the lookup
 
 **Parameter**
 
@@ -28,13 +28,26 @@ Get the lookup
 
 [LookupItem](#lookupitem)
 
+**Sample code**
+
+<details class="tab-container" open>
+<Summary>get Lookup</Summary>
+
+**Source code**
+
+```java
+LookupItem lookup = lookupField.getLookup();
+```
+
+</details>
+
 ## LookupItem
 
 ### Methods
 
-#### getFieldMapping()
+### getFieldMapping()
 
-Get the fieldMapping
+> Get the fieldMapping
 
 **Parameter**
 
@@ -42,11 +55,24 @@ Get the fieldMapping
 
 **Return**
 
-List<[FieldMapping](../../form-fields/#fieldmapping.md)\>
+List<[FieldMapping](../form-fields/#fieldmapping)\>
 
-#### getFilterCond()
+**Sample code**
 
-Get the filterCond
+<details class="tab-container" open>
+<Summary>get Field Mapping</Summary>
+
+**Source code**
+
+```java
+List<FieldMapping> fieldMapping = lookupItem.getFieldMapping();
+```
+
+</details>
+
+### getFilterCond()
+
+> Get the filterCond
 
 **Parameter**
 
@@ -56,9 +82,22 @@ Get the filterCond
 
 String
 
-#### getLookupPickerFields()
+**Sample code**
 
-Get the lookupPickerFields
+<details class="tab-container" open>
+<Summary>get Filter Cond</Summary>
+
+**Source code**
+
+```java
+String filterCond = lookupItem.getFilterCond();
+```
+
+</details>
+
+### getLookupPickerFields()
+
+> Get the lookupPickerFields
 
 **Parameter**
 
@@ -68,9 +107,22 @@ Get the lookupPickerFields
 
 List<String\>
 
-#### getRelatedApp()
+**Sample code**
 
-Get the relatedApp
+<details class="tab-container" open>
+<Summary>get Lookup Picker Fields</Summary>
+
+**Source code**
+
+```java
+List<String> lookupPickerFields = lookupItem.getLookupPickerFields();
+```
+
+</details>
+
+### getRelatedApp()
+
+> Get the relatedApp
 
 **Parameter**
 
@@ -78,11 +130,24 @@ Get the relatedApp
 
 **Return**
 
-[RelatedApp](../../../form-fields-related_record/#relatedapp.md)
+[RelatedApp](../../form-fields-related_record#relatedapp)
 
-#### getRelatedKeyField()
+**Sample code**
 
-Get the relatedKeyField
+<details class="tab-container" open>
+<Summary>get Related App</Summary>
+
+**Source code**
+
+```java
+RelatedApp relatedApp = lookupItem.getRelatedApp();
+```
+
+</details>
+
+### getRelatedKeyField()
+
+> Get the relatedKeyField
 
 **Parameter**
 
@@ -92,9 +157,22 @@ Get the relatedKeyField
 
 String
 
-#### getSort()
+**Sample code**
 
-Get the sort
+<details class="tab-container" open>
+<Summary>get Related App</Summary>
+
+**Source code**
+
+```java
+String relatedKeyField = lookupItem.getRelatedKeyField();
+```
+
+</details>
+
+### getSort()
+
+> Get the sort
 
 **Parameter**
 
@@ -103,10 +181,23 @@ Get the sort
 **Return**
 
 String
+
+**Sample code**
+
+<details class="tab-container" open>
+<Summary>get Sort</Summary>
+
+**Source code**
+
+```java
+String sort = lookupItem.getSort();
+```
+
+</details>
 
 ## Reference
 
-- [Get App](https://developer.kintone.io/hc/en-us/articles/212494888)
-- [Get Apps](https://developer.kintone.io/hc/en-us/articles/115005336727)
-- [Get Form fields](https://developer.kintone.io/hc/en-us/articles/115005509288)
-- [Get Form Layout](https://developer.kintone.io/hc/en-us/articles/115005509068)
+- [Get App](https://developer.kintone.io/hc/en-us/articles/212494888)`on developer network`
+- [Get Apps](https://developer.kintone.io/hc/en-us/articles/115005336727)`on developer network`
+- [Get Form fields](https://developer.kintone.io/hc/en-us/articles/115005509288)`on developer network`
+- [Get Form Layout](https://developer.kintone.io/hc/en-us/articles/115005509068)`on developer network`

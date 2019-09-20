@@ -1,7 +1,7 @@
 ---
 id: form-layout
 title: Form Layout
-sidebar_label: Form Layout
+sidebar_label: FormLayout
 ---
 
 Get the layout of a form.
@@ -10,16 +10,16 @@ The fields you set on the table and their order,
 Put fields in the Group field and their layout,
 label, space, and border settings.
 
-- Permissions to view the App is needed.
-- API Tokens cannot be used with this API.
+>- Permissions to view the App is needed.
+>- API Tokens cannot be used with this API.
 
 ## FormLayout
 
 ### Methods
 
-#### getRevision()
+### getRevision()
 
-Get the revision
+> Get the revision
 
 **Parameter**
 
@@ -29,11 +29,24 @@ Get the revision
 
 String
 
-#### getLayout()
+**Sample code**
 
-Get the layout
+<details class="tab-container" open>
+<Summary>get Revision</Summary>
 
-**Parameter **
+**Source code**
+
+```java
+String revision = layout.getRevision();
+```
+
+</details>
+
+### getLayout()
+
+> Get the layout
+
+**Parameter**
 
 (none)
 
@@ -41,25 +54,26 @@ Get the layout
 
 List<[ItemLayout](#itemlayout)\>
 
+**Sample code**
+
+<details class="tab-container" open>
+<Summary>get Layout</Summary>
+
+**Source code**
+
+```java
+List<ItemLayout> itemLayoutList = layout.getLayout();
+```
+
+</details>
+
 ## FieldLayout
 
 ### Methods
 
-#### getType()
+### getType()
 
-Get the type
-
-**Parameter**
-
-(none)
-
-**Return**
-
-String
-
-#### getCode()
-
-Get the code
+> Get the type
 
 **Parameter**
 
@@ -69,9 +83,22 @@ Get the code
 
 String
 
-#### getElementId()
+**Sample code**
 
-Get the elementId
+<details class="tab-container" open>
+<Summary>get Type</Summary>
+
+**Source code**
+
+```java
+String type = fieldLayout.getType();
+```
+
+</details>
+
+### getCode()
+
+> Get the code
 
 **Parameter**
 
@@ -81,9 +108,22 @@ Get the elementId
 
 String
 
-#### getLabel()
+**Sample code**
 
-Get the label
+<details class="tab-container" open>
+<Summary>get Code</Summary>
+
+**Source code**
+
+```java
+String code = fieldLayout.getCode();
+```
+
+</details>
+
+### getElementId()
+
+> Get the elementId
 
 **Parameter**
 
@@ -93,9 +133,47 @@ Get the label
 
 String
 
-#### getSize()
+**Sample code**
 
-Get the size
+<details class="tab-container" open>
+<Summary>get Element Id</Summary>
+
+**Source code**
+
+```java
+String elementId = fieldLayout.getElementId();
+```
+
+</details>
+
+### getLabel()
+
+> Get the label
+
+**Parameter**
+
+(none)
+
+**Return**
+
+String
+
+**Sample code**
+
+<details class="tab-container" open>
+<Summary>get Label</Summary>
+
+**Source code**
+
+```java
+String label = fieldLayout.getLabel();
+```
+
+</details>
+
+### getSize()
+
+> Get the size
 
 **Parameter**
 
@@ -105,25 +183,26 @@ Get the size
 
 [FieldSize](#fieldsize)
 
+**Sample code**
+
+<details class="tab-container" open>
+<Summary>get Size</Summary>
+
+**Source code**
+
+```java
+FieldSize size = fieldLayout.getSize();
+```
+
+</details>
+
 ## FieldSize
 
 ### Methods
 
-#### getWidth()
+### getWidth()
 
-Get the width
-
-**Parameter**
-
-(none)
-
-**Return**
-
-String
-
-#### getHeight()
-
-Get the height
+> Get the width
 
 **Parameter**
 
@@ -133,9 +212,22 @@ Get the height
 
 String
 
-#### getInnerHeight()
+**Sample code**
 
-Get the innerHeight
+<details class="tab-container" open>
+<Summary>get Width</Summary>
+
+**Source code**
+
+```java
+String width = fieldSize.getWidth();
+```
+
+</details>
+
+### getHeight()
+
+> Get the height
 
 **Parameter**
 
@@ -144,6 +236,44 @@ Get the innerHeight
 **Return**
 
 String
+
+**Sample code**
+
+<details class="tab-container" open>
+<Summary>get Height</Summary>
+
+**Source code**
+
+```java
+String height = fieldSize.getHeight();
+```
+
+</details>
+
+### getInnerHeight()
+
+> Get the innerHeight
+
+**Parameter**
+
+(none)
+
+**Return**
+
+String
+
+**Sample code**
+
+<details class="tab-container" open>
+<Summary>get Inner Height</Summary>
+
+**Source code**
+
+```java
+String innerHeight = fieldSize.getInnerHeight();
+```
+
+</details>
 
 ## GroupLayout
 
@@ -152,9 +282,9 @@ String
 
 ### Methods
 
-#### getCode()
+### getCode()
 
-Get the code
+> Get the code
 
 **Parameter**
 
@@ -164,9 +294,22 @@ Get the code
 
 String
 
-#### getLayout()
+**Sample code**
 
-Get the layout
+<details class="tab-container" open>
+<Summary>get Code</Summary>
+
+**Source code**
+
+```java
+String code = groupLayout.getCode();
+```
+
+</details>
+
+### getLayout()
+
+> Get the layout
 
 **Parameter**
 
@@ -176,6 +319,19 @@ Get the layout
 
 List<[RowLayout](#rowlayout)>
 
+**Sample code**
+
+<details class="tab-container" open>
+<Summary>get Code</Summary>
+
+**Source code**
+
+```java
+List<RowLayout> layout = groupLayout.getLayout();
+```
+
+</details>
+
 ## RowLayout
 
 !!! warning
@@ -183,9 +339,9 @@ List<[RowLayout](#rowlayout)>
 
 ### Methods
 
-#### getFields()
+### getFields()
 
-Get the fields
+> Get the fields
 
 **Parameter**
 
@@ -195,6 +351,19 @@ Get the fields
 
 List<[FieldLayout](#fieldlayout)>
 
+**Sample code**
+
+<details class="tab-container" open>
+<Summary>get Fields</Summary>
+
+**Source code**
+
+```java
+String fields = rowLayout.getFields();
+```
+
+</details>
+
 ## SubTableLayout
 
 !!! warning
@@ -202,9 +371,9 @@ List<[FieldLayout](#fieldlayout)>
 
 ### Methods
 
-#### getCode()
+### getCode()
 
-Get the code
+> Get the code
 
 **Parameter**
 
@@ -214,6 +383,19 @@ Get the code
 
 String
 
+**Sample code**
+
+<details class="tab-container" open>
+<Summary>get Code</Summary>
+
+**Source code**
+
+```java
+String code = subTableLayout.getCode();
+```
+
+</details>
+
 ## ItemLayout
 
 !!! warning
@@ -221,9 +403,9 @@ String
 
 ### Methods
 
-#### getType()
+### getType()
 
-Get the type
+> Get the type
 
 **Parameter**
 
@@ -235,7 +417,7 @@ LayoutType
 
 ## Reference
 
-- [Get App](https://developer.kintone.io/hc/en-us/articles/212494888)
-- [Get Apps](https://developer.kintone.io/hc/en-us/articles/115005336727)
-- [Get Form fields](https://developer.kintone.io/hc/en-us/articles/115005509288)
-- [Get Form Layout](https://developer.kintone.io/hc/en-us/articles/115005509068)
+- [Get App](https://developer.kintone.io/hc/en-us/articles/212494888)`on developer network`
+- [Get Apps](https://developer.kintone.io/hc/en-us/articles/115005336727)`on developer network`
+- [Get Form fields](https://developer.kintone.io/hc/en-us/articles/115005509288)`on developer network`
+- [Get Form Layout](https://developer.kintone.io/hc/en-us/articles/115005509068)`on developer network`

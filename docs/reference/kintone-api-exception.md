@@ -10,7 +10,7 @@ Handle error responses from kintone Rest API
 
 ### getHttpErrorCode()
 
-**Parameter **
+**Parameter**
 
 (none)
 
@@ -40,7 +40,7 @@ try {
 
 ### getErrorResponse()
 
-**Parameter **
+**Parameter**
 
 (none)
 
@@ -72,7 +72,7 @@ try {
 
 ### getErrorResponses()
 
-**Parameter **
+**Parameter**
 
 (none)
 

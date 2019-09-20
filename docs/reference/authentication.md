@@ -4,7 +4,7 @@ title: Authentication
 sidebar_label: Authentication
 ---
 
-Authentication module will be used by [Connection](../connection).
+Authentication module will be used by [Connection](./connection).
 This module allow we authenticate with kintone app by password authenticator or API token authenticator. This module is also support basic authenticator.
 
 !!! warning
@@ -145,73 +145,6 @@ Array&lt;HTTPHeader&gt;
 for (HTTPHeader header : kintoneAuth.createHeaderCredentials()) {
 	connection.setRequestProperty(header.getKey(), header.getValue());
 }
-```
-
-</details>
-
-### setClientCert(cert, password)
-
-Set certificate by certificate data
-
-**Parameter**
-
-| Name| Type| Required| Description |
-| --- | --- | --- | --- |
-| cert | InputStream | yes | Data read from certificate file received from kintone
-| password | String | yes | The password from kintone to decode the cert file
-
-**Return**
-
-[Auth](../authentication)
-
-**Sample code**
-
-<details class="tab-container" open>
-<Summary>Set certificate by certificate data</Summary>
-
-**Source code**
-
-```java
-    Auth certAuth = new Auth();
-    certAuth.setPasswordAuth("YOUR_KINTONE_ID", "YOUR_KINTONE_PASSWORD");
-    String certPassword = "YOUR_CERT_PASSWORD"
-    String certPath = "YOUR_CERT_PATH"
-    InputStream cert = new FileInputStream(certPath);
-    auth.setClientCert(cert, certPassword)
-    Connection connection = new Connection("YOUR_DOMAIN", certAuth, -1);
-```
-
-</details>
-
-### setClientCertByPath(filePath, password)
-
-Set certificate by path
-
-**Parameter**
-
-| Name| Type| Required| Description |
-| --- | --- | --- | --- |
-| filePath | String | yes | Path to kintone certificate file
-| password | String | yes | The password from kintone to decode the cert file
-
-**Return**
-
-[Auth](../authentication)
-
-**Sample code**
-
-<details class="tab-container" open>
-<Summary>Set certificate by path</Summary>
-
-**Source code**
-
-```java
-    Auth certauth = new Auth();
-    certAuth.setPasswordAuth("YOUR_KINTONE_ID", "YOUR_KINTONE_PASSWORD");
-    String certPassword = "YOUR_CERT_PASSWORD"
-    String certPath = "YOUR_CERT_PATH"
-    certauth.setClientCertByPath(certPath, certPassword);
-    Connection connection = new Connection("YOUR_DOMAIN", certAuth);
 ```
 
 </details>

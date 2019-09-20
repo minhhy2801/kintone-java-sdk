@@ -6,8 +6,8 @@ sidebar_label: Selection
 
 Get a list of fields and their settings.
 
-- Permissions to view the App is needed.
-- API Tokens cannot be used with this API.
+>- Permissions to view the App is needed.
+>- API Tokens cannot be used with this API.
 
 ## CheckboxField
 
@@ -16,9 +16,9 @@ Get a list of fields and their settings.
 
 ### Methods
 
-#### getAlign()
+### getAlign()
 
-Get the align
+> Get the align
 
 **Parameter**
 
@@ -28,9 +28,22 @@ Get the align
 
 AlignLayout
 
-#### getDefaultValue()
+**Sample code**
 
-Get the defaultValue
+<details class="tab-container" open>
+<Summary>get Align</Summary>
+
+**Source code**
+
+```java
+AlignLayout align = checkboxField.getAlign();
+```
+
+</details>
+
+### getDefaultValue()
+
+> Get the defaultValue
 
 **Parameter**
 
@@ -40,6 +53,19 @@ Get the defaultValue
 
 List<String\>
 
+**Sample code**
+
+<details class="tab-container" open>
+<Summary>get Default Value</Summary>
+
+**Source code**
+
+```java
+List<String> defaultValue = checkboxField.getDefaultValue();
+```
+
+</details>
+
 ## DropDownField
 
 !!! warning
@@ -47,9 +73,9 @@ List<String\>
 
 ### Methods
 
-#### getDefaultValue()
+### getDefaultValue()
 
-Get the defaultValue
+> Get the defaultValue
 
 **Parameter**
 
@@ -59,6 +85,19 @@ Get the defaultValue
 
 String
 
+**Sample code**
+
+<details class="tab-container" open>
+<Summary>get Default Value</Summary>
+
+**Source code**
+
+```java
+String defaultValue = dropDownField.getDefaultValue();
+```
+
+</details>
+
 ## MultipleSelectField
 
 !!! warning
@@ -66,9 +105,9 @@ String
 
 ### Methods
 
-#### getDefaultValue()
+### getDefaultValue()
 
-Get the defaultValue
+> Get the defaultValue
 
 **Parameter**
 
@@ -78,13 +117,26 @@ Get the defaultValue
 
 List<String\>
 
+**Sample code**
+
+<details class="tab-container" open>
+<Summary>get Default Value</Summary>
+
+**Source code**
+
+```java
+List<String> defaultValue = multipleSelectField.getDefaultValue();
+```
+
+</details>
+
 ## OptionData
 
 ### Methods
 
-#### getIndex()
+### getIndex()
 
-Get the index
+> Get the index
 
 **Parameter**
 
@@ -94,9 +146,22 @@ Get the index
 
 Integer
 
-#### getLabel()
+**Sample code**
 
-Get the label
+<details class="tab-container" open>
+<Summary>get Index</Summary>
+
+**Source code**
+
+```java
+Integer index = optionData.getIndex();
+```
+
+</details>
+
+### getLabel()
+
+> Get the label
 
 **Parameter**
 
@@ -106,6 +171,19 @@ Get the label
 
 String
 
+**Sample code**
+
+<details class="tab-container" open>
+<Summary>get Label</Summary>
+
+**Source code**
+
+```java
+String label = optionData.getLabel();
+```
+
+</details>
+
 ## RadioButtonField
 
 !!! warning
@@ -113,9 +191,9 @@ String
 
 ### Methods
 
-#### getAlign()
+### getAlign()
 
-Get the align
+> Get the align
 
 **Parameter**
 
@@ -125,9 +203,22 @@ Get the align
 
 AlignLayout
 
-#### getDefaultValue()
+**Sample code**
 
-Get the defaultValue
+<details class="tab-container" open>
+<Summary>get Align</Summary>
+
+**Source code**
+
+```java
+AlignLayout align = radioButtonField.getAlign();
+```
+
+</details>
+
+### getDefaultValue()
+
+> Get the defaultValue
 
 **Parameter**
 
@@ -137,17 +228,30 @@ Get the defaultValue
 
 String
 
+**Sample code**
+
+<details class="tab-container" open>
+<Summary>get Default Value</Summary>
+
+**Source code**
+
+```java
+String defaultValue = radioButtonField.getDefaultValue();
+```
+
+</details>
+
 ## AbstractSelectionField
 
 !!! warning
-    - extend the abstract class "[AbstractInputField](./form-fields-input/#abstractinputfield.md)"
+    - extend the abstract class "[AbstractInputField](./form-fields-input/#abstractinputfield)"
     - This class is an abstract class.
 
 ### Methods
 
-#### getOptions()
+### getOptions()
 
-Get the options
+> Get the options
 
 **Parameter**
 
@@ -159,7 +263,7 @@ Map<String, [OptionData](#optiondata)\>
 
 ## Reference
 
-- [Get App](https://developer.kintone.io/hc/en-us/articles/212494888)
-- [Get Apps](https://developer.kintone.io/hc/en-us/articles/115005336727)
-- [Get Form fields](https://developer.kintone.io/hc/en-us/articles/115005509288)
-- [Get Form Layout](https://developer.kintone.io/hc/en-us/articles/115005509068)
+- [Get App](https://developer.kintone.io/hc/en-us/articles/212494888)`on developer network`
+- [Get Apps](https://developer.kintone.io/hc/en-us/articles/115005336727)`on developer network`
+- [Get Form fields](https://developer.kintone.io/hc/en-us/articles/115005509288)`on developer network`
+- [Get Form Layout](https://developer.kintone.io/hc/en-us/articles/115005509068)`on developer network`

@@ -6,20 +6,33 @@ sidebar_label: AppModel
 
 Gets the basic information about the app.
 
-- Permissions to view the App is needed.
-- API Tokens cannot be used with this API.
+>- Permissions to view the App is needed.
+>- API Tokens cannot be used with this API.
 
 ## Constructor
 
-### **Parameter**
+**Parameter**
 
 (none)
+
+**Sample code**
+
+<details class="tab-container" open>
+<Summary>Init App Model</Summary>
+
+**Source code**
+
+```java
+AppModel appModel = new AppModel();
+```
+
+</details>
 
 ## Methods
 
 ### getAppId()
 
-Get the appId
+> Get the appId
 
 **Parameter**
 
@@ -29,35 +42,74 @@ Get the appId
 
 Integer
 
+**Sample code**
+
+<details class="tab-container" open>
+<Summary>get App Id</Summary>
+
+**Source code**
+
+```java
+Integer addId = appModel.getAppId();
+```
+
+</details>
+
 ### getCode()
 
-Get the code
+> Get the code
 
-**Parameter **
+**Parameter**
 
 (none)
 
 **Return**
 
 String
+
+**Sample code**
+
+<details class="tab-container" open>
+<Summary>get Code</Summary>
+
+**Source code**
+
+```java
+String code = appModel.getCode();
+```
+
+</details>
 
 ### getName()
 
-Get the name
+> Get the name
 
-**Parameter **
+**Parameter**
 
 (none)
 
 **Return**
 
 String
+
+**Sample code**
+
+<details class="tab-container" open>
+<Summary>get Name</Summary>
+
+**Source code**
+
+```java
+String name = appModel.getName();
+```
+
+</details>
 
 ### getDescription()
 
-Get the description
+> Get the description
 
-**Parameter **
+**Parameter**
 
 (none)
 
@@ -65,23 +117,49 @@ Get the description
 
 String
 
+**Sample code**
+
+<details class="tab-container" open>
+<Summary>get Description</Summary>
+
+**Source code**
+
+```java
+String description = appModel.getDescription();
+```
+
+</details>
+
 ### getSpaceId()
 
-Get the spaceId
+> Get the spaceId
 
-**Parameter **
+**Parameter**
 
 (none)
 
 **Return**
 
 Integer
+
+**Sample code**
+
+<details class="tab-container" open>
+<Summary>get Space Id</Summary>
+
+**Source code**
+
+```java
+Integer spaceId = appModel.getSpaceId();
+```
+
+</details>
 
 ### getThreadId()
 
-Get the threadId
+> Get the threadId
 
-**Parameter **
+**Parameter**
 
 (none)
 
@@ -89,47 +167,99 @@ Get the threadId
 
 Integer
 
+**Sample code**
+
+<details class="tab-container" open>
+<Summary>get Thread Id</Summary>
+
+**Source code**
+
+```java
+Integer threadId = appModel.getThreadId();
+```
+
+</details>
+
 ### getCreator()
 
-Get the creator
+> Get the creator
 
-**Parameter **
+**Parameter**
 
 (none)
 
 **Return**
 
-[Member](../member.md)
+[Member](../../member/member)
+
+**Sample code**
+
+<details class="tab-container" open>
+<Summary>get Creator</Summary>
+
+**Source code**
+
+```java
+Member member = appModel.getCreator();
+```
+
+</details>
 
 ### getModifier()
 
-Get the modifier
+> Get the modifier
 
-**Parameter **
+**Parameter**
 
 (none)
 
 **Return**
 
-[Member](../member.md)
+[Member](../../member/member)
+
+**Sample code**
+
+<details class="tab-container" open>
+<Summary>get Modifier</Summary>
+
+**Source code**
+
+```java
+Member member = appModel.getModifier();
+```
+
+</details>
 
 ### getCreatedAt()
 
-Get the createdAt
+> Get the createdAt
 
-**Parameter **
+**Parameter**
 
 (none)
 
 **Return**
 
 Date
+
+**Sample code**
+
+<details class="tab-container" open>
+<Summary>get Create Date</Summary>
+
+**Source code**
+
+```java
+Date date = appModel.getCreatedAt();
+```
+
+</details>
 
 ### getModifiedAt()
 
-Get the modifiedAt
+> Get the modifiedAt
 
-**Parameter **
+**Parameter**
 
 (none)
 
@@ -137,9 +267,22 @@ Get the modifiedAt
 
 Date
 
+**Sample code**
+
+<details class="tab-container" open>
+<Summary>get Modified Date</Summary>
+
+**Source code**
+
+```java
+Date date = appModel.getModifiedAt();
+```
+
+</details>
+
 ## Reference
 
-- [Get App](https://developer.kintone.io/hc/en-us/articles/212494888)
-- [Get Apps](https://developer.kintone.io/hc/en-us/articles/115005336727)
-- [Get Form fields](https://developer.kintone.io/hc/en-us/articles/115005509288)
-- [Get Form Layout](https://developer.kintone.io/hc/en-us/articles/115005509068)
+- [Get App](https://developer.kintone.io/hc/en-us/articles/212494888)`on developer network`
+- [Get Apps](https://developer.kintone.io/hc/en-us/articles/115005336727)`on developer network`
+- [Get Form fields](https://developer.kintone.io/hc/en-us/articles/115005509288)`on developer network`
+- [Get Form Layout](https://developer.kintone.io/hc/en-us/articles/115005509068)`on developer network`

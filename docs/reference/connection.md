@@ -48,7 +48,7 @@ Connection kintoneConnectionWithGuestSpaceDemo =
 
 ### setHeader(key, value)
 
-> Set new header of the [Connection](../connection)
+> Set new header of the [Connection](./connection)
 
 **Parameter**
 
@@ -59,7 +59,7 @@ Connection kintoneConnectionWithGuestSpaceDemo =
 
 **Return**
 
-[Connection](../connection)
+[Connection](./connection)
 
 **Sample code**
 
@@ -85,7 +85,7 @@ connection.setHeader(key, value);
 
 </details>
 
-### setProxy(host, port, username, password)
+### setProxy(proxyHost, proxyPort)
 
 > Set the proxy of the request
 
@@ -93,16 +93,14 @@ connection.setHeader(key, value);
 
 | Name| Type| Required| Description |
 | --- | --- | --- | --- |
-| host | String | yes | The proxy host name
-| port | Integer | yes | The proxy port number
-| username | String | (optional) | User name of the proxy
-| password | String | (optional) | Password of the proxy
+| proxyHost | String | yes | The proxy host name
+| proxyPort | Integer | yes | The proxy port number
 
 **Return**
 
-[Connection](../connection)
+(none)
 
-**Source code**
+**Sample code**
 
 <details class="tab-container" open>
 <Summary>Set the proxy of the request</Summary>
@@ -121,62 +119,7 @@ kintoneAuth.setPasswordAuth(username, password);
 
 String myDomainName = "sample.cybozu.com";
 Connection connection = new Connection(myDomainName, kintoneAuth);
-
-// Set proxy without proxyUsername & proxyPassword
 connection.setProxy(proxyHost, proxyPort);
-
-// Set proxy with proxyUsername & proxyPassword
-String proxyUsername = "xxxx";
-String proxyPassword = "xxxx";
-connection.setProxy(proxyHost, proxyPort, proxyUsername, proxyPassword);
-```
-
-</details>
-
-### setHttpsProxy(host, port, username, password)
-
-> Set the SSL-secured proxy of the request
-
-**Parameter**
-
-| Name| Type| Required| Description |
-| --- | --- | --- | --- |
-| host | String | yes | The proxy host name
-| port | Integer | yes | The proxy port number
-| username | String | (optional) | User name of the proxy
-| password | String | (optional) | Password of the proxy
-
-**Return**
-
-[Connection](../connection)
-
-**Source code**
-
-<details class="tab-container" open>
-<Summary>Set the proxy of the request</Summary>
-
-**Source code**
-
-```java
-String username = "cybozu";
-String password = "cybozu";
-String proxyHost = "xxxx";
-Integer proxyPort = 1234;
-  
-// Init authenticationAuth
-Auth kintoneAuth = new Auth();
-kintoneAuth.setPasswordAuth(username, password);
-
-String myDomainName = "sample.cybozu.com";
-Connection connection = new Connection(myDomainName, kintoneAuth);
-
-// Set ssl-secured proxy without proxyUsername & proxyPassword
-connection.setHttpsProxy(proxyHost, proxyPort);
-
-// Set ssl-secured proxy with proxyUsername & proxyPassword
-String proxyUsername = "xxxx";
-String proxyPassword = "xxxx";
-connection.setHttpsProxy(proxyHost, proxyPort, proxyUsername, proxyPassword);
 ```
 
 </details>

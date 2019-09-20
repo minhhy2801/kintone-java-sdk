@@ -1,7 +1,7 @@
 ---
 id: record-field-model
 title: Field Model
-sidebar_label: Field Model
+sidebar_label: FieldModel
 ---
 
 ## FieldValue
@@ -16,7 +16,7 @@ General Field's value of the kintone app
 
 ### Methods
 
-#### getType()
+### getType()
 
 > get the type of field.
 
@@ -48,7 +48,7 @@ FieldType fieldType = fv.getType();
 
 </details>
 
-#### setType(FieldType type)
+### setType(FieldType type)
 
 > set the type of field.
 
@@ -83,7 +83,7 @@ AddRecordResponse response = kintoneRecordManager.addRecord(appID, record);
 
 </details>
 
-#### getValue()
+### getValue()
 
 > get the value of field in the record.
 
@@ -115,7 +115,7 @@ Object fieldValue = fv.getValue();
 
 </details>
 
-#### setValue(Object value)
+### setValue(Object value)
 
 > set the value of field in the record.
 
@@ -151,7 +151,7 @@ AddRecordResponse response = kintoneRecordManager.addRecord(appID, record);
 
 </details>
 
-##SubTableValueItem
+## SubTableValueItem
 
 ### Constructor
 
@@ -161,7 +161,7 @@ AddRecordResponse response = kintoneRecordManager.addRecord(appID, record);
 
 ### Methods
 
-#### getID()
+### getID()
 
 > get the ID of item in table.
 
@@ -196,7 +196,7 @@ Integer itemID = subTable.get(0).getID();
 </details>
 
 
-#### setID(Integer id)
+### setID(Integer id)
 
 > set the ID of table.
 
@@ -235,7 +235,7 @@ tableItem.setValue(tableItemValue);
 
 </details>
 
-#### getValue()
+### getValue()
 
 > get the value of field in the record.
 
@@ -269,7 +269,7 @@ HashMap<String, FieldValue> itemValue= subTable.get(0).getValue();
 
 </details>
 
-#### setValue(HashMap<String, [FieldValue](#fieldvalue)\> value) 
+### setValue(HashMap<String, [FieldValue](#fieldvalue)\> value) 
 
 > set the value of field in the record.
 

@@ -6,8 +6,8 @@ sidebar_label: Member
 
 Get a list of fields and their settings.
 
-- Permissions to view the App is needed.
-- API Tokens cannot be used with this API.
+>- Permissions to view the App is needed.
+>- API Tokens cannot be used with this API.
 
 ## DepartmentSelectionField
 
@@ -31,9 +31,9 @@ Get a list of fields and their settings.
 
 ### Methods
 
-#### getCode()
+### getCode()
 
-Get the code
+> Get the code
 
 **Parameter**
 
@@ -43,9 +43,22 @@ Get the code
 
 String
 
-#### getType()
+**Sample code**
 
-Get the type
+<details class="tab-container" open>
+<Summary>get Code</Summary>
+
+**Source code**
+
+```java
+String code = memberSelectEntity.getCode();
+```
+
+</details>
+
+### getType()
+
+> Get the type
 
 **Parameter**
 
@@ -54,6 +67,19 @@ Get the type
 **Return**
 
 MemberSelectEntityType
+
+**Sample code**
+
+<details class="tab-container" open>
+<Summary>get Code</Summary>
+
+**Source code**
+
+```java
+MemberSelectEntityType type = memberSelectEntity.getType();
+```
+
+</details>
 
 ## UserSelectionField
 
@@ -67,14 +93,14 @@ MemberSelectEntityType
 ## AbstractMemberSelectField
 
 !!! warning
-    - extend the abstract class "[AbstractInputField](../form-fields-input/#abstractinputfield.md)"
+    - extend the abstract class "[AbstractInputField](./form-fields-input#abstractinputfield)"
     - This class is an abstract class.
 
 ### Methods
 
-#### getDefaultValue()
+### getDefaultValue()
 
-Get the defaultValue
+> Get the defaultValue
 
 **Parameter**
 
@@ -84,9 +110,9 @@ Get the defaultValue
 
 List<[MemberSelectEntity](#memberselectentity)\>
 
-#### getEntites()
+### getEntites()
 
-Get the entites
+> Get the entites
 
 **Parameter**
 
@@ -98,7 +124,7 @@ List<[MemberSelectEntity](#memberselectentity)\>
 
 ## Reference
 
-- [Get App](https://developer.kintone.io/hc/en-us/articles/212494888)
-- [Get Apps](https://developer.kintone.io/hc/en-us/articles/115005336727)
-- [Get Form fields](https://developer.kintone.io/hc/en-us/articles/115005509288)
-- [Get Form Layout](https://developer.kintone.io/hc/en-us/articles/115005509068)
+- [Get App](https://developer.kintone.io/hc/en-us/articles/212494888)`on developer network`
+- [Get Apps](https://developer.kintone.io/hc/en-us/articles/115005336727)`on developer network`
+- [Get Form fields](https://developer.kintone.io/hc/en-us/articles/115005509288)`on developer network`
+- [Get Form Layout](https://developer.kintone.io/hc/en-us/articles/115005509068)`on developer network`

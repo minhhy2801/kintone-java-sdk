@@ -8,31 +8,11 @@
       "reference/authentication",
       "reference/connection",
       "reference/record",
-      "reference/record-cursor",
       "reference/bulk-request",
       "reference/app",
       "reference/kintone-api-exception",
-      "reference/bulks-exception",
       "reference/file",
-      {
-        "type": "subcategory",
-        "label": "Model",
-        "ids": [
-          "reference/model/app/app/app-model",
-          "reference/model/app/app/app-deploy-status",
-          "reference/model/app/form/field/input/form-fields-input-lookup",
-          "reference/model/app/form/field/input/form-fields-input",
-          "reference/model/app/form/field/input/form-fields-input-member",
-          "reference/model/app/form/field/input/form-fields-input-selection",
-          "reference/model/app/form/field/input/form-fields-input-time",
-          "reference/model/app/form/field/layout/form-layout",
-          "reference/model/app/general/general-settings",
-          "reference/model/app/view/view-model",
-          "reference/model/cursor/record-cursor",
-          "reference/model/file/file-model",
-          "reference/model/bulk-request/bulk-request-model"
-        ]
-      }
+      "reference/model"
     ]
   }
 }

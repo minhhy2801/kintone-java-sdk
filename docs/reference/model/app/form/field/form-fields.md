@@ -1,21 +1,21 @@
 ---
 id: form-fields
 title: Form Fields
-sidebar_label: Form Fields
+sidebar_label: FormFields
 ---
 
 Get a list of fields and their settings.
 
-- Permissions to view the App is needed.
-- API Tokens cannot be used with this API.
+>- Permissions to view the App is needed.
+>- API Tokens cannot be used with this API.
 
 ## FormFields
 
 ### Methods
 
-#### getApp()
+### getApp()
 
-Get the app
+> Get the app
 
 **Parameter**
 
@@ -33,18 +33,16 @@ Integer
 **Source code**
 
 ```java
-
-    Integer app = formfields.getApp();
-
+Integer app = formfields.getApp();
 ```
 
 </details>
 
-#### getRevision()
+### getRevision()
 
-Get the revision
+> Get the revision
 
-**Parameter **
+**Parameter**
 
 (none)
 
@@ -60,18 +58,16 @@ Integer
 **Source code**
 
 ```java
-
-    int revision = formfields.getRevision();
-
+Integer revision = formfields.getRevision();
 ```
 
 </details>
 
-#### getProperties()
+### getProperties()
 
-Get the properties
+> Get the properties
 
-**Parameter **
+**Parameter**
 
 (none)
 
@@ -87,9 +83,7 @@ Get the properties
 **Source code**
 
 ```java
-
-    Map<String, Field> properties = formfields.getProperties();
-
+Map<String, Field> properties = formfields.getProperties();
 ```
 
 </details>
@@ -101,9 +95,9 @@ Get the properties
 
 ### Methods
 
-#### getLabel()
+### getLabel()
 
-Get the label
+> Get the label
 
 **Parameter**
 
@@ -121,16 +115,14 @@ String
 **Source code**
 
 ```java
-
-    String label = fieldGroup.getLabel();
-
+String label = fieldGroup.getLabel();
 ```
 
 </details>
 
-#### getNoLabel()
+### getNoLabel()
 
-Get the noLabel
+> Get the noLabel
 
 **Parameter**
 
@@ -148,16 +140,14 @@ Boolean
 **Source code**
 
 ```java
-
-    Boolean noLabel = fieldGroup.getNoLabel();
-
+Boolean noLabel = fieldGroup.getNoLabel();
 ```
 
 </details>
 
-#### getOpenGroup()
+### getOpenGroup()
 
-Get the openGroup
+> Get the openGroup
 
 **Parameter**
 
@@ -175,9 +165,7 @@ Boolean
 **Source code**
 
 ```java
-
-    Boolean openGroup = fieldGroup.getOpenGroup();
-
+Boolean openGroup = fieldGroup.getOpenGroup();
 ```
 
 </details>
@@ -186,9 +174,9 @@ Boolean
 
 ### Methods
 
-#### getField()
+### getField()
 
-Get the field
+> Get the field
 
 **Parameter**
 
@@ -206,16 +194,14 @@ String
 **Source code**
 
 ```java
-
-    String field = fieldMapping.getField();
-
+String field = fieldMapping.getField();
 ```
 
 </details>
 
-#### getRelatedFields()
+### getRelatedFields()
 
-Get the relatedFields
+> Get the relatedFields
 
 **Parameter**
 
@@ -233,9 +219,7 @@ String
 **Source code**
 
 ```java
-
-    String relatedFields = fieldMapping.getRelatedFields();
-
+String relatedFields = fieldMapping.getRelatedFields();
 ```
 
 </details>
@@ -249,9 +233,9 @@ String
 
 </details>
 
-#### getFields()
+### getFields()
 
-Get the fields
+> Get the fields
 
 **Parameter**
 
@@ -259,7 +243,7 @@ Get the fields
 
 **Return**
 
- Map<String, [AbstractInputField](../form-fields-input/#abstractinputfield)\>
+ Map<String, [AbstractInputField](../input/form-fields-input#abstractinputfield)\>
 
 **Sample code**
 
@@ -269,9 +253,7 @@ Get the fields
 **Source code**
 
 ```java
-
-    Map<String, AbstractInputField> fields = subTableField.getFields();
-    
+Map<String, AbstractInputField> fields = subTableField.getFields();
 ```
 
 </details>
@@ -283,9 +265,9 @@ Get the fields
 
 ### Methods
 
-#### getCode()
+### getCode()
 
-Get the code
+> Get the code
 
 **Parameter**
 
@@ -295,9 +277,9 @@ Get the code
 
 String
 
-#### getType()
+### getType()
 
-Get the type
+> Get the type
 
 **Parameter**
 
@@ -309,7 +291,7 @@ LayoutType
 
 ## Reference
 
-- [Get App](https://developer.kintone.io/hc/en-us/articles/212494888)
-- [Get Apps](https://developer.kintone.io/hc/en-us/articles/115005336727)
-- [Get Form fields](https://developer.kintone.io/hc/en-us/articles/115005509288)
-- [Get Form Layout](https://developer.kintone.io/hc/en-us/articles/115005509068)
+- [Get App](https://developer.kintone.io/hc/en-us/articles/212494888)`on developer network`
+- [Get Apps](https://developer.kintone.io/hc/en-us/articles/115005336727)`on developer network`
+- [Get Form fields](https://developer.kintone.io/hc/en-us/articles/115005509288)`on developer network`
+- [Get Form Layout](https://developer.kintone.io/hc/en-us/articles/115005509068)`on developer network`

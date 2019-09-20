@@ -4,12 +4,10 @@ title: System
 sidebar_label: System
 ---
 
-# System
-
 Get a list of fields and their settings.
 
-> - Permissions to view the App is needed.
-> - API Tokens cannot be used with this API.
+>- Permissions to view the App is needed.
+>- API Tokens cannot be used with this API.
 
 ## AssigneeField
 
@@ -27,9 +25,9 @@ Get a list of fields and their settings.
 
 ### Methods
 
-#### getEnabled()
+### getEnabled()
 
-Get the enabled
+> Get the enabled
 
 **Parameter**
 
@@ -47,9 +45,7 @@ Boolean
 **Source code**
 
 ```java
-
-    Boolean enabled = categoryField.getEnabled();
-    
+Boolean enabled = categoryField.getEnabled();
 ```
 
 </details>
@@ -111,14 +107,14 @@ Boolean
 ## AbstractSystemField
 
 !!! warning
-    - extend the abstract class  "[Field](../form-fields/#field)"
+    - extend the abstract class  "[Field](./field/form-fields#field)"
     - This class is an abstract class.
 
 ### Methods
 
-#### getLabel()
+### getLabel()
 
-Get the label
+> Get the label
 
 **Parameter**
 
@@ -136,9 +132,9 @@ String
 
 ### Methods
 
-#### getEnabled()
+### getEnabled()
 
-Get the enabled
+> Get the enabled
 
 **Parameter**
 
@@ -156,9 +152,9 @@ Boolean
 
 ### Methods
 
-#### getNoLabel()
+### getNoLabel()
 
-Get the noLabel
+> Get the noLabel
 
 **Parameter**
 
@@ -170,7 +166,7 @@ Boolean
 
 ## Reference
 
-- [Get App](https://developer.kintone.io/hc/en-us/articles/212494888)
-- [Get Apps](https://developer.kintone.io/hc/en-us/articles/115005336727)
-- [Get Form fields](https://developer.kintone.io/hc/en-us/articles/115005509288)
-- [Get Form Layout](https://developer.kintone.io/hc/en-us/articles/115005509068)
+- [Get App](https://developer.kintone.io/hc/en-us/articles/212494888)`on developer network`
+- [Get Apps](https://developer.kintone.io/hc/en-us/articles/115005336727)`on developer network`
+- [Get Form fields](https://developer.kintone.io/hc/en-us/articles/115005509288)`on developer network`
+- [Get Form Layout](https://developer.kintone.io/hc/en-us/articles/115005509068)`on developer network`

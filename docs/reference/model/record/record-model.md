@@ -1,7 +1,7 @@
 ---
 id: record-model
 title: Record Model
-sidebar_label: Record Model
+sidebar_label: RecordModel
 ---
 
 General record response, using for data response from the kintone app
@@ -10,7 +10,7 @@ General record response, using for data response from the kintone app
 
 ### Methods
 
-#### getRecord()
+### getRecord()
 
 > get the Record data response.
 
@@ -20,7 +20,7 @@ General record response, using for data response from the kintone app
 
 **Return**
 
-HashMap<String, [FieldValue](../record-field-model#fieldvalue)\>
+HashMap<String, [FieldValue](./record-field-model#fieldvalue)\>
 
 
 **Sample code**
@@ -45,7 +45,7 @@ HashMap<String, FieldValue> resultRecord = response.getRecord();
 
 ### Methods
 
-#### getRecords()
+### getRecords()
 
 > get the Records data response.
 
@@ -55,7 +55,7 @@ HashMap<String, FieldValue> resultRecord = response.getRecord();
 
 **Return**
 
-ArrayList<HashMap<String, [FieldValue](../record-field-model#fieldvalue)\>\>
+ArrayList<HashMap<String, [FieldValue](./record-field-model#fieldvalue)\>\>
 
 **Sample code**
 
@@ -75,7 +75,7 @@ ArrayList<HashMap<String, FieldValue>> resultRecords = response.getRecords();
 
 </details>
 
-#### getTotalCount()
+### getTotalCount()
 
 > get the number of records response.
 
@@ -109,7 +109,7 @@ Integer count =  response.getTotalCount();
 
 ### Methods
 
-#### getID()
+### getID()
 
 > get the the ID of record added.
 
@@ -145,7 +145,7 @@ Integer resultID = response.getID();
 
 </details>
 
-#### getRevision()
+### getRevision()
 
 > get the revision number of record added.
 
@@ -185,7 +185,7 @@ Integer resultRevision = response.getRevision();
 
 ### Methods
 
-#### getIDs()
+### getIDs()
 
 > get the array of added records ID.
 
@@ -232,7 +232,7 @@ ArrayList<Integer> resultIDs = response.getIDs();
 
 </details>
 
-#### getRevisions()
+### getRevisions()
 
 > get the array of added records revision number.
 
@@ -283,7 +283,7 @@ ArrayList<Integer> resultRevisions = response.getRevisions();
 
 ### Methods
 
-#### getRevision()
+### getRevision()
 
 > get the revision number of record updated.
 
@@ -326,7 +326,7 @@ Integer resultRevision = response.getRevision();
 
 ### Methods
 
-#### getRecords()
+### getRecords()
 
 > get the array of added records ID with revision.
 
@@ -380,7 +380,7 @@ ArrayList<RecordUpdateResponseItem> resultRuris = response.getRecords();
 
 ### Methods
 
-#### getID()
+### getID()
 
 > get the the ID of record updated.
 
@@ -433,7 +433,7 @@ Integer resultID = resultRusi.getID();
 
 </details>
 
-#### getRevision()
+### getRevision()
 
 > get the revision number of record updated.
 
@@ -497,7 +497,7 @@ Integer resultRevision = resultRusi.getRevision();
 | id | Integer  | The ID of the record.
 | revision | Integer  | The revision number of the record.
 | updateKey | [RecordUpdateKey](#recordupdatekey)  |  The unique key of the record to be updated. Required, if id will not be specified. To specify this field, the field must have the "Prohibit duplicate values" option turned on.
-| record | HashMap<String, [FieldValue](../record-field-model#fieldvalue)\>  | The data to update record.
+| record | HashMap<String, [FieldValue](./record-field-model#fieldvalue)\>  | The data to update record.
 
 **Sample code**
 

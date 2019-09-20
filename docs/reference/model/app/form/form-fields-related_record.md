@@ -1,21 +1,21 @@
 ---
 id: form-fields-related_record
 title: Related Record
-sidebar_label: Related Record
+sidebar_label: RelatedRecord
 ---
 
 Get a list of fields and their settings.
 
-> - Permissions to view the App is needed.
-> - API Tokens cannot be used with this API.
+>- Permissions to view the App is needed.
+>- API Tokens cannot be used with this API.
 
 ## RelatedApp
 
 ### Methods
 
-#### getApp()
+### getApp()
 
-Get the app
+> Get the app 
 
 **Parameter**
 
@@ -33,16 +33,14 @@ Get the app
 **Source code**
 
 ```java
-
-    String app = relatedApp.getApp();
-
+String app = relatedApp.getApp();
 ```
 
 </details>
 
-#### getCode()
+### getCode()
 
-Get the code
+> Get the code
 
 **Parameter**
 
@@ -60,9 +58,7 @@ String
 **Source code**
 
 ```java
-
-    String app = relatedApp.getCode();
-
+String app = relatedApp.getCode();
 ```
 
 </details>
@@ -71,9 +67,9 @@ String
 
 ### Methods
 
-#### getCondition()
+### getCondition()
 
-Get the condition
+> Get the condition
 
 **Parameter**
 
@@ -81,7 +77,7 @@ Get the condition
 
 **Return**
 
-[FieldMapping](../form-fields/#fieldmapping)
+[FieldMapping](./field/form-fields#fieldmapping)
 
 **Sample code**
 
@@ -91,16 +87,14 @@ Get the condition
 **Source code**
 
 ```java
-
-    FieldMapping condition = referenceTable.getCondition();
-
+FieldMapping condition = referenceTable.getCondition();
 ```
 
 </details>
 
-#### getFilterCond()
+### getFilterCond()
 
-Get the filterCond
+> Get the filterCond
 
 **Parameter**
 
@@ -118,16 +112,14 @@ Get the filterCond
 **Source code**
 
 ```java
-
-    String filterCond = referenceTable.getFilterCond();
-
+String filterCond = referenceTable.getFilterCond();
 ```
 
 </details>
 
-#### getRelatedApp()
+### getRelatedApp()
 
-Get the relatedApp
+> Get the relatedApp
 
 **Parameter**
 
@@ -145,16 +137,14 @@ Get the relatedApp
 **Source code**
 
 ```java
-
-    RelatedApp relatedApp = referenceTable.getRelatedApp();
-
+RelatedApp relatedApp = referenceTable.getRelatedApp();
 ```
 
 </details>
 
-#### getSize()
+### getSize()
 
-Get the size
+> Get the size
 
 **Parameter**
 
@@ -172,16 +162,14 @@ Get the size
 **Source code**
 
 ```java
-
-    Integer size = referenceTable.getSize();
-
+Integer size = referenceTable.getSize();
 ```
 
 </details>
 
-#### getDisplayFields()
+### getDisplayFields()
 
-Get the displayFields
+> Get the displayFields
 
 **Parameter**
 
@@ -199,16 +187,14 @@ Get the displayFields
 **Source code**
 
 ```java
-
-    ArrayList<String> displayFields = referenceTable.getDisplayFields();
-
+List<String> displayFields = referenceTable.getDisplayFields();
 ```
 
 </details>
 
-#### getSort()
+### getSort()
 
-Get the sort
+> Get the sort
 
 **Parameter**
 
@@ -226,9 +212,7 @@ String
 **Source code**
 
 ```java
-
-    String sort = referenceTable.getSort();
-
+String sort = referenceTable.getSort();
 ```
 
 </details>
@@ -236,13 +220,13 @@ String
 ## RelatedRecordsField
 
 !!! warning
-    - extend the abstract class  "[Field](../form-fields/#field)"
+    - extend the abstract class  "[Field](./field/form-fields#field)"
 
 ### Methods
 
-#### getLabel()
+### getLabel()
 
-Get the label
+> Get the label
 
 **Parameter**
 
@@ -260,16 +244,14 @@ String
 **Source code**
 
 ```java
-
-    String label = relatedRecordsField.getLabel();
-
+String label = relatedRecordsField.getLabel();
 ```
 
 </details>
 
-#### getNoLabel()
+### getNoLabel()
 
-Get the noLabel
+> Get the noLabel
 
 **Parameter**
 
@@ -287,16 +269,14 @@ Boolean
 **Source code**
 
 ```java
-
-    Boolean noLabel = relatedRecordsField.getNoLabel();
-
+Boolean noLabel = relatedRecordsField.getNoLabel();
 ```
 
 </details>
 
-#### getReferenceTable()
+### getReferenceTable()
 
-Get the referenceTable
+> Get the referenceTable
 
 **Parameter**
 
@@ -314,16 +294,14 @@ Get the referenceTable
 **Source code**
 
 ```java
-
-    ReferenceTable referenceTable = relatedRecordsField.getReferenceTable();
-    
+ReferenceTable referenceTable = relatedRecordsField.getReferenceTable();
 ```
 
 </details>
 
 ## Reference
 
-- [Get App](https://developer.kintone.io/hc/en-us/articles/212494888)
-- [Get Apps](https://developer.kintone.io/hc/en-us/articles/115005336727)
-- [Get Form fields](https://developer.kintone.io/hc/en-us/articles/115005509288)
-- [Get Form Layout](https://developer.kintone.io/hc/en-us/articles/115005509068)
+- [Get App](https://developer.kintone.io/hc/en-us/articles/212494888)`on developer network`
+- [Get Apps](https://developer.kintone.io/hc/en-us/articles/115005336727)`on developer network`
+- [Get Form fields](https://developer.kintone.io/hc/en-us/articles/115005509288)`on developer network`
+- [Get Form Layout](https://developer.kintone.io/hc/en-us/articles/115005509068)`on developer network`

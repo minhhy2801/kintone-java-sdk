@@ -13,7 +13,7 @@ Provide manipulate functions on file: file download & file upload in the kintone
 
 | Name| Type| Required| Description |
 | --- | --- | --- | --- |
-| connection | [Connection](../connection) | yes | The connection module of this SDK.
+| connection | [Connection](./connection) | yes | The connection module of this SDK.
 
 **Sample code**
 
@@ -43,7 +43,7 @@ File fileManagement = new File(connection);
 
 **Return**
 
-[FileModel](../file-model)
+[FileModel](./model/file/file-model)
 
 **Sample code**
 

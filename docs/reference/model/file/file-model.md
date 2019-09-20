@@ -1,28 +1,16 @@
 ---
 id: file-model
 title: File Model
-sidebar_label: File Model
+sidebar_label: FileModel
 ---
 
 Holds file information obtained from kintone.
 
 ## Methods
 
-### getContentType()
-
-Get the content type of the file.
-
-**Parameter**
-
-(none)
-
-**Return**
-
-String
-
 ### getFileKey()
 
-Get the file key of the uploaded file.
+> Get the file key of the uploaded file.
 
 **Parameter**
 
@@ -31,10 +19,40 @@ Get the file key of the uploaded file.
 **Return**
 
 String
+
+**Sample code**
+
+<details class="tab-container" open>
+<Summary>Get the file key of the uploaded file</Summary>
+
+**Source code**
+
+```java
+String appId = 1;
+Integer recordID = 1;
+Integer revision = -1;
+String uploadPath = "C:/Users/Administrator/Desktop/upload";
+
+// file upload
+File file = new File(connection);
+FileModel fileModel = file.upload(uploadPath + "test.txt");
+
+// update reocrd
+fileParam.put("fileKey", fileModel.getFileKey());
+fkeyList.add(fileParam);
+fval.setValue(fkeyList);
+updateParam.put("attachment1", fval);
+Record recordManagement = new Record(connection);
+UpdateRecordResponse updRes = recordManagement.updateRecordByID(appId, recordID, updateParam, revision);
+
+
+```
+
+</details>
 
 ### getName()
 
-Get the name of the uploaded file.
+> Get the name of the uploaded file.
 
 **Parameter**
 
@@ -44,14 +62,30 @@ Get the name of the uploaded file.
 
 String
 
-### getSize()
+**Sample code**
 
-Get the size of the file.
+<details class="tab-container" open>
+<Summary>Get the name of the uploaded file</Summary>
 
-**Parameter**
+**Source code**
 
-(none)
+```java
+String appId = 1;
+Integer recordID = 3;
+String downloadPath = "C:/Users/Administrator/Desktop/download";
 
-**Return**
+// get record
+Record record = new Record(connection);
+GetRecordResponse recordJson = record.getRecord(appId, recordID);
+HashMap<String, FieldValue> recordVal = recordJson.getRecord();
+FieldValue fileVal = recordVal.get("attachment1");
+ArrayList<FileModel> fileList = (ArrayList<FileModel>) fileVal.getValue();
 
-String
+// donwnload file
+FileModel fdata = fileList.get(0);
+File file = new File(connection);
+file.download(fdata.getFileKey(), downloadPath + fdata.getName());
+
+```
+
+</details>
