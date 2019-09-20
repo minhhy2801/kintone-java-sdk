@@ -1,7 +1,8 @@
 ---
-id: record
+id: version-0.4.0-record
 title: Record
 sidebar_label: Record
+original_id: record
 ---
 
 Provide manipulate functions on records: get, update, delete, update the record status & assignees in the kintone app

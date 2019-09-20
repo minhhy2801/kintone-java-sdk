@@ -10,6 +10,7 @@
       "reference/record",
       "reference/record-cursor",
       "reference/bulk-request",
+      "reference/bulks-exception",
       "reference/app",
       "reference/kintone-api-exception",
       "reference/file",
