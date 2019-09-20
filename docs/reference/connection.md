@@ -93,12 +93,14 @@ connection.setHeader(key, value);
 
 | Name| Type| Required| Description |
 | --- | --- | --- | --- |
-| proxyHost | String | yes | The proxy host name
-| proxyPort | Integer | yes | The proxy port number
+| host | String | yes | The proxy host name
+| port | Integer | yes | The proxy port number
+| username | String | (optional) | User name of the proxy
+| password | String | (optional) | Password of the proxy
 
 **Return**
 
-(none)
+[Connection](./connection)
 
 **Sample code**
 
@@ -146,9 +148,9 @@ connection.setProxy(proxyHost, proxyPort, proxyUsername, proxyPassword);
 
 **Return**
 
-[Connection](../connection)
+[Connection](./connection)
 
-<strong class="tab-name">Source code</strong>
+**Source code**
 
 <details class="tab-container" open>
 <Summary>Set the proxy of the request</Summary>

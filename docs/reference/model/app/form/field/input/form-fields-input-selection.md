@@ -140,7 +140,7 @@ String
 ## AbstractSelectionField
 
 !!! warning
-    - extend the abstract class "[AbstractInputField](./form-fields-input/#abstractinputfield)"
+    - extend the abstract class "[AbstractInputField](./form-fields-input#abstractinputfield)"
     - This class is an abstract class.
 
 ### Methods

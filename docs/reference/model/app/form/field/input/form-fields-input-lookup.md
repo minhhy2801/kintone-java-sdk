@@ -42,7 +42,7 @@ Get the fieldMapping
 
 **Return**
 
-List<[FieldMapping](../form-fields/#fieldmapping)\>
+List<[FieldMapping](../form-fields#fieldmapping)\>
 
 ### getFilterCond()
 

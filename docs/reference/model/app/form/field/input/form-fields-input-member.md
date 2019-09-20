@@ -67,7 +67,7 @@ MemberSelectEntityType
 ## AbstractMemberSelectField
 
 !!! warning
-    - extend the abstract class "[AbstractInputField](../form-fields-input/#abstractinputfield.md)"
+    - extend the abstract class "[AbstractInputField](../form-fields-input#abstractinputfield.md)"
     - This class is an abstract class.
 
 ### Methods

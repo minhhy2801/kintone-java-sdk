@@ -771,11 +771,11 @@ GetCommentsResponse response = kintoneRecordManager.getComments(appID, recordID,
 | --- | --- | --- | --- |
 | app | Integer | yes | The kintone app ID |
 | record | Integer | yes | The kintone app ID |
-| comment | [CommentContent](../record-comment-model/#commentcontent) | yes | About the format, please look the sample below or [reference](#reference) at the end of this page.|
+| comment | [CommentContent](../record-comment-model#commentcontent) | yes | About the format, please look the sample below or [reference](#reference) at the end of this page.|
 
 **Return**
 
-[AddCommentResponse](../record-comment-model/#addcommentresponse)
+[AddCommentResponse](../record-comment-model#addcommentresponse)
 
 **Sample code**
 
@@ -873,7 +873,7 @@ kintoneRecordManager.deleteComment(app, record, comment);
 
 **Return**
 
-[GetRecordsResponse](./model/record/record-model/#getrecordsresponse)
+[GetRecordsResponse](./model/record/record-model#getrecordsresponse)
 
 **Sample code**
 
@@ -958,7 +958,7 @@ try {
 | Name| Type| Required| Description |
 | --- | --- | --- | --- |
 | app | Integer | yes | The kintone app ID
-| records | Array<[RecordUpdateItem](./model/record/record-model/#recordupdateitem)> | yes | The records data which will update to kintone app
+| records | Array<[RecordUpdateItem](./model/record/record-model#recordupdateitem)> | yes | The records data which will update to kintone app
 
 **Return**
 
@@ -1109,6 +1109,88 @@ try {
 }
 ```
 
+</details>
+
+### upsertRecord(app, updateKey, record, revision)
+
+**Parameter**
+
+| Name| Type| Required| Description |
+| --- | --- | --- | --- |
+| app | Integer | yes | The kintone app ID
+| updateKey | [RecordUpdateKey](./model/record/record-model#recordupdatekey) | yes | The unique key of the record to be updated. About the format, please look the sample below or [reference](#reference) at the end of this page.
+| record | HashMap<String, [FieldValue](./model/record/record-field-model#fieldvalue)\>  | yes | The record data will be added to kintone app. About the format, please look the sample below or [reference](#reference) at the end of this page.
+| revision | Integer | (optional) | The revision number of record
+
+**Return**
+
+[AddRecordResponse](./model/record/record-model#addrecordresponse) or [UpdateRecordResponse](./model/record/record-model#updaterecordresponse)
+
+**Sample code**
+
+<details class="tab-container" open>
+<Summary>Upsert record</Summary>
+
+**Source code**
+
+```java
+
+Integer appID = {YOUR_APP_ID};
+FieldValue fv = new FieldValue();
+fv.setType(FieldType.SINGLE_LINE_TEXT);
+fv.setValue( {YOUR_FIELD_VALUE} );
+
+HashMap&lt;String, FieldValue&gt; record = new HashMap&lt;String, FieldValue&gt;();
+record.put("title", fv);
+
+RecordUpdateKey updateKey = new RecordUpdateKey("detail", "update 123");
+
+kintoneRecordManager.upsertRecord(appID, updateKey, record, 1);
+
+```
+
+</details>
+
+### upsertRecords(app, updateKey, records, revision)
+
+**Parameter**
+
+| Name| Type| Required| Description |
+| --- | --- | --- | --- |
+| app | Integer | yes | The kintone app ID
+| records | ArrayList<[RecordUpdateItem](./model/record/record-model#recordupdateitem)\> | yes | The record data will be added to kintone app. About the format, please look the sample below or [reference](#reference) at the end of this page.
+
+**Return**
+
+[BulkRequestResponse](./model/bulk-request/bulk-request-response)
+
+**Sample code**
+
+<details class="tab-container" open>
+<Summary>Upsert records</Summary>
+
+**Source code**
+
+```java
+
+Integer appID = {YOUR_APP_ID};
+ArrayList&lt;RecordsUpsertItem&gt; upsertRecords = new ArrayList&lt;RecordsUpsertItem&gt;();
+
+ArrayList&lt;HashMap&lt;String, FieldValue&gt; &gt; records = new ArrayList&lt;HashMap&lt;String, FieldValue&gt; &gt;();
+
+FieldValue fv = new FieldValue();
+fv.setType(FieldType.SINGLE_LINE_TEXT);
+fv.setValue("Title 123");
+
+HashMap&lt;String, FieldValue&gt; record = new HashMap&lt;String, FieldValue&gt;();
+record.put("title", fv);
+
+RecordUpdateKey updateKey = new RecordUpdateKey("title", "update 123");
+
+upsertRecords.add(new RecordsUpsertItem(updateKey, record));
+kintoneRecordManager.upsertRecords(appID, upsertRecords);
+
+```
 </details>
 
 ## Reference

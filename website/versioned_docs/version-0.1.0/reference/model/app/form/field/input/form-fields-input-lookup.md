@@ -56,7 +56,7 @@ LookupItem lookup = lookupField.getLookup();
 
 **Return**
 
-List<[FieldMapping](../form-fields/#fieldmapping)\>
+List<[FieldMapping](../form-fields#fieldmapping)\>
 
 **Sample code**
 

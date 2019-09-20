@@ -123,7 +123,7 @@ Object fieldValue = fv.getValue();
 
 | Name| type| Description |
 | --- | ---  | --- |
-| value | Object  | The value of field in the record, read more at [Field Type here](https://developer.kintone.io/hc/en-us/articles/212494818/#responses).
+| value | Object  | The value of field in the record, read more at [Field Type here](https://developer.kintone.io/hc/en-us/articles/212494818#responses).
 
 
 **Return**

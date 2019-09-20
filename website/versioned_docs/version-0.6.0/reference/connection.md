@@ -1,5 +1,5 @@
 ---
-id: version-0.5.0-connection
+id: version-0.6.0-connection
 title: Connection
 sidebar_label: Connection
 original_id: connection
@@ -94,12 +94,14 @@ connection.setHeader(key, value);
 
 | Name| Type| Required| Description |
 | --- | --- | --- | --- |
-| proxyHost | String | yes | The proxy host name
-| proxyPort | Integer | yes | The proxy port number
+| host | String | yes | The proxy host name
+| port | Integer | yes | The proxy port number
+| username | String | (optional) | User name of the proxy
+| password | String | (optional) | Password of the proxy
 
 **Return**
 
-(none)
+[Connection](./connection)
 
 **Sample code**
 
@@ -147,7 +149,7 @@ connection.setProxy(proxyHost, proxyPort, proxyUsername, proxyPassword);
 
 **Return**
 
-[Connection](../connection)
+[Connection](./connection)
 
 **Source code**
 
