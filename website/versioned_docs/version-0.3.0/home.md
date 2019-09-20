@@ -1,7 +1,8 @@
 ---
-id: home
+id: version-0.3.0-home
 title: Home
 sidebar_label: Home
+original_id: home
 ---
 
 > kintone-java-sdk is the SDK of kintone REST API client on Java

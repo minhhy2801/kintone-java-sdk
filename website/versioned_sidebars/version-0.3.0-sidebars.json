@@ -1,0 +1,19 @@
+{
+  "version-0.3.0-docs": {
+    "kintone java SDK": [
+      "version-0.3.0-home",
+      "version-0.3.0-getting-started/quickstart"
+    ],
+    "API Reference": [
+      "version-0.3.0-reference/authentication",
+      "version-0.3.0-reference/connection",
+      "version-0.3.0-reference/record",
+      "version-0.3.0-reference/record-cursor",
+      "version-0.3.0-reference/bulk-request",
+      "version-0.3.0-reference/app",
+      "version-0.3.0-reference/kintone-api-exception",
+      "version-0.3.0-reference/file",
+      "version-0.3.0-reference/model"
+    ]
+  }
+}

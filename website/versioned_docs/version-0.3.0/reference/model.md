@@ -1,7 +1,8 @@
 ---
-id: model
+id: version-0.3.0-model
 title: Model
 sidebar_label: Model
+original_id: model
 ---
 ## App
 ### App
