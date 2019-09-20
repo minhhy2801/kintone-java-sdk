@@ -16,11 +16,9 @@ original_id: home
 - [Authentication](reference/authentication)
 - [Connection](reference/connection)
 - [Record](reference/record)
-- [RecordCursor](reference/record-cursor)
 - [BulkRequest](reference/bulk-request)
 - [App](reference/app)
 - [KintoneAPIException](reference/kintone-api-exception)
-- [BulksException](reference/bulks-exception)
 - [File](reference/file)
 - [Model](reference/model)
 
