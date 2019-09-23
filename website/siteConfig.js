@@ -14,7 +14,7 @@ const users = [
     caption: 'User1',
     // You will need to prepend the image path with your baseUrl
     // if it is not '/', like: '/test-site/img/image.jpg'.
-    image: '/img/undraw_open_source.svg',
+    // image: '/img/undraw_open_source.svg',
     infoLink: 'https://www.facebook.com',
     pinned: true,
   },
@@ -37,15 +37,15 @@ const siteConfig = {
 
   // For no header links in the top nav bar -> headerLinks: [],
   headerLinks: [
-    {search: true},
+    {search: true}
   ],
 
   // If you have users set above, you add it here:
   users,
 
   /* path to images for header/footer */
-  headerIcon: 'img/header.png',
-  footerIcon: 'img/header.ico',
+  // headerIcon: 'img/header.png',
+  // footerIcon: 'img/header.ico',
   favicon: 'img/favicon.ico',
 
   /* Colors for website */
@@ -87,7 +87,6 @@ const siteConfig = {
   onPageNav: 'separate',
   // No .html extensions for paths.
   cleanUrl: true,
-
   // Open Graph and Twitter card images.
   ogImage: 'img/undraw_online.svg',
   twitterImage: 'img/undraw_tweetstorm.svg',
@@ -97,6 +96,11 @@ const siteConfig = {
   stylesheets: [
     '/kintone-java-sdk/css/custom.css'
   ],
+  algolia: {
+    apiKey: 'e019773ff126b5eae98b79185f6d1e0e',
+    indexName: 'kintone_java_sdk',
+    algoliaOptions: {}
+  },
   // For sites with a sizable amount of content, set collapsible to true.
   // Expand/collapse the links and subcategories under categories.
   // docsSideNavCollapsible: true,

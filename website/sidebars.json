@@ -5,15 +5,15 @@
       "getting-started/quickstart"
     ],
     "API Reference": [
+      "reference/app",
       "reference/authentication",
-      "reference/connection",
-      "reference/record",
-      "reference/record-cursor",
       "reference/bulk-request",
       "reference/bulks-exception",
-      "reference/app",
+      "reference/connection",
       "reference/kintone-api-exception",
       "reference/file",
+      "reference/record",
+      "reference/record-cursor",
       "reference/model"
     ]
   }
