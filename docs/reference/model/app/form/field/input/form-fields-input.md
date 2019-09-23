@@ -12,7 +12,7 @@ Get a list of fields and their settings.
 ## AttachmentField
 
 !!! warning
-    - extend the abstract class  "[AbstractInputField](#abstractinputfield)"
+    - extend the abstract class  "[AbstractInputField](./form-fields-input#abstractinputfield)"
 
 ### Methods
 
@@ -32,7 +32,7 @@ Integer
 
 
 !!! warning
-    - extend the abstract class  "[AbstractInputField](#abstractinputfield)"
+    - extend the abstract class  "[AbstractInputField](./form-fields-input#abstractinputfield)"
 
 ### Methods
 
@@ -112,7 +112,7 @@ NumberFormat
 
 
 !!! warning
-    - extend the abstract class  "[AbstractInputField](#abstractinputfield)"
+    - extend the abstract class  "[AbstractInputField](./form-fields-input#abstractinputfield)"
 
 ### Methods
 
@@ -180,7 +180,7 @@ LinkProtocol
 
 
 !!! warning
-    - extend the abstract class  "[AbstractInputField](#abstractinputfield)"
+    - extend the abstract class  "[AbstractInputField](./form-fields-input#abstractinputfield)"
 
 ### Methods
 
@@ -200,7 +200,7 @@ String
 
 
 !!! warning
-    - extend the abstract class  "[AbstractInputField](#abstractinputfield)"
+    - extend the abstract class  "[AbstractInputField](./form-fields-input#abstractinputfield)"
 
 ### Methods
 
@@ -303,7 +303,7 @@ Boolean
 ## RichTextField
 
 !!! warning
-    - extend the abstract class  "[AbstractInputField](#abstractinputfield)"
+    - extend the abstract class  "[AbstractInputField](./form-fields-input#abstractinputfield)"
 
 ### Methods
 
@@ -323,7 +323,7 @@ String
 
 
 !!! warning
-    - extend the abstract class  "[AbstractInputField](#abstractinputfield)"
+    - extend the abstract class  "[AbstractInputField](./form-fields-input#abstractinputfield)"
 
 ### Methods
 
@@ -402,7 +402,7 @@ Boolean
 ## AbstractInputField
 
 !!! warning
-    - extend the abstract class  "[Field](../field/form-fields#field)"
+    - extend the abstract class  "[Field](../form-fields#field)"
     - This class is an abstract class.
 
 ### Methods

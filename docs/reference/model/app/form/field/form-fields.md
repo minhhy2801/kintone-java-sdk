@@ -91,7 +91,7 @@ Map<String, Field> properties = formfields.getProperties();
 ## FieldGroup
 
 !!! warning
-    - extend the abstract class  "[Field](#field)"
+    - extend the abstract class  "[Field](./form-fields)"
 
 ### Methods
 
@@ -227,7 +227,7 @@ String relatedFields = fieldMapping.getRelatedFields();
 ## SubTableField
 
 !!! warning
-    - extend the abstract class  "[Field](#field)"
+    - extend the abstract class  "[Field](./form-fields)"
 
 ### Methods
 

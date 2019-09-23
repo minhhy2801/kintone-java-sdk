@@ -13,7 +13,7 @@ Get a list of fields and their settings.
 ## AttachmentField
 
 !!! warning
-    - extend the abstract class  "[AbstractInputField](#abstractinputfield)"
+    - extend the abstract class  "[AbstractInputField](./form-fields-input#abstractinputfield)"
 
 ### Methods
 
@@ -46,7 +46,7 @@ Integer thumbnailSize = attachmentField.getThumbnailSize();
 
 
 !!! warning
-    - extend the abstract class  "[AbstractInputField](#abstractinputfield)"
+    - extend the abstract class  "[AbstractInputField](./form-fields-input#abstractinputfield)"
 
 ### Methods
 
@@ -204,7 +204,7 @@ NumberFormat format = calculatedField.getFormat();
 
 
 !!! warning
-    - extend the abstract class  "[AbstractInputField](#abstractinputfield)"
+    - extend the abstract class  "[AbstractInputField](./form-fields-input#abstractinputfield)"
 
 ### Methods
 
@@ -337,7 +337,7 @@ LinkProtocol protocol = linkField.getProtocol();
 
 
 !!! warning
-    - extend the abstract class  "[AbstractInputField](#abstractinputfield)"
+    - extend the abstract class  "[AbstractInputField](./form-fields-input#abstractinputfield)"
 
 ### Methods
 
@@ -370,7 +370,7 @@ String defaultValue = multiLineTextField.getDefaultValue();
 
 
 !!! warning
-    - extend the abstract class  "[AbstractInputField](#abstractinputfield)"
+    - extend the abstract class  "[AbstractInputField](./form-fields-input#abstractinputfield)"
 
 ### Methods
 
@@ -577,7 +577,7 @@ Boolean unique = numberField.getUnique();
 ## RichTextField
 
 !!! warning
-    - extend the abstract class  "[AbstractInputField](#abstractinputfield)"
+    - extend the abstract class  "[AbstractInputField](./form-fields-input#abstractinputfield)"
 
 ### Methods
 
@@ -610,7 +610,7 @@ String defaultValue = richTextField.getDefaultValue();
 
 
 !!! warning
-    - extend the abstract class  "[AbstractInputField](#abstractinputfield)"
+    - extend the abstract class  "[AbstractInputField](./form-fields-input#abstractinputfield)"
 
 ### Methods
 
@@ -767,7 +767,7 @@ Boolean unique = singleLineTextField.getUnique();
 ## AbstractInputField
 
 !!! warning
-    - extend the abstract class  "[Field](../field/form-fields#field)"
+    - extend the abstract class  "[Field](../form-fields#field)"
     - This class is an abstract class.
 
 ### Methods

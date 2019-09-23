@@ -1,6 +1,6 @@
 ---
 id: bulk-request-model
-title: Bulk Request Model
+title: BulkRequestModel
 sidebar_label: BulkRequestModel
 ---
 

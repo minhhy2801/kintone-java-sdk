@@ -44,11 +44,11 @@ BulkRequest bulkRequestManager = new BulkRequest(connection);
 
 **Parameter**
 
-See at [Record - addRecord](./record#addrecordappid-recorddata)
+See at [Record - addRecord](./record#addrecordapp-record)
 
 **Return**
 
-[BulkRequest](#bulkrequest)
+[BulkRequest](./bulk-request)
 
 **Sample code**
 
@@ -79,11 +79,11 @@ bulkRequestManager.addRecord(appID, record);
 
 **Parameter**
 
-See at [Record - addRecords](./record#addrecordsappid-recordsdata)
+See at [Record - addRecords](./record#addrecordsapp-records)
 
 **Return**
 
-[BulkRequest](#bulkrequest)
+[BulkRequest](./bulk-request)
 
 **Sample code**
 
@@ -127,7 +127,7 @@ See at [Record - updateRecordByID](./record#updaterecordbyidapp-id-record-revisi
 
 **Return**
 
-[BulkRequest](#bulkrequest)
+[BulkRequest](./bulk-request)
 
 **Sample code**
 
@@ -163,7 +163,7 @@ See at [Record - updateRecordByUpdateKey](./record#updaterecordbyupdatekeyapp-up
 
 **Return**
 
-[BulkRequest](#bulkrequest)
+[BulkRequest](./bulk-request)
 
 **Sample code**
 
@@ -199,7 +199,7 @@ See at [Record - updateRecords](./record#updaterecordsapp-records)
 
 **Return**
 
-[BulkRequest](#bulkrequest)
+[BulkRequest](./bulk-request)
 
 **Sample code**
 
@@ -246,7 +246,7 @@ See at [Record - deleteRecords](./record#deleterecordsapp-ids)
 
 **Return**
 
-[BulkRequest](#bulkrequest)
+[BulkRequest](./bulk-request)
 
 **Sample code**
 
@@ -278,7 +278,7 @@ See at [Record - deleteRecordsWithRevision](./record#deleterecordswithrevisionap
 
 **Return**
 
-[BulkRequest](#bulkrequest)
+[BulkRequest](./bulk-request)
 
 **Sample code**
 
@@ -310,7 +310,7 @@ See at [Record - updateRecordAssignees](./record#updaterecordassigneesapp-id-ass
 
 **Return**
 
-[BulkRequest](#bulkrequest)
+[BulkRequest](./bulk-request)
 
 **Sample code**
 
@@ -342,7 +342,7 @@ See at [Record - updateRecordStatus](./record#updaterecordstatusapp-id-action-as
 
 **Return**
 
-[BulkRequest](#bulkrequest)
+[BulkRequest](./bulk-request)
 
 **Sample code**
 
@@ -373,7 +373,7 @@ See at [Record - updateRecordsStatus](./record#updaterecordsstatusappid-recordss
 
 **Return**
 
-[BulkRequest](#bulkrequest)
+[BulkRequest](./bulk-request)
 
 **Sample code**
 

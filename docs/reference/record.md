@@ -771,11 +771,11 @@ GetCommentsResponse response = kintoneRecordManager.getComments(appID, recordID,
 | --- | --- | --- | --- |
 | app | Integer | yes | The kintone app ID |
 | record | Integer | yes | The kintone app ID |
-| comment | [CommentContent](../record-comment-model#commentcontent) | yes | About the format, please look the sample below or [reference](#reference) at the end of this page.|
+| comment | [CommentContent](./model/record/record-comment-model#commentcontent) | yes | About the format, please look the sample below or [reference](#reference) at the end of this page.|
 
 **Return**
 
-[AddCommentResponse](../record-comment-model#addcommentresponse)
+[AddCommentResponse](./model/record/record-comment-model#addcommentresponse)
 
 **Sample code**
 

@@ -13,6 +13,36 @@
       "version-0.1.0-reference/file",
       "version-0.1.0-reference/record",
       "version-0.1.0-reference/model"
+    ],
+    "other": [
+      "version-0.1.0-reference/model/app/app/app-model",
+      "version-0.1.0-reference/model/app/app/app-deploy-status",
+      "version-0.1.0-reference/model/app/app/get-app-deploy-status-response",
+      "version-0.1.0-reference/model/app/app/preview-app",
+      "version-0.1.0-reference/model/app/form/field/form-fields",
+      "version-0.1.0-reference/model/app/form/field/input/form-fields-input-lookup",
+      "version-0.1.0-reference/model/app/form/field/input/form-fields-input",
+      "version-0.1.0-reference/model/app/form/field/input/form-fields-input-member",
+      "version-0.1.0-reference/model/app/form/field/input/form-fields-input-selection",
+      "version-0.1.0-reference/model/app/form/field/input/form-fields-input-time",
+      "version-0.1.0-reference/model/app/form/layout/form-layout",
+      "version-0.1.0-reference/model/app/form/form-fields-related_record",
+      "version-0.1.0-reference/model/app/form/form-fields-system",
+      "version-0.1.0-reference/model/app/general/general-settings",
+      "version-0.1.0-reference/model/app/general/icon-model",
+      "version-0.1.0-reference/model/app/view/view-model",
+      "version-0.1.0-reference/model/app/view/get-view-response",
+      "version-0.1.0-reference/model/app/view/update-views-response",
+      "version-0.1.0-reference/model/app/basic-response",
+      "version-0.1.0-reference/model/bulk-request/bulk-request-model",
+      "version-0.1.0-reference/model/bulk-request/bulk-request-item",
+      "version-0.1.0-reference/model/bulk-request/bulk-request-response",
+      "version-0.1.0-reference/model/file/file-model",
+      "version-0.1.0-reference/model/member/member",
+      "version-0.1.0-reference/model/record/record-model",
+      "version-0.1.0-reference/model/record/record-comment-model",
+      "version-0.1.0-reference/model/record/record-field-model",
+      "version-0.1.0-reference/model/cursor/record-cursor"
     ]
   }
 }
